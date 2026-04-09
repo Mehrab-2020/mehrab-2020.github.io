@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ElectroMartBD | Electronics Components & Arduino Store</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #0b0f14;
+  --card: #121821;
+  --accent: #00d1ff;
+  --text: #ffffff;
+  --dim: #9aa4b2;
+}
+
+* {margin:0; padding:0; box-sizing:border-box; font-family:Inter;}
+body {background:var(--bg); color:var(--text);}
+
+nav {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:15px 5%; background:#0b0f14; border-bottom:1px solid #1f2933;
+}
+nav h1 {color:var(--accent);} 
+
+.hero {
+  text-align:center; padding:80px 20px;
+}
+.hero h2 {font-size:2.8rem;}
+.hero p {color:var(--dim); margin-top:10px;}
+
+.container {max-width:1100px; margin:auto; padding:20px;}
+.section-title {margin:40px 0 20px; font-size:1.5rem;}
+
+.grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px;
+}
+
+.card {
+  background:var(--card); padding:20px; border-radius:15px;
+  border:1px solid #1f2933; transition:0.3s;
+}
+.card:hover {border-color:var(--accent); transform:translateY(-5px);} 
+
+.card img {width:100%; height:150px; object-fit:contain;}
+.card h3 {margin:10px 0;}
+.card p {color:var(--dim); font-size:0.9rem;}
+.price {margin:10px 0; font-weight:bold;}
+
+.btn {
+  display:block; text-align:center; background:var(--accent);
+  color:black; padding:10px; border-radius:8px; text-decoration:none;
+}
+
+footer {
+  text-align:center; padding:40px; color:var(--dim);
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<h1>ElectroMartBD</h1>
+<div>📞 01998421007</div>
+</nav>
+
+<section class="hero">
+<h2>Electronics for Every Project</h2>
+<p>Buy resistors, capacitors, Arduino boards, sensors and more in Bangladesh</p>
+</section>
+
+<div class="container">
+
+<h3 class="section-title">Arduino & Boards</h3>
+<div class="grid">
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arduino_Logo.svg">
+<h3>Arduino Uno R3</h3>
+<p>ATmega328P | USB Powered</p>
+<div class="price">৳550</div>
+<a class="btn" href="#">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arduino_Logo.svg">
+<h3>NodeMCU ESP8266</h3>
+<p>WiFi Development Board</p>
+<div class="price">৳350</div>
+<a class="btn" href="#">Buy Now</a>
+</div>
+</div>
+
+<h3 class="section-title">Basic Components</h3>
+<div class="grid">
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Resistor.jpg">
+<h3>Resistor Pack</h3>
+<p>100 pcs assorted values</p>
+<div class="price">৳120</div>
+<a class="btn" href="#">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Capacitors.jpg">
+<h3>Capacitor Kit</h3>
+<p>Electrolytic + Ceramic</p>
+<div class="price">৳180</div>
+<a class="btn" href="#">Buy Now</a>
+</div>
+</div>
+
+<h3 class="section-title">Sensors & Modules</h3>
+<div class="grid">
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/DHT11.jpg">
+<h3>DHT11 Sensor</h3>
+<p>Temperature & Humidity</p>
+<div class="price">৳120</div>
+<a class="btn" href="#">Buy Now</a>
+</div>
+
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Ultrasonic_Sensor.jpg">
+<h3>Ultrasonic Sensor</h3>
+<p>Distance Measurement</p>
+<div class="price">৳150</div>
+<a class="btn" href="#">Buy Now</a>
+</div>
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 ElectroMartBD | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
