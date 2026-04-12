@@ -1,140 +1,417 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ElectroMartBD | Electronics Components & Arduino Store</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElectroMartBD | Electronics Components & Arduino Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-color: #030712;
+      --card-bg: rgba(17, 24, 39, 0.7);
+      --card-border: rgba(31, 41, 55, 0.8);
+      --accent: #00d1ff;
+      --accent-hover: #00e5ff;
+      --accent-glow: rgba(0, 209, 255, 0.3);
+      --text-main: #f9fafb;
+      --text-dim: #9ca3af;
+    }
 
-<style>
-:root {
-  --bg: #0b0f14;
-  --card: #121821;
-  --accent: #00d1ff;
-  --text: #ffffff;
-  --dim: #9aa4b2;
-}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      background-color: var(--bg-color);
+      background-image: 
+        radial-gradient(circle at 15% 50%, rgba(0, 209, 255, 0.05), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(0, 209, 255, 0.04), transparent 25%);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
 
-* {margin:0; padding:0; box-sizing:border-box; font-family:Inter;}
-body {background:var(--bg); color:var(--text);}
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Outfit', sans-serif;
+    }
 
-nav {
-  display:flex; justify-content:space-between; align-items:center;
-  padding:15px 5%; background:#0b0f14; border-bottom:1px solid #1f2933;
-}
-nav h1 {color:var(--accent);} 
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 5%;
+      background: rgba(3, 7, 18, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-.hero {
-  text-align:center; padding:80px 20px;
-}
-.hero h2 {font-size:2.8rem;}
-.hero p {color:var(--dim); margin-top:10px;}
+    nav h1 {
+      color: var(--text-main);
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    nav h1 span {
+      background: linear-gradient(135deg, #00d1ff, #0088ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      padding-right: 2px;
+    }
 
-.container {max-width:1100px; margin:auto; padding:20px;}
-.section-title {margin:40px 0 20px; font-size:1.5rem;}
+    .contact-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      font-family: 'Outfit', sans-serif;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 8px 16px;
+      border-radius: 99px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
 
-.grid {
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px;
-}
+    .contact-badge:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
 
-.card {
-  background:var(--card); padding:20px; border-radius:15px;
-  border:1px solid #1f2933; transition:0.3s;
-}
-.card:hover {border-color:var(--accent); transform:translateY(-5px);} 
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
 
-.card img {width:100%; height:150px; object-fit:contain;}
-.card h3 {margin:10px 0;}
-.card p {color:var(--dim); font-size:0.9rem;}
-.price {margin:10px 0; font-weight:bold;}
+    .hero h2 {
+      font-size: 4rem;
+      line-height: 1.1;
+      font-weight: 800;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+    
+    .hero h2 span {
+      position: relative;
+      background: linear-gradient(135deg, #00d1ff, #0088ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
 
-.btn {
-  display:block; text-align:center; background:var(--accent);
-  color:black; padding:10px; border-radius:8px; text-decoration:none;
-}
+    .hero p {
+      color: var(--text-dim);
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      font-weight: 300;
+    }
 
-footer {
-  text-align:center; padding:40px; color:var(--dim);
-}
-</style>
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 5%;
+      position: relative;
+      z-index: 10;
+    }
+
+    .section-title {
+      margin: 60px 0 30px;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title::before {
+      content: '';
+      display: block;
+      width: 12px;
+      height: 24px;
+      background: var(--accent);
+      border-radius: 4px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0, 209, 255, 0.5), transparent);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 20px var(--accent-glow);
+      border-color: rgba(0, 209, 255, 0.3);
+    }
+    
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .img-container {
+      width: 100%;
+      height: 220px;
+      border-radius: 12px;
+      background: #000;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .card:hover img {
+      transform: scale(1.05);
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .card p {
+      color: var(--text-dim);
+      font-size: 0.95rem;
+      flex-grow: 1;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
+    }
+
+    .price {
+      font-size: 1.5rem;
+      font-weight: 800;
+      font-family: 'Outfit', sans-serif;
+      color: var(--accent);
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #00d1ff, #0088ff);
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn:hover {
+      box-shadow: 0 0 15px var(--accent-glow);
+      transform: translateY(-2px);
+      filter: brightness(1.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 60px 20px;
+      margin-top: 60px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--text-dim);
+      font-size: 0.9rem;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 28px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+    
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    /* Subtle entry animation */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .card {
+      animation: fadeUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.2s; }
+    
+    @media (max-width: 768px) {
+      .hero h2 { font-size: 2.8rem; }
+      .section-title { font-size: 1.8rem; }
+      .grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+    }
+  </style>
 </head>
 
 <body>
 
 <nav>
-<h1>ElectroMartBD</h1>
-<div>📞 01998421007</div>
+  <h1>ElectroMart<span>BD</span></h1>
+  <div class="contact-badge">📞 01998421007</div>
 </nav>
 
 <section class="hero">
-<h2>Electronics for Every Project</h2>
-<p>Buy resistors, capacitors, Arduino boards, sensors and more in Bangladesh</p>
+  <h2>Hardware for <span>Builders</span></h2>
+  <p>Your one-stop shop for resistors, capacitors, Arduino boards, and advanced sensors in Bangladesh.</p>
 </section>
 
 <div class="container">
 
-<h3 class="section-title">Arduino & Boards</h3>
-<div class="grid">
-<div class="card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arduino_Logo.svg">
-<h3>Arduino Uno R3</h3>
-<p>ATmega328P | USB Powered</p>
-<div class="price">৳550</div>
-<a class="btn" href="#">Buy Now</a>
-</div>
+  <h3 class="section-title">Development Boards</h3>
+  <div class="grid">
+    <div class="card">
+      <div class="img-container">
+        <img src="file:///C:/Users/Meherab/.gemini/antigravity/brain/292e06b3-2e8f-490c-8eb8-0fd42e0d5783/arduino_uno_1776011591754.png" alt="Arduino Uno R3">
+      </div>
+      <h3>Arduino Uno R3</h3>
+      <p>The classic microcontroller board. ATmega328P | USB Powered.</p>
+      <div class="card-footer">
+        <div class="price">৳550</div>
+        <a class="btn" href="https://wa.me/8801998421007?text=I%20want%20to%20order%20Arduino%20Uno%20R3">Order Now</a>
+      </div>
+    </div>
 
-<div class="card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arduino_Logo.svg">
-<h3>NodeMCU ESP8266</h3>
-<p>WiFi Development Board</p>
-<div class="price">৳350</div>
-<a class="btn" href="#">Buy Now</a>
-</div>
-</div>
+    <div class="card">
+      <div class="img-container">
+        <img src="file:///C:/Users/Meherab/.gemini/antigravity/brain/292e06b3-2e8f-490c-8eb8-0fd42e0d5783/nodemcu_1776011869141.png" alt="NodeMCU ESP8266">
+      </div>
+      <h3>NodeMCU ESP8266</h3>
+      <p>Powerful WiFi Development Board for your IoT projects.</p>
+      <div class="card-footer">
+        <div class="price">৳350</div>
+        <a class="btn" href="https://wa.me/8801998421007?text=I%20want%20to%20order%20NodeMCU%20ESP8266">Order Now</a>
+      </div>
+    </div>
+  </div>
 
-<h3 class="section-title">Basic Components</h3>
-<div class="grid">
-<div class="card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Resistor.jpg">
-<h3>Resistor Pack</h3>
-<p>100 pcs assorted values</p>
-<div class="price">৳120</div>
-<a class="btn" href="#">Buy Now</a>
-</div>
+  <h3 class="section-title">Components & Passives</h3>
+  <div class="grid">
+    <div class="card">
+      <div class="img-container">
+        <img src="file:///C:/Users/Meherab/.gemini/antigravity/brain/292e06b3-2e8f-490c-8eb8-0fd42e0d5783/resistors_1776012060167.png" alt="Resistor Pack">
+      </div>
+      <h3>Resistor Pack</h3>
+      <p>100 pieces of assorted through-hole resistor values for prototyping.</p>
+      <div class="card-footer">
+        <div class="price">৳120</div>
+        <a class="btn" href="https://wa.me/8801998421007?text=I%20want%20to%20order%20Resistor%20Pack">Order Now</a>
+      </div>
+    </div>
 
-<div class="card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Capacitors.jpg">
-<h3>Capacitor Kit</h3>
-<p>Electrolytic + Ceramic</p>
-<div class="price">৳180</div>
-<a class="btn" href="#">Buy Now</a>
-</div>
-</div>
+    <div class="card">
+      <div class="img-container">
+        <img src="file:///C:/Users/Meherab/.gemini/antigravity/brain/292e06b3-2e8f-490c-8eb8-0fd42e0d5783/capacitors_1776012151934.png" alt="Capacitor Kit">
+      </div>
+      <h3>Capacitor Kit</h3>
+      <p>Mixed pack of electrolytic and ceramic capacitors.</p>
+      <div class="card-footer">
+        <div class="price">৳180</div>
+        <a class="btn" href="https://wa.me/8801998421007?text=I%20want%20to%20order%20Capacitor%20Kit">Order Now</a>
+      </div>
+    </div>
+  </div>
 
-<h3 class="section-title">Sensors & Modules</h3>
-<div class="grid">
-<div class="card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/DHT11.jpg">
-<h3>DHT11 Sensor</h3>
-<p>Temperature & Humidity</p>
-<div class="price">৳120</div>
-<a class="btn" href="#">Buy Now</a>
-</div>
+  <h3 class="section-title">Sensors & Modules</h3>
+  <div class="grid">
+    <div class="card">
+      <div class="img-container">
+        <img src="file:///C:/Users/Meherab/.gemini/antigravity/brain/292e06b3-2e8f-490c-8eb8-0fd42e0d5783/dht11_1776012357195.png" alt="DHT11 Sensor">
+      </div>
+      <h3>DHT11 Sensor</h3>
+      <p>Digital temperature and humidity sensor module.</p>
+      <div class="card-footer">
+        <div class="price">৳120</div>
+        <a class="btn" href="https://wa.me/8801998421007?text=I%20want%20to%20order%20DHT11%20Sensor">Order Now</a>
+      </div>
+    </div>
 
-<div class="card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Ultrasonic_Sensor.jpg">
-<h3>Ultrasonic Sensor</h3>
-<p>Distance Measurement</p>
-<div class="price">৳150</div>
-<a class="btn" href="#">Buy Now</a>
-</div>
-</div>
+    <div class="card">
+      <div class="img-container">
+        <img src="file:///C:/Users/Meherab/.gemini/antigravity/brain/292e06b3-2e8f-490c-8eb8-0fd42e0d5783/ultrasonic_1776012457533.png" alt="Ultrasonic Sensor">
+      </div>
+      <h3>HC-SR04 Ultrasonic</h3>
+      <p>Precision distance measurement module with dual transducers.</p>
+      <div class="card-footer">
+        <div class="price">৳150</div>
+        <a class="btn" href="https://wa.me/8801998421007?text=I%20want%20to%20order%20Ultrasonic%20Sensor">Order Now</a>
+      </div>
+    </div>
+  </div>
 
 </div>
 
 <footer>
-<p>© 2026 ElectroMartBD | All Rights Reserved</p>
+  <p>© 2026 ElectroMartBD | Designed with precision for builders</p>
 </footer>
+
+<!-- Floating WhatsApp Button -->
+<a class="whatsapp-float" href="https://wa.me/8801998421007" target="_blank" title="Chat on WhatsApp">💬</a>
 
 </body>
 </html>
