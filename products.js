@@ -35,7 +35,7 @@ const productsData = [
       {
         id: "raspberry_pi_4",
         name: "Raspberry Pi 4 Model B",
-        image: "./images/raspberry_pi_4.png", 
+        image: "./images/raspberry_pi_4.jpg", 
         shortDesc: "High-performance SBC with dual 4K display support and true Gigabit Ethernet.",
         price: "৳6500",
         fullDesc: "The Raspberry Pi 4 Model B represents a huge leap forward for single-board computing. It boasts a 64-bit quad-core processor, dual-display support at resolutions up to 4K, and dual-band wireless LAN. Whether you're building a retro gaming console, a media center, or an industrial controller, the Pi 4 has the power you need.",
@@ -51,7 +51,7 @@ const productsData = [
       {
         id: "esp32",
         name: "ESP32 Development Board",
-        image: "./images/esp32.png",
+        image: "./images/esp32.jpg",
         shortDesc: "Dual-core WiFi & Bluetooth MCU for advanced IoT applications.",
         price: "৳450",
         fullDesc: "The ESP32 is a powerful dual-core microcontroller with integrated Wi-Fi and dual-mode Bluetooth (Classic and BLE). It excels in complex IoT applications, robotics, and smart home systems requiring both strong processing capabilities and varied wireless connectivity.",
@@ -136,7 +136,7 @@ const productsData = [
       {
         id: "hc05",
         name: "HC-05 Bluetooth Module",
-        image: "./images/hc05.png",
+        image: "./images/hc05.jpg",
         shortDesc: "Add full-duplex serial wireless connectivity to your projects.",
         price: "৳250",
         fullDesc: "The HC-05 is a widely popular, low-cost serial Bluetooth module. It can be set up as a Master or Slave device, making it incredibly versatile for creating point-to-point wireless connections between microcontrollers, PCs, and smartphones.",
