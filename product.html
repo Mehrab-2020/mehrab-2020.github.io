@@ -305,6 +305,50 @@
       function renderProduct(p) {
         document.title = `${p.name} | ElectroMartBD`;
         
+        // --- Inject Dynamic SEO Tags ---
+        const metaDesc = document.createElement('meta');
+        metaDesc.name = "description";
+        metaDesc.content = p.shortDesc;
+        document.head.appendChild(metaDesc);
+
+        const ogTitle = document.createElement('meta');
+        ogTitle.property = "og:title";
+        ogTitle.content = `${p.name} | ElectroMartBD`;
+        document.head.appendChild(ogTitle);
+
+        const ogDesc = document.createElement('meta');
+        ogDesc.property = "og:description";
+        ogDesc.content = p.shortDesc;
+        document.head.appendChild(ogDesc);
+
+        const ogImg = document.createElement('meta');
+        ogImg.property = "og:image";
+        // construct absolute URL if possible. Since we're client-side, we use location.origin
+        ogImg.content = window.location.origin + p.image.substring(1); // assumes p.image starts with ./
+        document.head.appendChild(ogImg);
+
+        // Inject Product JSON-LD Schema
+        const schemaUrl = window.location.href;
+        const jsonLd = document.createElement('script');
+        jsonLd.type = "application/ld+json";
+        jsonLd.text = JSON.stringify({
+          "@context": "https://schema.org/",
+          "@type": "Product",
+          "name": p.name,
+          "image": window.location.origin + p.image.substring(1),
+          "description": p.shortDesc,
+          "sku": p.id,
+          "offers": {
+            "@type": "Offer",
+            "url": schemaUrl,
+            "priceCurrency": "BDT",
+            "price": p.price.replace(/[^0-9]/g, ''), 
+            "availability": "https://schema.org/InStock"
+          }
+        });
+        document.head.appendChild(jsonLd);
+        // -------------------------------
+        
         // Render features
         const featuresHtml = p.features.map(f => `<li>${f}</li>`).join('');
         
