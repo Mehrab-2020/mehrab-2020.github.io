@@ -4,7 +4,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Details | ElectroMartBD</title>
+  
+  <!-- Primary Meta Tags -->
+  <title>ElectroMartBD | Electronics Components, Arduino & Sensors Store in BD</title>
+  <meta name="title" content="ElectroMartBD | Electronics Components, Arduino & Sensors Store in BD">
+  <meta name="description" content="Your one-stop shop for resistors, capacitors, Arduino boards, and advanced sensors in Bangladesh. High-quality hardware for builders at ElectroMartBD.">
+  <meta name="keywords" content="electronics components BD, Arduino store Bangladesh, buy resistors, capacitors, sensors BD, robotics parts Bangladesh, ElectroMartBD">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://electromartbd.com/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://electromartbd.com/">
+  <meta property="og:title" content="ElectroMartBD | Electronics Components, Arduino & Sensors Store in BD">
+  <meta property="og:description" content="Your one-stop shop for resistors, capacitors, Arduino boards, and advanced sensors in Bangladesh. High-quality hardware for builders at ElectroMartBD.">
+  <meta property="og:image" content="https://electromartbd.com/meta-image.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://electromartbd.com/">
+  <meta property="twitter:title" content="ElectroMartBD | Electronics Components, Arduino & Sensors Store in BD">
+  <meta property="twitter:description" content="Your one-stop shop for resistors, capacitors, Arduino boards, and advanced sensors in Bangladesh. High-quality hardware for builders at ElectroMartBD.">
+  <meta property="twitter:image" content="https://electromartbd.com/meta-image.jpg">
+
+  <!-- JSON-LD Structured Data for Local/Electronic Store -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ElectronicsStore",
+    "name": "ElectroMartBD",
+    "image": "https://electromartbd.com/logo.png",
+    "url": "https://electromartbd.com/",
+    "telephone": "+8801998421007",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dhaka",
+      "addressCountry": "BD"
+    },
+    "description": "Your one-stop shop for resistors, capacitors, Arduino boards, and advanced sensors in Bangladesh.",
+    "priceRange": "$$"
+  }
+  </script>
   <link
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap"
     rel="stylesheet">
@@ -36,12 +76,14 @@
       font-family: 'Inter', sans-serif;
       overflow-x: hidden;
       line-height: 1.5;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       font-family: 'Outfit', sans-serif;
     }
 
@@ -59,7 +101,7 @@
       z-index: 100;
     }
 
-    nav h1 {
+    nav .logo {
       color: var(--text-main);
       font-size: 1.8rem;
       font-weight: 800;
@@ -69,56 +111,138 @@
       gap: 8px;
     }
 
-    nav h1 a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    nav h1 span {
+    nav .logo span {
       background: linear-gradient(135deg, #00d1ff, #0088ff);
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
       padding-right: 2px;
     }
 
-    .container {
-      max-width: 1000px;
-      margin: 60px auto;
-      padding: 20px 5%;
-      flex-grow: 1;
-      width: 100%;
-    }
-
-    .back-link {
-      display: inline-block;
-      color: var(--accent);
-      text-decoration: none;
-      margin-bottom: 30px;
-      font-weight: 500;
+    .contact-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      font-family: 'Outfit', sans-serif;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 8px 16px;
+      border-radius: 99px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
       transition: all 0.3s ease;
     }
 
-    .back-link:hover {
-      text-shadow: 0 0 10px var(--accent-glow);
-      transform: translateX(-5px);
+    .contact-badge:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
     }
 
-    .product-grid {
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      line-height: 1.1;
+      font-weight: 800;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+
+    .hero h1 span {
+      position: relative;
+      background: linear-gradient(135deg, #00d1ff, #0088ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      color: var(--text-dim);
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      font-weight: 300;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 5%;
+      position: relative;
+      z-index: 10;
+    }
+
+    .section-title {
+      margin: 60px 0 30px;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title::before {
+      content: '';
+      display: block;
+      width: 12px;
+      height: 24px;
+      background: var(--accent);
+      border-radius: 4px;
+    }
+
+    .grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
       background: var(--card-bg);
+      backdrop-filter: blur(10px);
       border: 1px solid var(--card-border);
       border-radius: 20px;
-      padding: 40px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
     }
 
-    .product-image {
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0, 209, 255, 0.5), transparent);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 20px var(--accent-glow);
+      border-color: rgba(0, 209, 255, 0.3);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .img-container {
       width: 100%;
-      height: 400px;
+      height: 220px;
       border-radius: 12px;
       background: #000;
+      margin-bottom: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -126,123 +250,133 @@
       border: 1px solid rgba(255, 255, 255, 0.03);
     }
 
-    .product-image img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       transition: transform 0.5s ease;
     }
 
-    .product-image:hover img {
+    .card:hover img {
       transform: scale(1.05);
     }
 
-    .product-details {
-      display: flex;
-      flex-direction: column;
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+      font-weight: 600;
     }
 
-    .product-title {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-bottom: 10px;
-      background: linear-gradient(135deg, #ffffff, #a0a0a0);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .card p {
+      color: var(--text-dim);
+      font-size: 0.95rem;
+      flex-grow: 1;
     }
 
-    .product-price {
-      font-size: 2rem;
-      color: var(--accent);
-      font-weight: 700;
-      font-family: 'Outfit', sans-serif;
-      margin-bottom: 30px;
+    .card-footer {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 10px;
+      margin-top: 24px;
     }
 
-    .product-price span {
-      font-size: 1rem;
-      color: var(--text-dim);
-      font-weight: 400;
-      text-decoration: line-through;
-    }
-
-    .product-desc {
-      color: var(--text-dim);
-      font-size: 1.1rem;
-      margin-bottom: 30px;
-      line-height: 1.7;
-    }
-
-    .features-list {
-      margin-bottom: 40px;
-      list-style: none;
-    }
-
-    .features-list li {
-      margin-bottom: 12px;
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      color: var(--text-main);
-    }
-
-    .features-list li::before {
-      content: '✓';
+    .price {
+      font-size: 1.5rem;
+      font-weight: 800;
+      font-family: 'Outfit', sans-serif;
       color: var(--accent);
-      font-weight: bold;
     }
 
-    .order-btn {
+    .btn {
       background: linear-gradient(135deg, #00d1ff, #0088ff);
       color: #000;
-      padding: 16px 30px;
-      border-radius: 12px;
+      padding: 10px 20px;
+      border-radius: 10px;
       text-decoration: none;
-      font-weight: 800;
-      font-size: 1.1rem;
-      text-align: center;
+      font-weight: 600;
+      font-size: 0.95rem;
       transition: all 0.3s ease;
-      display: flex;
-      justify-content: center;
+      display: inline-flex;
       align-items: center;
-      gap: 10px;
-      border: none;
-      cursor: pointer;
+      gap: 6px;
     }
 
-    .order-btn:hover {
-      box-shadow: 0 0 25px var(--accent-glow);
-      transform: translateY(-3px);
+    .btn:hover {
+      box-shadow: 0 0 15px var(--accent-glow);
+      transform: translateY(-2px);
       filter: brightness(1.1);
     }
 
     footer {
       text-align: center;
-      padding: 40px 20px;
-      margin-top: auto;
+      padding: 60px 20px;
+      margin-top: 60px;
       border-top: 1px solid rgba(255, 255, 255, 0.05);
       color: var(--text-dim);
       font-size: 0.9rem;
     }
 
-    .error-container {
-      text-align: center;
-      padding: 100px 20px;
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 28px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    /* Subtle entry animation */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card {
+      animation: fadeUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    .card:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .card:nth-child(2) {
+      animation-delay: 0.2s;
     }
 
     @media (max-width: 768px) {
-      .product-grid {
-        grid-template-columns: 1fr;
-        padding: 20px;
+      .hero h1 {
+        font-size: 2.8rem;
       }
-      .product-image {
-        height: 300px;
+
+      .section-title {
+        font-size: 1.8rem;
       }
-      .product-title {
-        font-size: 2rem;
+
+      .grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
       }
     }
   </style>
@@ -250,95 +384,70 @@
 
 <body>
 
-  <nav>
-    <h1><a href="index.html">ElectroMart<span>BD</span></a></h1>
-    <div style="display: flex; align-items: center; gap: 8px; font-weight: 600; font-family: 'Outfit', sans-serif; background: rgba(255, 255, 255, 0.05); padding: 8px 16px; border-radius: 99px; border: 1px solid rgba(255, 255, 255, 0.1);">📞 01998421007</div>
-  </nav>
+  <header>
+    <nav>
+      <div class="logo">ElectroMart<span>BD</span></div>
+      <div class="contact-badge">📞 01998421007</div>
+    </nav>
+  </header>
 
-  <div class="container" id="main-content">
-    <a href="index.html" class="back-link">← Back to Catalog</a>
-    
-    <div id="product-view">
-      <!-- Injected by JS -->
-    </div>
-  </div>
+  <main>
+    <section class="hero">
+      <h1>Hardware for <span>Builders</span></h1>
+      <p>Your one-stop shop for resistors, capacitors, Arduino boards, and advanced sensors in Bangladesh.</p>
+    </section>
+
+    <section class="container" id="catalog-container">
+      <!-- Products will be dynamically generated here by JS -->
+    </section>
+  </main>
 
   <footer>
     <p>© 2026 ElectroMartBD | Designed with precision for builders</p>
   </footer>
 
+  <!-- Floating WhatsApp Button -->
+  <a class="whatsapp-float" href="https://wa.me/8801998421007" target="_blank" title="Chat on WhatsApp">💬</a>
+
+  <!-- Product Data and Dynamic Rendering -->
   <script src="products.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // Get product ID from URL
-      const urlParams = new URLSearchParams(window.location.search);
-      const productId = urlParams.get('id');
+      const container = document.getElementById("catalog-container");
       
-      const productView = document.getElementById("product-view");
-
-      if (!productId) {
-        showError("No product specified.");
-        return;
-      }
-
-      // Fetch product from data
-      const product = getProductById(productId);
-
-      if (!product) {
-        showError("Product not found.");
-        return;
-      }
-
-      // Render product
-      renderProduct(product);
-
-      function showError(msg) {
-        document.title = "Not Found | ElectroMartBD";
-        productView.innerHTML = `
-          <div class="error-container">
-            <h2>${msg}</h2>
-            <p style="color: var(--text-dim); margin-top: 10px;">Please return to the catalog and try again.</p>
-          </div>
-        `;
-      }
-
-      function renderProduct(p) {
-        document.title = `${p.name} | ElectroMartBD`;
+      productsData.forEach(category => {
+        // Create category title
+        const titleText = document.createElement("h2");
+        titleText.className = "section-title";
+        titleText.textContent = category.category;
+        container.appendChild(titleText);
         
-        // Render features
-        const featuresHtml = p.features.map(f => `<li>${f}</li>`).join('');
+        // Create grid
+        const grid = document.createElement("div");
+        grid.className = "grid";
         
-        // WhatsApp Message
-        const waMessage = encodeURIComponent(`Hello! I want to order: ${p.name}`);
-
-        productView.innerHTML = `
-          <div class="product-grid">
-            <div class="product-image">
-              <img src="${p.image}" alt="${p.name}">
+        category.items.forEach((item, index) => {
+          const card = document.createElement("div");
+          card.className = "card";
+          card.style.animationDelay = `${0.1 * (index + 1)}s`;
+          
+          card.innerHTML = `
+            <div class="img-container">
+              <img src="${item.image}" alt="${item.name}">
             </div>
-            
-            <div class="product-details">
-              <h2 class="product-title">${p.name}</h2>
-              <div class="product-price">${p.price}</div>
-              
-              <div class="product-desc">
-                <p>${p.fullDesc}</p>
-              </div>
-              
-              <h3 style="margin-bottom: 15px; font-size: 1.2rem; color: #fff;">Key Features:</h3>
-              <ul class="features-list">
-                ${featuresHtml}
-              </ul>
-              
-              <div style="margin-top: auto;">
-                <a href="https://wa.me/8801998421007?text=${waMessage}" target="_blank" class="order-btn">
-                   Order via WhatsApp
-                </a>
-              </div>
+            <h3>${item.name}</h3>
+            <p>${item.shortDesc}</p>
+            <div class="card-footer">
+              <div class="price">${item.price}</div>
+              <a class="btn" href="product.html?id=${item.id}">View Details</a>
             </div>
-          </div>
-        `;
-      }
+          `;
+          
+          grid.appendChild(card);
+        });
+        
+        container.appendChild(grid);
+      });
     });
   </script>
 
