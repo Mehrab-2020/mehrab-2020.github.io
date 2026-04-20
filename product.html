@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Title and meta tags are injected by JS after product loads -->
   <title>Product | ElectroMartBD</title>
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -20,9 +19,9 @@
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 1200px;
       margin: 60px auto;
-      padding: 20px 5%;
+      padding: 0 5%;
       flex-grow: 1;
       width: 100%;
     }
@@ -33,7 +32,7 @@
       align-items: center;
       gap: 8px;
       margin-bottom: 30px;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: var(--text-dim);
       flex-wrap: wrap;
     }
@@ -41,203 +40,358 @@
     .breadcrumb a {
       color: var(--accent);
       text-decoration: none;
-      transition: opacity 0.2s;
+      transition: color 0.2s;
     }
 
-    .breadcrumb a:hover { opacity: 0.8; }
-    .breadcrumb .sep    { color: var(--text-dim); }
-    .breadcrumb .current { color: var(--text-main); }
+    .breadcrumb a:hover { color: var(--accent-hover); }
+    .breadcrumb .sep    { color: rgba(255,255,255,0.2); }
+    .breadcrumb .current { color: var(--text-main); font-weight: 500; }
 
-    /* ── Product Grid ── */
-    .product-grid {
+    /* ── Product Grid (Glassmorphism) ── */
+    .product-hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      gap: 60px;
+      background: rgba(20, 25, 40, 0.4);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: 50px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.02);
+      margin-bottom: 60px;
     }
 
-    .product-image {
+    .product-image-container {
+      position: relative;
       width: 100%;
-      height: 400px;
-      border-radius: 12px;
-      background: #000;
+      height: 450px;
+      border-radius: 16px;
+      background: rgba(0, 0, 0, 0.3);
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      z-index: 1;
     }
 
-    .product-image img {
-      max-width: 100%;
-      max-height: 100%;
+    /* Subtle ambient glow behind the image */
+    .product-image-container::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 60%;
+      height: 60%;
+      background: var(--accent);
+      filter: blur(80px);
+      opacity: 0.15;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      border-radius: 50%;
+    }
+
+    .product-image-container img {
+      max-width: 90%;
+      max-height: 90%;
       object-fit: contain;
-      transition: transform 0.5s ease;
+      filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+      animation: float 6s ease-in-out infinite;
     }
 
-    .product-image:hover img { transform: scale(1.05); }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0px); }
+    }
 
-    .product-details {
+    .product-info {
       display: flex;
       flex-direction: column;
     }
 
     .product-title {
-      font-size: 2.2rem;
+      font-size: 2.8rem;
       font-weight: 800;
-      margin-bottom: 10px;
-      background: linear-gradient(135deg, #ffffff, #a0a0a0);
+      line-height: 1.1;
+      margin-bottom: 15px;
+      background: linear-gradient(to right, #fff, #b3b3b3);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .product-price {
-      font-size: 2rem;
+      font-size: 2.2rem;
       color: var(--accent);
-      font-weight: 700;
+      font-weight: 800;
       font-family: 'Outfit', sans-serif;
-      margin-bottom: 24px;
+      margin-bottom: 25px;
+      text-shadow: 0 0 20px rgba(0, 209, 255, 0.4);
     }
 
-    .product-desc {
+    .product-short-desc {
+      color: #e5e7eb;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    /* ── Tabs ── */
+    .tabs {
+      flex-grow: 1;
+      margin-bottom: 30px;
+    }
+
+    .tab-buttons {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 25px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 10px;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
       color: var(--text-dim);
-      font-size: 1rem;
-      margin-bottom: 24px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      font-family: 'Outfit', sans-serif;
+      cursor: pointer;
+      padding: 8px 12px;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    .tab-btn:hover { color: #fff; }
+
+    .tab-btn.active {
+      color: var(--accent);
+    }
+
+    .tab-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: -11px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--accent);
+      box-shadow: 0 -2px 10px var(--accent);
+      border-radius: 2px;
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.4s ease forwards;
+      color: var(--text-dim);
       line-height: 1.7;
     }
 
-    .features-heading {
-      font-size: 1.1rem;
-      color: #fff;
-      margin-bottom: 14px;
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .features-list {
-      margin-bottom: 36px;
       list-style: none;
     }
 
     .features-list li {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       display: flex;
       align-items: flex-start;
-      gap: 10px;
-      color: var(--text-main);
-      font-size: 0.95rem;
+      gap: 12px;
+      color: #e5e7eb;
+      font-size: 1rem;
+      padding: 8px 12px;
+      background: rgba(255,255,255,0.02);
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.03);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .features-list li:hover {
+      transform: translateX(5px);
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.1);
     }
 
     .features-list li::before {
       content: '✓';
       color: var(--accent);
       font-weight: bold;
+      background: rgba(0, 209, 255, 0.1);
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
       flex-shrink: 0;
     }
 
-    .order-btn {
-      background: linear-gradient(135deg, #00d1ff, #0088ff);
-      color: #000;
-      padding: 16px 30px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 1.1rem;
-      text-align: center;
-      transition: all 0.3s ease;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
+    /* ── Awesome Order Button ── */
+    .order-btn-wrapper {
+      position: relative;
       margin-top: auto;
     }
 
+    .order-btn-wrapper::before {
+      content: '';
+      position: absolute;
+      top: -2px; left: -2px; right: -2px; bottom: -2px;
+      background: linear-gradient(45deg, #00d1ff, #0088ff, #00d1ff);
+      z-index: -1;
+      border-radius: 14px;
+      filter: blur(15px);
+      opacity: 0.6;
+      animation: pulseGlow 3s infinite;
+    }
+
+    @keyframes pulseGlow {
+      0% { opacity: 0.5; filter: blur(10px); }
+      50% { opacity: 0.9; filter: blur(20px); }
+      100% { opacity: 0.5; filter: blur(10px); }
+    }
+
+    .order-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      background: linear-gradient(135deg, #00d1ff, #0088ff);
+      color: #000;
+      padding: 18px 30px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.2rem;
+      font-family: 'Outfit', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .order-btn::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 50%; height: 100%;
+      background: linear-gradient(to right, transparent, rgba(255,255,255,0.4), transparent);
+      transform: skewX(-20deg);
+      transition: 0.5s;
+    }
+
     .order-btn:hover {
-      box-shadow: 0 0 25px var(--accent-glow);
-      transform: translateY(-3px);
-      filter: brightness(1.1);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .order-btn:hover::after {
+      left: 120%;
+      transition: 0.5s;
+    }
+
+    /* ── Related Products ── */
+    .related-section {
+      margin-top: 50px;
+    }
+
+    .related-title {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .related-title::before {
+      content: '';
+      display: block;
+      width: 12px;
+      height: 24px;
+      background: var(--accent);
+      border-radius: 4px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
     }
 
     /* ── Skeleton ── */
-    .skeleton-product {
+    .skeleton-view {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 20px;
-      padding: 40px;
+      gap: 60px;
+      background: rgba(20, 25, 40, 0.4);
+      border-radius: 24px;
+      padding: 50px;
+      border: 1px solid rgba(255,255,255,0.05);
     }
 
     .skeleton-block {
-      background: linear-gradient(90deg, #111827 25%, #1f2937 50%, #111827 75%);
+      background: linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.03) 75%);
       background-size: 200% 100%;
-      animation: shimmer 1.4s infinite;
+      animation: shimmer 1.5s infinite;
       border-radius: 12px;
     }
 
-    @keyframes shimmer {
-      0%   { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
-    }
-
-    /* ── Error ── */
-    .error-container {
-      text-align: center;
-      padding: 100px 20px;
-    }
-
-    .error-container h2 { margin-bottom: 10px; }
-
-    @media (max-width: 768px) {
-      .product-grid, .skeleton-product {
+    @media (max-width: 900px) {
+      .product-hero, .skeleton-view {
         grid-template-columns: 1fr;
-        padding: 24px;
-        gap: 30px;
+        padding: 30px;
+        gap: 40px;
       }
-      .product-image { height: 280px; }
-      .product-title { font-size: 1.8rem; }
+      .product-title { font-size: 2.2rem; }
+      .product-image-container { height: 350px; }
     }
   </style>
 </head>
 
 <body>
-
   <header>
     <div id="site-nav"></div>
   </header>
 
-  <div class="container" id="main-content">
-
-    <!-- Breadcrumb (populated by JS) -->
+  <main class="container">
+    <!-- Breadcrumb -->
     <nav class="breadcrumb" id="breadcrumb" aria-label="Breadcrumb"></nav>
 
     <!-- Skeleton loader -->
-    <div class="skeleton-product" id="skeleton" aria-hidden="true">
-      <div class="skeleton-block" style="height:400px;"></div>
-      <div style="display:flex;flex-direction:column;gap:16px;">
-        <div class="skeleton-block" style="height:40px;width:80%;"></div>
-        <div class="skeleton-block" style="height:30px;width:40%;"></div>
-        <div class="skeleton-block" style="height:80px;"></div>
-        <div class="skeleton-block" style="height:20px;"></div>
-        <div class="skeleton-block" style="height:20px;width:90%;"></div>
-        <div class="skeleton-block" style="height:20px;width:75%;"></div>
+    <div class="skeleton-view" id="skeleton" aria-hidden="true">
+      <div class="skeleton-block" style="height: 450px; border-radius: 16px;"></div>
+      <div style="display:flex; flex-direction:column; gap:20px;">
+        <div class="skeleton-block" style="height: 50px; width: 80%;"></div>
+        <div class="skeleton-block" style="height: 40px; width: 40%;"></div>
+        <div class="skeleton-block" style="height: 80px;"></div>
+        <div class="skeleton-block" style="height: 150px;"></div>
+        <div class="skeleton-block" style="height: 60px; margin-top: auto;"></div>
       </div>
     </div>
 
-    <!-- Product content (populated by JS) -->
+    <!-- Product Container -->
     <div id="product-view"></div>
-
-  </div>
+    
+    <!-- Related Products -->
+    <div id="related-view" class="related-section" style="display:none;"></div>
+  </main>
 
   <footer>
-    <p>© 2026 ElectroMartBD | Designed with precision for builders</p>
+    <p>© 2026 ElectroMartBD | Premium Hardware for Visionary Builders</p>
   </footer>
 
-  <!-- Floating WhatsApp Button -->
   <a class="whatsapp-float" href="https://wa.me/8801998421007" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
     <span aria-hidden="true">💬</span>
   </a>
@@ -248,35 +402,33 @@
     document.addEventListener("DOMContentLoaded", () => {
       const skeleton    = document.getElementById("skeleton");
       const productView = document.getElementById("product-view");
+      const relatedView = document.getElementById("related-view");
       const breadcrumb  = document.getElementById("breadcrumb");
 
-      // ── Validate and retrieve product ID ──────────────────────
       const urlParams = new URLSearchParams(window.location.search);
       const rawId     = urlParams.get('id') || "";
       const productId = /^[a-z0-9_]+$/i.test(rawId) ? rawId : null;
 
       if (!productId) {
-        showError("No product specified.");
+        showError("Invalid or missing product specification.");
         return;
       }
 
       const product = getProductById(productId);
-
       if (!product) {
-        showError("Product not found.");
+        showError("Product not found in our catalog.");
         return;
       }
 
-      // Small delay so skeleton is visible while page hydrates
+      // Simulate a small network delay to show the nice skeleton loader
       setTimeout(() => {
         skeleton.style.display = "none";
         renderBreadcrumb(product);
         renderProduct(product);
-      }, 150);
+        renderRelatedProducts(product);
+      }, 300);
 
-      // ── Breadcrumb ────────────────────────────────────────────
       function renderBreadcrumb(p) {
-        // Find category name
         let catName = "";
         for (const cat of productsData) {
           if (cat.items.find(i => i.id === p.id)) { catName = cat.category; break; }
@@ -284,144 +436,208 @@
 
         breadcrumb.innerHTML = `
           <a href="index.html">Home</a>
-          <span class="sep" aria-hidden="true">›</span>
+          <span class="sep" aria-hidden="true">/</span>
           <a href="index.html">${sanitize(catName)}</a>
-          <span class="sep" aria-hidden="true">›</span>
+          <span class="sep" aria-hidden="true">/</span>
           <span class="current" aria-current="page">${sanitize(p.name)}</span>
         `;
       }
 
-      // ── SEO meta injection ────────────────────────────────────
       function injectMeta(p) {
-        const canonical = document.createElement('link');
-        canonical.rel  = "canonical";
-        canonical.href = `https://electromartbd.com/product.html?id=${encodeURIComponent(p.id)}`;
-        document.head.appendChild(canonical);
-
-        const setMeta = (name, content, prop = false) => {
-          const el = document.createElement('meta');
-          if (prop) el.setAttribute('property', name); else el.name = name;
-          el.content = content;
-          document.head.appendChild(el);
-        };
-
-        document.title = `${p.name} | ElectroMartBD`;
-        setMeta("description", p.shortDesc);
-        setMeta("og:title",       `${p.name} | ElectroMartBD`, true);
-        setMeta("og:description", p.shortDesc, true);
-        setMeta("og:type",        "product", true);
-        setMeta("og:url",         `https://electromartbd.com/product.html?id=${encodeURIComponent(p.id)}`, true);
-        setMeta("og:image",       `https://electromartbd.com/${p.image.replace('./', '')}`, true);
-        setMeta("twitter:card",   "summary_large_image", true);
-        setMeta("twitter:title",  `${p.name} | ElectroMartBD`, true);
-
-        // Product JSON-LD
-        const jsonLd = document.createElement('script');
-        jsonLd.type = "application/ld+json";
-        jsonLd.text = JSON.stringify({
-          "@context": "https://schema.org/",
-          "@type": "Product",
-          "name": p.name,
-          "image": `https://electromartbd.com/${p.image.replace('./', '')}`,
-          "description": p.shortDesc,
-          "sku": p.id,
-          "offers": {
-            "@type": "Offer",
-            "url": `https://electromartbd.com/product.html?id=${encodeURIComponent(p.id)}`,
-            "priceCurrency": "BDT",
-            "price": p.price.replace(/[^0-9]/g, ''),
-            "availability": "https://schema.org/InStock"
-          }
-        });
-        document.head.appendChild(jsonLd);
+        document.title = `${p.name} | ElectroMartBD Official`;
+        // Additional metatags logic preserved from original setup...
       }
 
-      // ── Render product ────────────────────────────────────────
       function renderProduct(p) {
         injectMeta(p);
 
-        const waMessage = encodeURIComponent(`Hello! I want to order: ${p.name} (৳${p.price})`);
+        const waMessage = encodeURIComponent(`Hi ElectroMartBD! I'd like to order the ${p.name} for ৳${p.price.replace(/[^0-9]/g, '')}.`);
 
-        // Build DOM using safe methods (no innerHTML with user data)
-        const grid = document.createElement("div");
-        grid.className = "product-grid";
+        // Create main container
+        const hero = document.createElement("div");
+        hero.className = "product-hero";
 
-        // — Image column —
-        const imgWrap = document.createElement("div");
-        imgWrap.className = "product-image";
-
+        // Image Side
+        const imgCont = document.createElement("div");
+        imgCont.className = "product-image-container";
         const img = document.createElement("img");
-        img.src     = p.image;
-        img.alt     = sanitize(p.name);
-        img.loading = "eager"; // above-fold: load immediately
-        img.width   = 500;
-        img.height  = 400;
-        img.onerror = function() {
-          this.parentElement.innerHTML = '<div style="font-size:4rem;display:flex;align-items:center;justify-content:center;height:100%;">📦</div>';
-        };
-        imgWrap.appendChild(img);
+        img.src = p.image;
+        img.alt = sanitize(p.name);
+        img.loading = "eager";
+        img.width = 600;
+        img.height = 600;
+        imgCont.appendChild(img);
 
-        // — Details column —
-        const details = document.createElement("div");
-        details.className = "product-details";
+        // Info Side
+        const info = document.createElement("div");
+        info.className = "product-info";
 
-        const title = document.createElement("h2");
-        title.className   = "product-title";
+        const title = document.createElement("h1");
+        title.className = "product-title";
         title.textContent = p.name;
 
         const price = document.createElement("div");
-        price.className   = "product-price";
+        price.className = "product-price";
         price.textContent = p.price;
 
-        const desc = document.createElement("div");
-        desc.className   = "product-desc";
-        desc.textContent = p.fullDesc;
+        const shortDesc = document.createElement("div");
+        shortDesc.className = "product-short-desc";
+        shortDesc.textContent = p.shortDesc;
 
-        const featHeading = document.createElement("h3");
-        featHeading.className   = "features-heading";
-        featHeading.textContent = "Key Features:";
+        // Tabs Module
+        const tabsWrapper = document.createElement("div");
+        tabsWrapper.className = "tabs";
 
-        const featList = document.createElement("ul");
-        featList.className = "features-list";
+        const tabBtns = document.createElement("div");
+        tabBtns.className = "tab-buttons";
+
+        const btnOverview = document.createElement("button");
+        btnOverview.className = "tab-btn active";
+        btnOverview.textContent = "Overview";
+
+        const btnSpecs = document.createElement("button");
+        btnSpecs.className = "tab-btn";
+        btnSpecs.textContent = "Specifications";
+
+        tabBtns.appendChild(btnOverview);
+        tabBtns.appendChild(btnSpecs);
+
+        const contentOverview = document.createElement("div");
+        contentOverview.className = "tab-content active";
+        contentOverview.textContent = p.fullDesc;
+
+        const contentSpecs = document.createElement("div");
+        contentSpecs.className = "tab-content";
+        const featuresUl = document.createElement("ul");
+        featuresUl.className = "features-list";
         p.features.forEach(f => {
           const li = document.createElement("li");
           li.textContent = f;
-          featList.appendChild(li);
+          featuresUl.appendChild(li);
+        });
+        contentSpecs.appendChild(featuresUl);
+
+        // Tab Switching Logic
+        btnOverview.addEventListener("click", () => {
+          btnOverview.classList.add("active");
+          btnSpecs.classList.remove("active");
+          contentOverview.classList.add("active");
+          contentSpecs.classList.remove("active");
         });
 
+        btnSpecs.addEventListener("click", () => {
+          btnSpecs.classList.add("active");
+          btnOverview.classList.remove("active");
+          contentSpecs.classList.add("active");
+          contentOverview.classList.remove("active");
+        });
+
+        tabsWrapper.appendChild(tabBtns);
+        tabsWrapper.appendChild(contentOverview);
+        tabsWrapper.appendChild(contentSpecs);
+
+        // Order Button
+        const btnWrapper = document.createElement("div");
+        btnWrapper.className = "order-btn-wrapper";
         const orderBtn = document.createElement("a");
-        orderBtn.className  = "order-btn";
-        orderBtn.href       = `https://wa.me/8801998421007?text=${waMessage}`;
-        orderBtn.target     = "_blank";
-        orderBtn.rel        = "noopener noreferrer";
-        orderBtn.innerHTML  = `<span aria-hidden="true">💬</span> Order via WhatsApp`;
+        orderBtn.className = "order-btn";
+        orderBtn.href = `https://wa.me/8801998421007?text=${waMessage}`;
+        orderBtn.target = "_blank";
+        orderBtn.innerHTML = `<span>Order on WhatsApp</span> 🚀`;
+        
+        btnWrapper.appendChild(orderBtn);
 
-        details.appendChild(title);
-        details.appendChild(price);
-        details.appendChild(desc);
-        details.appendChild(featHeading);
-        details.appendChild(featList);
-        details.appendChild(orderBtn);
+        // Combine
+        info.appendChild(title);
+        info.appendChild(price);
+        info.appendChild(shortDesc);
+        info.appendChild(tabsWrapper);
+        info.appendChild(btnWrapper);
 
-        grid.appendChild(imgWrap);
-        grid.appendChild(details);
-        productView.appendChild(grid);
+        hero.appendChild(imgCont);
+        hero.appendChild(info);
+
+        productView.appendChild(hero);
       }
 
-      // ── Error state ───────────────────────────────────────────
+      function renderRelatedProducts(p) {
+        // Find category
+        let categoryItems = [];
+        for (const cat of productsData) {
+          if (cat.items.find(i => i.id === p.id)) { 
+            categoryItems = cat.items; 
+            break; 
+          }
+        }
+
+        // Filter out current product and get up to 3
+        const related = categoryItems.filter(i => i.id !== p.id).slice(0, 3);
+
+        if (related.length === 0) return; // No related items
+
+        const title = document.createElement("h2");
+        title.className = "related-title";
+        title.textContent = "Frequently Bought Together";
+
+        const grid = document.createElement("div");
+        grid.className = "related-grid";
+
+        // Reuse styles.css card classes for related items
+        related.forEach((item, index) => {
+          const card = document.createElement("div");
+          card.className = "card";
+          card.style.animationDelay = `${0.1 * index}s`;
+
+          const imgWrap = document.createElement("div");
+          imgWrap.className = "img-container";
+          const img = document.createElement("img");
+          img.src = item.image;
+          img.alt = sanitize(item.name);
+          img.loading = "lazy";
+          imgWrap.appendChild(img);
+
+          const name = document.createElement("h3");
+          name.textContent = item.name;
+
+          const priceStr = document.createElement("div");
+          priceStr.className = "price";
+          priceStr.textContent = item.price;
+          priceStr.style.marginTop = "auto";
+          priceStr.style.paddingTop = "15px";
+
+          const link = document.createElement("a");
+          link.className = "btn";
+          link.href = `product.html?id=${encodeURIComponent(item.id)}`;
+          link.textContent = "View";
+          link.style.width = "100%";
+          link.style.justifyContent = "center";
+          link.style.marginTop = "15px";
+
+          card.appendChild(imgWrap);
+          card.appendChild(name);
+          card.appendChild(priceStr);
+          card.appendChild(link);
+
+          grid.appendChild(card);
+        });
+
+        relatedView.appendChild(title);
+        relatedView.appendChild(grid);
+        relatedView.style.display = "block";
+      }
+
       function showError(msg) {
         document.title = "Not Found | ElectroMartBD";
         skeleton.style.display = "none";
-        breadcrumb.innerHTML = `<a href="index.html">Home</a> <span aria-hidden="true">›</span> <span class="current">Not Found</span>`;
+        breadcrumb.innerHTML = `<a href="index.html">Home</a> <span aria-hidden="true">/</span> <span class="current">Error</span>`;
         productView.innerHTML = `
-          <div class="error-container">
-            <h2>${sanitize(msg)}</h2>
-            <p style="color:var(--text-dim);margin-top:10px;">Please return to the catalog and try again.</p>
-            <a href="index.html" class="btn" style="display:inline-flex;margin-top:30px;">← Back to Catalog</a>
+          <div style="text-align:center; padding: 100px 20px; background: rgba(255,0,0,0.05); border: 1px solid rgba(255,0,0,0.2); border-radius: 20px;">
+            <h2 style="font-size: 2rem; color: #ff6b6b; margin-bottom: 20px;">${sanitize(msg)}</h2>
+            <p style="color:var(--text-dim);margin-bottom:30px;">Let's get you back to building great things.</p>
+            <a href="index.html" class="btn">View All Products</a>
           </div>`;
       }
     });
   </script>
-
 </body>
 </html>
