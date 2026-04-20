@@ -1,44 +1,56 @@
+/**
+ * products.js — Product data & utilities for ElectroMartBD
+ */
+
+// ── Security: HTML sanitizer ──────────────────────────────────────────────────
+function sanitize(str) {
+  const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
+  return String(str).replace(/[&<>"']/g, ch => map[ch]);
+}
+
+// ── Product Data ──────────────────────────────────────────────────────────────
 const productsData = [
   {
     category: "Development Boards",
+    icon: "🔌",
     items: [
       {
         id: "arduino_uno",
         name: "Arduino Uno R3",
-        image: "./images/arduino_uno.png",
+        image: "./images/webp/arduino_uno.webp",
         shortDesc: "The classic microcontroller board. ATmega328P | USB Powered.",
         price: "৳550",
         fullDesc: "The Arduino Uno R3 is the perfect microcontroller board for beginners and professionals alike. Based on the ATmega328P, it offers a robust platform for learning electronics and coding.",
         features: [
-           "Microcontroller: ATmega328P",
-           "Operating Voltage: 5V",
-           "Digital I/O Pins: 14 (of which 6 provide PWM output)",
-           "Analog Input Pins: 6",
-           "Flash Memory: 32 KB"
+          "Microcontroller: ATmega328P",
+          "Operating Voltage: 5V",
+          "Digital I/O Pins: 14 (of which 6 provide PWM output)",
+          "Analog Input Pins: 6",
+          "Flash Memory: 32 KB"
         ]
       },
       {
         id: "nodemcu",
         name: "NodeMCU ESP8266",
-        image: "./images/nodemcu.png",
+        image: "./images/webp/nodemcu.webp",
         shortDesc: "Powerful WiFi Development Board for your IoT projects.",
         price: "৳350",
-        fullDesc: "The NodeMCU ESP8266 is an open-source firmware and development kit that helps you to prototype or build IoT products. It includes firmware which runs on the ESP8266 Wi-Fi SoC.",
+        fullDesc: "The NodeMCU ESP8266 is an open-source firmware and development kit that helps you prototype or build IoT products. It includes firmware which runs on the ESP8266 Wi-Fi SoC.",
         features: [
-           "Microcontroller: ESP8266",
-           "Built-in WiFi 802.11 b/g/n",
-           "Operating Voltage: 3.3V",
-           "Digital I/O Pins: 11",
-           "Clock Speed: 80MHz/160MHz"
+          "Microcontroller: ESP8266",
+          "Built-in WiFi 802.11 b/g/n",
+          "Operating Voltage: 3.3V",
+          "Digital I/O Pins: 11",
+          "Clock Speed: 80MHz/160MHz"
         ]
       },
       {
         id: "raspberry_pi_4",
         name: "Raspberry Pi 4 Model B",
-        image: "./images/raspberry_pi_4.jpg", 
+        image: "./images/webp/raspberry_pi_4.webp",
         shortDesc: "High-performance SBC with dual 4K display support and true Gigabit Ethernet.",
         price: "৳6500",
-        fullDesc: "The Raspberry Pi 4 Model B represents a huge leap forward for single-board computing. It boasts a 64-bit quad-core processor, dual-display support at resolutions up to 4K, and dual-band wireless LAN. Whether you're building a retro gaming console, a media center, or an industrial controller, the Pi 4 has the power you need.",
+        fullDesc: "The Raspberry Pi 4 Model B represents a huge leap forward for single-board computing. It boasts a 64-bit quad-core processor, dual-display support at resolutions up to 4K, and dual-band wireless LAN.",
         features: [
           "Processor: Broadcom BCM2711, quad-core Cortex-A72 (ARM v8) 64-bit SoC @ 1.5GHz",
           "Dual-band 2.4 GHz and 5.0 GHz IEEE 802.11b/g/n/ac wireless LAN",
@@ -51,10 +63,10 @@ const productsData = [
       {
         id: "esp32",
         name: "ESP32 Development Board",
-        image: "./images/esp32.jpg",
+        image: "./images/webp/esp32.webp",
         shortDesc: "Dual-core WiFi & Bluetooth MCU for advanced IoT applications.",
         price: "৳450",
-        fullDesc: "The ESP32 is a powerful dual-core microcontroller with integrated Wi-Fi and dual-mode Bluetooth (Classic and BLE). It excels in complex IoT applications, robotics, and smart home systems requiring both strong processing capabilities and varied wireless connectivity.",
+        fullDesc: "The ESP32 is a powerful dual-core microcontroller with integrated Wi-Fi and dual-mode Bluetooth (Classic and BLE). It excels in complex IoT applications, robotics, and smart home systems.",
         features: [
           "Processor: Dual-core Tensilica Xtensa LX6",
           "Clock Speed: Up to 240 MHz",
@@ -67,11 +79,12 @@ const productsData = [
   },
   {
     category: "Components & Passives",
+    icon: "⚡",
     items: [
       {
         id: "resistor_pack",
         name: "Resistor Pack",
-        image: "./images/resistors.png",
+        image: "./images/webp/resistors.webp",
         shortDesc: "100 pieces of assorted through-hole resistor values for prototyping.",
         price: "৳120",
         fullDesc: "A complete set of 100 high-quality carbon film resistors. Essential for any electronics enthusiast, this pack includes the most common values needed for building circuits, dividing voltage, and protecting components like LEDs.",
@@ -86,10 +99,10 @@ const productsData = [
       {
         id: "capacitor_kit",
         name: "Capacitor Kit",
-        image: "./images/capacitors.png",
+        image: "./images/webp/capacitors.webp",
         shortDesc: "Mixed pack of electrolytic and ceramic capacitors.",
         price: "৳180",
-        fullDesc: "This versatile capacitor kit contains a wide assortment of both ceramic and electrolytic capacitors. Perfect for decoupling noise in power supplies, signal filtering, and timing circuits in your projects.",
+        fullDesc: "This versatile capacitor kit contains a wide assortment of both ceramic and electrolytic capacitors. Perfect for decoupling noise in power supplies, signal filtering, and timing circuits.",
         features: [
           "Includes both ceramic disc and aluminum electrolytic types",
           "Various capacitance values (pF to µF range)",
@@ -102,11 +115,12 @@ const productsData = [
   },
   {
     category: "Sensors & Modules",
+    icon: "📡",
     items: [
       {
         id: "dht11",
         name: "DHT11 Sensor",
-        image: "./images/dht11.png",
+        image: "./images/webp/dht11.webp",
         shortDesc: "Digital temperature and humidity sensor module.",
         price: "৳120",
         fullDesc: "The DHT11 is a basic, ultra low-cost digital temperature and humidity sensor. It uses a capacitive humidity sensor and a thermistor to measure the surrounding air, outputting a digital signal on the data pin.",
@@ -121,10 +135,10 @@ const productsData = [
       {
         id: "ultrasonic",
         name: "HC-SR04 Ultrasonic",
-        image: "./images/ultrasonic.png",
+        image: "./images/webp/ultrasonic.webp",
         shortDesc: "Precision distance measurement module with dual transducers.",
         price: "৳150",
-        fullDesc: "The HC-SR04 uses sonar to determine distance to an object like bats do. It offers excellent non-contact range detection with high accuracy and stable readings in an easy-to-use package. From 2cm to 400cm, it's the standard for robotic obstacle avoidance.",
+        fullDesc: "The HC-SR04 uses sonar to determine distance to an object like bats do. It offers excellent non-contact range detection with high accuracy and stable readings. From 2cm to 400cm, it is the standard for robotic obstacle avoidance.",
         features: [
           "Operating Voltage: 5V DC",
           "Quiescent Current: <2mA",
@@ -136,7 +150,7 @@ const productsData = [
       {
         id: "hc05",
         name: "HC-05 Bluetooth Module",
-        image: "./images/hc05.jpg",
+        image: "./images/webp/hc05.webp",
         shortDesc: "Add full-duplex serial wireless connectivity to your projects.",
         price: "৳250",
         fullDesc: "The HC-05 is a widely popular, low-cost serial Bluetooth module. It can be set up as a Master or Slave device, making it incredibly versatile for creating point-to-point wireless connections between microcontrollers, PCs, and smartphones.",
@@ -152,8 +166,9 @@ const productsData = [
   }
 ];
 
-// Helper to get a single product by ID
+// ── Helpers ───────────────────────────────────────────────────────────────────
 function getProductById(id) {
+  if (!/^[a-z0-9_]+$/i.test(id)) return null;
   for (const category of productsData) {
     const found = category.items.find(item => item.id === id);
     if (found) return found;

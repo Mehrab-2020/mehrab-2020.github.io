@@ -4,81 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Details | ElectroMartBD</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap"
-    rel="stylesheet">
+  <!-- Title and meta tags are injected by JS after product loads -->
+  <title>Product | ElectroMartBD</title>
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 
   <style>
-    :root {
-      --bg-color: #030712;
-      --card-bg: rgba(17, 24, 39, 0.7);
-      --card-border: rgba(31, 41, 55, 0.8);
-      --accent: #00d1ff;
-      --accent-hover: #00e5ff;
-      --accent-glow: rgba(0, 209, 255, 0.3);
-      --text-main: #f9fafb;
-      --text-dim: #9ca3af;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    /* ── Product page layout ── */
     body {
-      background-color: var(--bg-color);
-      background-image:
-        radial-gradient(circle at 15% 50%, rgba(0, 209, 255, 0.05), transparent 25%),
-        radial-gradient(circle at 85% 30%, rgba(0, 209, 255, 0.04), transparent 25%);
-      color: var(--text-main);
-      font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
-      line-height: 1.5;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Outfit', sans-serif;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 5%;
-      background: rgba(3, 7, 18, 0.8);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    nav h1 {
-      color: var(--text-main);
-      font-size: 1.8rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    nav h1 a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    nav h1 span {
-      background: linear-gradient(135deg, #00d1ff, #0088ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      padding-right: 2px;
     }
 
     .container {
@@ -89,20 +27,28 @@
       width: 100%;
     }
 
-    .back-link {
-      display: inline-block;
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 30px;
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb a {
       color: var(--accent);
       text-decoration: none;
-      margin-bottom: 30px;
-      font-weight: 500;
-      transition: all 0.3s ease;
+      transition: opacity 0.2s;
     }
 
-    .back-link:hover {
-      text-shadow: 0 0 10px var(--accent-glow);
-      transform: translateX(-5px);
-    }
+    .breadcrumb a:hover { opacity: 0.8; }
+    .breadcrumb .sep    { color: var(--text-dim); }
+    .breadcrumb .current { color: var(--text-main); }
 
+    /* ── Product Grid ── */
     .product-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -111,7 +57,7 @@
       border: 1px solid var(--card-border);
       border-radius: 20px;
       padding: 40px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     }
 
     .product-image {
@@ -133,9 +79,7 @@
       transition: transform 0.5s ease;
     }
 
-    .product-image:hover img {
-      transform: scale(1.05);
-    }
+    .product-image:hover img { transform: scale(1.05); }
 
     .product-details {
       display: flex;
@@ -143,11 +87,12 @@
     }
 
     .product-title {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       font-weight: 800;
       margin-bottom: 10px;
       background: linear-gradient(135deg, #ffffff, #a0a0a0);
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
@@ -156,43 +101,41 @@
       color: var(--accent);
       font-weight: 700;
       font-family: 'Outfit', sans-serif;
-      margin-bottom: 30px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .product-price span {
-      font-size: 1rem;
-      color: var(--text-dim);
-      font-weight: 400;
-      text-decoration: line-through;
+      margin-bottom: 24px;
     }
 
     .product-desc {
       color: var(--text-dim);
-      font-size: 1.1rem;
-      margin-bottom: 30px;
+      font-size: 1rem;
+      margin-bottom: 24px;
       line-height: 1.7;
     }
 
+    .features-heading {
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+
     .features-list {
-      margin-bottom: 40px;
+      margin-bottom: 36px;
       list-style: none;
     }
 
     .features-list li {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       display: flex;
       align-items: flex-start;
       gap: 10px;
       color: var(--text-main);
+      font-size: 0.95rem;
     }
 
     .features-list li::before {
       content: '✓';
       color: var(--accent);
       font-weight: bold;
+      flex-shrink: 0;
     }
 
     .order-btn {
@@ -209,8 +152,7 @@
       justify-content: center;
       align-items: center;
       gap: 10px;
-      border: none;
-      cursor: pointer;
+      margin-top: auto;
     }
 
     .order-btn:hover {
@@ -219,69 +161,105 @@
       filter: brightness(1.1);
     }
 
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      margin-top: auto;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      color: var(--text-dim);
-      font-size: 0.9rem;
+    /* ── Skeleton ── */
+    .skeleton-product {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 40px;
     }
 
+    .skeleton-block {
+      background: linear-gradient(90deg, #111827 25%, #1f2937 50%, #111827 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.4s infinite;
+      border-radius: 12px;
+    }
+
+    @keyframes shimmer {
+      0%   { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    /* ── Error ── */
     .error-container {
       text-align: center;
       padding: 100px 20px;
     }
 
+    .error-container h2 { margin-bottom: 10px; }
+
     @media (max-width: 768px) {
-      .product-grid {
+      .product-grid, .skeleton-product {
         grid-template-columns: 1fr;
-        padding: 20px;
+        padding: 24px;
+        gap: 30px;
       }
-      .product-image {
-        height: 300px;
-      }
-      .product-title {
-        font-size: 2rem;
-      }
+      .product-image { height: 280px; }
+      .product-title { font-size: 1.8rem; }
     }
   </style>
 </head>
 
 <body>
 
-  <nav>
-    <h1><a href="index.html">ElectroMart<span>BD</span></a></h1>
-    <div style="display: flex; align-items: center; gap: 8px; font-weight: 600; font-family: 'Outfit', sans-serif; background: rgba(255, 255, 255, 0.05); padding: 8px 16px; border-radius: 99px; border: 1px solid rgba(255, 255, 255, 0.1);">📞 01998421007</div>
-  </nav>
+  <header>
+    <div id="site-nav"></div>
+  </header>
 
   <div class="container" id="main-content">
-    <a href="index.html" class="back-link">← Back to Catalog</a>
-    
-    <div id="product-view">
-      <!-- Injected by JS -->
+
+    <!-- Breadcrumb (populated by JS) -->
+    <nav class="breadcrumb" id="breadcrumb" aria-label="Breadcrumb"></nav>
+
+    <!-- Skeleton loader -->
+    <div class="skeleton-product" id="skeleton" aria-hidden="true">
+      <div class="skeleton-block" style="height:400px;"></div>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div class="skeleton-block" style="height:40px;width:80%;"></div>
+        <div class="skeleton-block" style="height:30px;width:40%;"></div>
+        <div class="skeleton-block" style="height:80px;"></div>
+        <div class="skeleton-block" style="height:20px;"></div>
+        <div class="skeleton-block" style="height:20px;width:90%;"></div>
+        <div class="skeleton-block" style="height:20px;width:75%;"></div>
+      </div>
     </div>
+
+    <!-- Product content (populated by JS) -->
+    <div id="product-view"></div>
+
   </div>
 
   <footer>
     <p>© 2026 ElectroMartBD | Designed with precision for builders</p>
   </footer>
 
+  <!-- Floating WhatsApp Button -->
+  <a class="whatsapp-float" href="https://wa.me/8801998421007" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <span aria-hidden="true">💬</span>
+  </a>
+
+  <script src="nav.js"></script>
   <script src="products.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // Get product ID from URL
-      const urlParams = new URLSearchParams(window.location.search);
-      const productId = urlParams.get('id');
-      
+      const skeleton    = document.getElementById("skeleton");
       const productView = document.getElementById("product-view");
+      const breadcrumb  = document.getElementById("breadcrumb");
+
+      // ── Validate and retrieve product ID ──────────────────────
+      const urlParams = new URLSearchParams(window.location.search);
+      const rawId     = urlParams.get('id') || "";
+      const productId = /^[a-z0-9_]+$/i.test(rawId) ? rawId : null;
 
       if (!productId) {
         showError("No product specified.");
         return;
       }
 
-      // Fetch product from data
       const product = getProductById(productId);
 
       if (!product) {
@@ -289,103 +267,161 @@
         return;
       }
 
-      // Render product
-      renderProduct(product);
+      // Small delay so skeleton is visible while page hydrates
+      setTimeout(() => {
+        skeleton.style.display = "none";
+        renderBreadcrumb(product);
+        renderProduct(product);
+      }, 150);
 
-      function showError(msg) {
-        document.title = "Not Found | ElectroMartBD";
-        productView.innerHTML = `
-          <div class="error-container">
-            <h2>${msg}</h2>
-            <p style="color: var(--text-dim); margin-top: 10px;">Please return to the catalog and try again.</p>
-          </div>
+      // ── Breadcrumb ────────────────────────────────────────────
+      function renderBreadcrumb(p) {
+        // Find category name
+        let catName = "";
+        for (const cat of productsData) {
+          if (cat.items.find(i => i.id === p.id)) { catName = cat.category; break; }
+        }
+
+        breadcrumb.innerHTML = `
+          <a href="index.html">Home</a>
+          <span class="sep" aria-hidden="true">›</span>
+          <a href="index.html">${sanitize(catName)}</a>
+          <span class="sep" aria-hidden="true">›</span>
+          <span class="current" aria-current="page">${sanitize(p.name)}</span>
         `;
       }
 
-      function renderProduct(p) {
+      // ── SEO meta injection ────────────────────────────────────
+      function injectMeta(p) {
+        const canonical = document.createElement('link');
+        canonical.rel  = "canonical";
+        canonical.href = `https://electromartbd.com/product.html?id=${encodeURIComponent(p.id)}`;
+        document.head.appendChild(canonical);
+
+        const setMeta = (name, content, prop = false) => {
+          const el = document.createElement('meta');
+          if (prop) el.setAttribute('property', name); else el.name = name;
+          el.content = content;
+          document.head.appendChild(el);
+        };
+
         document.title = `${p.name} | ElectroMartBD`;
-        
-        // --- Inject Dynamic SEO Tags ---
-        const metaDesc = document.createElement('meta');
-        metaDesc.name = "description";
-        metaDesc.content = p.shortDesc;
-        document.head.appendChild(metaDesc);
+        setMeta("description", p.shortDesc);
+        setMeta("og:title",       `${p.name} | ElectroMartBD`, true);
+        setMeta("og:description", p.shortDesc, true);
+        setMeta("og:type",        "product", true);
+        setMeta("og:url",         `https://electromartbd.com/product.html?id=${encodeURIComponent(p.id)}`, true);
+        setMeta("og:image",       `https://electromartbd.com/${p.image.replace('./', '')}`, true);
+        setMeta("twitter:card",   "summary_large_image", true);
+        setMeta("twitter:title",  `${p.name} | ElectroMartBD`, true);
 
-        const ogTitle = document.createElement('meta');
-        ogTitle.property = "og:title";
-        ogTitle.content = `${p.name} | ElectroMartBD`;
-        document.head.appendChild(ogTitle);
-
-        const ogDesc = document.createElement('meta');
-        ogDesc.property = "og:description";
-        ogDesc.content = p.shortDesc;
-        document.head.appendChild(ogDesc);
-
-        const ogImg = document.createElement('meta');
-        ogImg.property = "og:image";
-        // construct absolute URL if possible. Since we're client-side, we use location.origin
-        ogImg.content = window.location.origin + p.image.substring(1); // assumes p.image starts with ./
-        document.head.appendChild(ogImg);
-
-        // Inject Product JSON-LD Schema
-        const schemaUrl = window.location.href;
+        // Product JSON-LD
         const jsonLd = document.createElement('script');
         jsonLd.type = "application/ld+json";
         jsonLd.text = JSON.stringify({
           "@context": "https://schema.org/",
           "@type": "Product",
           "name": p.name,
-          "image": window.location.origin + p.image.substring(1),
+          "image": `https://electromartbd.com/${p.image.replace('./', '')}`,
           "description": p.shortDesc,
           "sku": p.id,
           "offers": {
             "@type": "Offer",
-            "url": schemaUrl,
+            "url": `https://electromartbd.com/product.html?id=${encodeURIComponent(p.id)}`,
             "priceCurrency": "BDT",
-            "price": p.price.replace(/[^0-9]/g, ''), 
+            "price": p.price.replace(/[^0-9]/g, ''),
             "availability": "https://schema.org/InStock"
           }
         });
         document.head.appendChild(jsonLd);
-        // -------------------------------
-        
-        // Render features
-        const featuresHtml = p.features.map(f => `<li>${f}</li>`).join('');
-        
-        // WhatsApp Message
-        const waMessage = encodeURIComponent(`Hello! I want to order: ${p.name}`);
+      }
 
+      // ── Render product ────────────────────────────────────────
+      function renderProduct(p) {
+        injectMeta(p);
+
+        const waMessage = encodeURIComponent(`Hello! I want to order: ${p.name} (৳${p.price})`);
+
+        // Build DOM using safe methods (no innerHTML with user data)
+        const grid = document.createElement("div");
+        grid.className = "product-grid";
+
+        // — Image column —
+        const imgWrap = document.createElement("div");
+        imgWrap.className = "product-image";
+
+        const img = document.createElement("img");
+        img.src     = p.image;
+        img.alt     = sanitize(p.name);
+        img.loading = "eager"; // above-fold: load immediately
+        img.width   = 500;
+        img.height  = 400;
+        img.onerror = function() {
+          this.parentElement.innerHTML = '<div style="font-size:4rem;display:flex;align-items:center;justify-content:center;height:100%;">📦</div>';
+        };
+        imgWrap.appendChild(img);
+
+        // — Details column —
+        const details = document.createElement("div");
+        details.className = "product-details";
+
+        const title = document.createElement("h2");
+        title.className   = "product-title";
+        title.textContent = p.name;
+
+        const price = document.createElement("div");
+        price.className   = "product-price";
+        price.textContent = p.price;
+
+        const desc = document.createElement("div");
+        desc.className   = "product-desc";
+        desc.textContent = p.fullDesc;
+
+        const featHeading = document.createElement("h3");
+        featHeading.className   = "features-heading";
+        featHeading.textContent = "Key Features:";
+
+        const featList = document.createElement("ul");
+        featList.className = "features-list";
+        p.features.forEach(f => {
+          const li = document.createElement("li");
+          li.textContent = f;
+          featList.appendChild(li);
+        });
+
+        const orderBtn = document.createElement("a");
+        orderBtn.className  = "order-btn";
+        orderBtn.href       = `https://wa.me/8801998421007?text=${waMessage}`;
+        orderBtn.target     = "_blank";
+        orderBtn.rel        = "noopener noreferrer";
+        orderBtn.innerHTML  = `<span aria-hidden="true">💬</span> Order via WhatsApp`;
+
+        details.appendChild(title);
+        details.appendChild(price);
+        details.appendChild(desc);
+        details.appendChild(featHeading);
+        details.appendChild(featList);
+        details.appendChild(orderBtn);
+
+        grid.appendChild(imgWrap);
+        grid.appendChild(details);
+        productView.appendChild(grid);
+      }
+
+      // ── Error state ───────────────────────────────────────────
+      function showError(msg) {
+        document.title = "Not Found | ElectroMartBD";
+        skeleton.style.display = "none";
+        breadcrumb.innerHTML = `<a href="index.html">Home</a> <span aria-hidden="true">›</span> <span class="current">Not Found</span>`;
         productView.innerHTML = `
-          <div class="product-grid">
-            <div class="product-image">
-              <img src="${p.image}" alt="${p.name}">
-            </div>
-            
-            <div class="product-details">
-              <h2 class="product-title">${p.name}</h2>
-              <div class="product-price">${p.price}</div>
-              
-              <div class="product-desc">
-                <p>${p.fullDesc}</p>
-              </div>
-              
-              <h3 style="margin-bottom: 15px; font-size: 1.2rem; color: #fff;">Key Features:</h3>
-              <ul class="features-list">
-                ${featuresHtml}
-              </ul>
-              
-              <div style="margin-top: auto;">
-                <a href="https://wa.me/8801998421007?text=${waMessage}" target="_blank" class="order-btn">
-                   Order via WhatsApp
-                </a>
-              </div>
-            </div>
-          </div>
-        `;
+          <div class="error-container">
+            <h2>${sanitize(msg)}</h2>
+            <p style="color:var(--text-dim);margin-top:10px;">Please return to the catalog and try again.</p>
+            <a href="index.html" class="btn" style="display:inline-flex;margin-top:30px;">← Back to Catalog</a>
+          </div>`;
       }
     });
   </script>
 
 </body>
-
 </html>

@@ -2,10 +2,9 @@
 <html lang="en">
 
 <head>
-  <meta name="google-site-verification" content="ufWQs0gXOa4d-Gj5zCzo_5QselcOTtEu3K4Mx_hiKxY" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!-- Primary Meta Tags -->
   <title>ElectroMartBD | Electronics Components, Arduino & Sensors Store in BD</title>
   <meta name="title" content="ElectroMartBD | Electronics Components, Arduino & Sensors Store in BD">
@@ -18,17 +17,17 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://electromartbd.com/">
   <meta property="og:title" content="ElectroMartBD | Electronics Components, Arduino & Sensors Store in BD">
-  <meta property="og:description" content="Your one-stop shop for resistors, capacitors, Arduino boards, and advanced sensors in Bangladesh. High-quality hardware for builders at ElectroMartBD.">
+  <meta property="og:description" content="Your one-stop shop for resistors, capacitors, Arduino boards, and advanced sensors in Bangladesh.">
   <meta property="og:image" content="https://electromartbd.com/meta-image.jpg">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://electromartbd.com/">
   <meta property="twitter:title" content="ElectroMartBD | Electronics Components, Arduino & Sensors Store in BD">
-  <meta property="twitter:description" content="Your one-stop shop for resistors, capacitors, Arduino boards, and advanced sensors in Bangladesh. High-quality hardware for builders at ElectroMartBD.">
+  <meta property="twitter:description" content="Your one-stop shop for resistors, capacitors, Arduino boards, and advanced sensors in Bangladesh.">
   <meta property="twitter:image" content="https://electromartbd.com/meta-image.jpg">
 
-  <!-- JSON-LD Structured Data for Local/Electronic Store -->
+  <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -46,104 +45,18 @@
     "priceRange": "$$"
   }
   </script>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap"
-    rel="stylesheet">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 
   <style>
-    :root {
-      --bg-color: #030712;
-      --card-bg: rgba(17, 24, 39, 0.7);
-      --card-border: rgba(31, 41, 55, 0.8);
-      --accent: #00d1ff;
-      --accent-hover: #00e5ff;
-      --accent-glow: rgba(0, 209, 255, 0.3);
-      --text-main: #f9fafb;
-      --text-dim: #9ca3af;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background-color: var(--bg-color);
-      background-image:
-        radial-gradient(circle at 15% 50%, rgba(0, 209, 255, 0.05), transparent 25%),
-        radial-gradient(circle at 85% 30%, rgba(0, 209, 255, 0.04), transparent 25%);
-      color: var(--text-main);
-      font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
-      line-height: 1.5;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: 'Outfit', sans-serif;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 5%;
-      background: rgba(3, 7, 18, 0.8);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    nav .logo {
-      color: var(--text-main);
-      font-size: 1.8rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    nav .logo span {
-      background: linear-gradient(135deg, #00d1ff, #0088ff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      padding-right: 2px;
-    }
-
-    .contact-badge {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 600;
-      font-family: 'Outfit', sans-serif;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 8px 16px;
-      border-radius: 99px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
-    }
-
-    .contact-badge:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.2);
-    }
-
+    /* ── Index-specific styles ── */
     .hero {
       text-align: center;
-      padding: 100px 20px;
+      padding: 100px 20px 60px;
       max-width: 800px;
       margin: 0 auto;
-      position: relative;
     }
 
     .hero h1 {
@@ -155,7 +68,6 @@
     }
 
     .hero h1 span {
-      position: relative;
       background: linear-gradient(135deg, #00d1ff, #0088ff);
       -webkit-background-clip: text;
       background-clip: text;
@@ -166,21 +78,52 @@
       color: var(--text-dim);
       font-size: 1.25rem;
       max-width: 600px;
-      margin: 0 auto 40px;
+      margin: 0 auto;
       font-weight: 300;
     }
 
+    /* ── Filter Bar ── */
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 50px 0 30px;
+    }
+
+    .filter-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-dim);
+      padding: 8px 18px;
+      border-radius: 99px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .filter-btn.active {
+      background: linear-gradient(135deg, #00d1ff22, #0088ff22);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ── Catalog ── */
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 20px 5%;
-      position: relative;
-      z-index: 10;
+      padding: 0 5% 20px;
     }
 
     .section-title {
-      margin: 60px 0 30px;
-      font-size: 2.2rem;
+      margin: 50px 0 24px;
+      font-size: 2rem;
       font-weight: 700;
       color: var(--text-main);
       display: flex;
@@ -195,190 +138,81 @@
       height: 24px;
       background: var(--accent);
       border-radius: 4px;
+      flex-shrink: 0;
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 30px;
+      gap: 28px;
     }
 
-    .card {
+    /* ── Skeleton Loader ── */
+    .skeleton-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 28px;
+      margin-top: 80px;
+    }
+
+    .skeleton-card {
       background: var(--card-bg);
-      backdrop-filter: blur(10px);
       border: 1px solid var(--card-border);
       border-radius: 20px;
       padding: 24px;
-      display: flex;
-      flex-direction: column;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      position: relative;
-      overflow: hidden;
+      height: 360px;
     }
 
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(0, 209, 255, 0.5), transparent);
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 20px var(--accent-glow);
-      border-color: rgba(0, 209, 255, 0.3);
-    }
-
-    .card:hover::before {
-      opacity: 1;
-    }
-
-    .img-container {
+    .skeleton-img {
       width: 100%;
-      height: 220px;
+      height: 200px;
       border-radius: 12px;
-      background: #000;
+      background: linear-gradient(90deg, #111827 25%, #1f2937 50%, #111827 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.4s infinite;
       margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.03);
     }
 
-    .card img {
+    .skeleton-line {
+      height: 16px;
+      border-radius: 8px;
+      background: linear-gradient(90deg, #111827 25%, #1f2937 50%, #111827 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.4s infinite;
+      margin-bottom: 12px;
+    }
+
+    .skeleton-line.short { width: 60%; }
+
+    @keyframes shimmer {
+      0%   { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    /* ── Empty State ── */
+    .empty-state {
+      text-align: center;
+      padding: 80px 20px;
+      color: var(--text-dim);
+    }
+
+    .empty-state .icon { font-size: 3rem; margin-bottom: 16px; }
+
+    /* ── Image Error Fallback ── */
+    .img-error {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .card:hover img {
-      transform: scale(1.05);
-    }
-
-    .card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 8px;
-      font-weight: 600;
-    }
-
-    .card p {
-      color: var(--text-dim);
-      font-size: 0.95rem;
-      flex-grow: 1;
-    }
-
-    .card-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 24px;
-    }
-
-    .price {
-      font-size: 1.5rem;
-      font-weight: 800;
-      font-family: 'Outfit', sans-serif;
-      color: var(--accent);
-    }
-
-    .btn {
-      background: linear-gradient(135deg, #00d1ff, #0088ff);
-      color: #000;
-      padding: 10px 20px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: all 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .btn:hover {
-      box-shadow: 0 0 15px var(--accent-glow);
-      transform: translateY(-2px);
-      filter: brightness(1.1);
-    }
-
-    footer {
-      text-align: center;
-      padding: 60px 20px;
-      margin-top: 60px;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      color: var(--text-dim);
-      font-size: 0.9rem;
-    }
-
-    .whatsapp-float {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: #25D366;
-      color: white;
-      width: 60px;
-      height: 60px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 50%;
-      font-size: 28px;
-      text-decoration: none;
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-      transition: all 0.3s ease;
-      z-index: 1000;
-    }
-
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-    }
-
-    /* Subtle entry animation */
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .card {
-      animation: fadeUp 0.6s ease-out forwards;
-      opacity: 0;
-    }
-
-    .card:nth-child(1) {
-      animation-delay: 0.1s;
-    }
-
-    .card:nth-child(2) {
-      animation-delay: 0.2s;
+      font-size: 3rem;
+      background: rgba(255,255,255,0.03);
     }
 
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.8rem;
-      }
-
-      .section-title {
-        font-size: 1.8rem;
-      }
-
-      .grid {
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      }
+      .hero h1 { font-size: 2.5rem; }
+      .section-title { font-size: 1.6rem; }
+      .grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
     }
   </style>
 </head>
@@ -386,21 +220,31 @@
 <body>
 
   <header>
-    <nav>
-      <div class="logo">ElectroMart<span>BD</span></div>
-      <div class="contact-badge">📞 01998421007</div>
-    </nav>
+    <div id="site-nav"></div>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" aria-label="Hero section">
       <h1>Hardware for <span>Builders</span></h1>
       <p>Your one-stop shop for resistors, capacitors, Arduino boards, and advanced sensors in Bangladesh.</p>
     </section>
 
-    <section class="container" id="catalog-container">
-      <!-- Products will be dynamically generated here by JS -->
-    </section>
+    <div class="container">
+      <!-- Filter Bar -->
+      <nav class="filter-bar" id="filter-bar" aria-label="Category filter">
+        <button class="filter-btn active" data-filter="all">All Products</button>
+      </nav>
+
+      <!-- Skeleton shown while JS renders -->
+      <div class="skeleton-grid" id="skeleton" aria-hidden="true">
+        <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div></div>
+        <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div></div>
+        <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div></div>
+      </div>
+
+      <!-- Product Catalog -->
+      <section id="catalog-container" aria-label="Product catalog" style="display:none;"></section>
+    </div>
   </main>
 
   <footer>
@@ -408,50 +252,124 @@
   </footer>
 
   <!-- Floating WhatsApp Button -->
-  <a class="whatsapp-float" href="https://wa.me/8801998421007" target="_blank" title="Chat on WhatsApp">💬</a>
+  <a class="whatsapp-float" href="https://wa.me/8801998421007" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <span aria-hidden="true">💬</span>
+  </a>
 
-  <!-- Product Data and Dynamic Rendering -->
+  <script src="nav.js"></script>
   <script src="products.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const container = document.getElementById("catalog-container");
-      
-      productsData.forEach(category => {
-        // Create category title
-        const titleText = document.createElement("h2");
-        titleText.className = "section-title";
-        titleText.textContent = category.category;
-        container.appendChild(titleText);
-        
-        // Create grid
-        const grid = document.createElement("div");
-        grid.className = "grid";
-        
-        category.items.forEach((item, index) => {
-          const card = document.createElement("div");
-          card.className = "card";
-          card.style.animationDelay = `${0.1 * (index + 1)}s`;
-          
-          card.innerHTML = `
-            <div class="img-container">
-              <img src="${item.image}" alt="${item.name}">
-            </div>
-            <h3>${item.name}</h3>
-            <p>${item.shortDesc}</p>
-            <div class="card-footer">
-              <div class="price">${item.price}</div>
-              <a class="btn" href="product.html?id=${item.id}">View Details</a>
-            </div>
-          `;
-          
-          grid.appendChild(card);
-        });
-        
-        container.appendChild(grid);
+      const skeleton  = document.getElementById("skeleton");
+      const filterBar = document.getElementById("filter-bar");
+
+      let activeFilter = "all";
+
+      // ── Build filter buttons ──────────────────────────────────
+      productsData.forEach(cat => {
+        const btn = document.createElement("button");
+        btn.className = "filter-btn";
+        btn.dataset.filter = cat.category;
+        btn.textContent = `${cat.icon} ${cat.category}`;
+        filterBar.appendChild(btn);
       });
+
+      filterBar.addEventListener("click", e => {
+        const btn = e.target.closest(".filter-btn");
+        if (!btn) return;
+        activeFilter = btn.dataset.filter;
+        filterBar.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        renderCatalog();
+      });
+
+      // ── Render catalog ────────────────────────────────────────
+      function renderCatalog() {
+        container.innerHTML = "";
+        let anyVisible = false;
+
+        productsData.forEach(category => {
+          if (activeFilter !== "all" && activeFilter !== category.category) return;
+          anyVisible = true;
+
+          const titleEl = document.createElement("h2");
+          titleEl.className = "section-title";
+          titleEl.textContent = `${category.icon} ${category.category}`;
+          container.appendChild(titleEl);
+
+          const grid = document.createElement("div");
+          grid.className = "grid";
+
+          category.items.forEach((item, index) => {
+            const card = document.createElement("div");
+            card.className = "card";
+            card.style.animationDelay = `${0.08 * index}s`;
+
+            // Use sanitize() on all interpolated values
+            const imgEl = document.createElement("img");
+            imgEl.src    = item.image;
+            imgEl.alt    = sanitize(item.name);
+            imgEl.loading = "lazy";
+            imgEl.width  = 400;
+            imgEl.height = 220;
+            imgEl.onerror = function() {
+              this.parentElement.innerHTML = `<div class="img-error" aria-hidden="true">📦</div>`;
+            };
+
+            const imgWrap = document.createElement("div");
+            imgWrap.className = "img-container";
+            imgWrap.appendChild(imgEl);
+
+            const nameEl = document.createElement("h3");
+            nameEl.textContent = item.name;
+
+            const descEl = document.createElement("p");
+            descEl.textContent = item.shortDesc;
+
+            const priceEl = document.createElement("div");
+            priceEl.className = "price";
+            priceEl.textContent = item.price;
+
+            const linkEl = document.createElement("a");
+            linkEl.className = "btn";
+            linkEl.href = `product.html?id=${encodeURIComponent(item.id)}`;
+            linkEl.textContent = "View Details";
+            linkEl.setAttribute("aria-label", `View details for ${item.name}`);
+
+            const footer = document.createElement("div");
+            footer.className = "card-footer";
+            footer.appendChild(priceEl);
+            footer.appendChild(linkEl);
+
+            card.appendChild(imgWrap);
+            card.appendChild(nameEl);
+            card.appendChild(descEl);
+            card.appendChild(footer);
+            grid.appendChild(card);
+          });
+
+          container.appendChild(grid);
+        });
+
+        if (!anyVisible) {
+          container.innerHTML = `
+            <div class="empty-state">
+              <div class="icon">🔍</div>
+              <p>No products found in this category.</p>
+            </div>`;
+        }
+      }
+
+      // ── Show catalog, hide skeleton ───────────────────────────
+      // Small timeout gives browser a frame to paint skeleton first
+      setTimeout(() => {
+        skeleton.style.display = "none";
+        container.style.display = "block";
+        renderCatalog();
+      }, 150);
     });
   </script>
 
 </body>
-
 </html>
