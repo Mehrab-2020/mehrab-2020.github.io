@@ -110,6 +110,21 @@ const productsData = [
           "Clearly marked values",
           "Ideal for breadboard development"
         ]
+      },
+      {
+        id: "l7805cv",
+        name: "L7805CV Voltage Regulator",
+        image: "./images/webp/l7805cv.jpg",
+        shortDesc: "5V fixed positive voltage regulator IC.",
+        price: "৳15",
+        fullDesc: "The L7805CV is a standard 5V voltage regulator capable of delivering up to 1.5A of output current. It features internal thermal overload protection and short circuit limiting, making it nearly indestructible and perfect for standard 5V logic power supplies.",
+        features: [
+          "Output Voltage: 5V fixed",
+          "Max Output Current: 1.5A",
+          "Input Voltage Range: 7V to 35V",
+          "Package: TO-220",
+          "Internal thermal overload and short-circuit protection"
+        ]
       }
     ]
   },
@@ -160,6 +175,21 @@ const productsData = [
           "Operating Voltage: 3.6V to 6V DC (5V recommended)",
           "Range: Up to 10 meters",
           "Configurable via AT commands (Name, Role, Baud Rate)"
+        ]
+      },
+      {
+        id: "l298n",
+        name: "L298N Motor Driver Module",
+        image: "./images/webp/l298n.jpg",
+        shortDesc: "Dual H-Bridge motor driver for DC and stepper motors.",
+        price: "৳150",
+        fullDesc: "The L298N module is a high voltage, high current dual full-bridge driver designed to accept standard TTL logic levels and drive inductive loads such as relays, solenoids, DC and stepping motors. It works great for robotics and RC cars.",
+        features: [
+          "Driver Chip: L298N dual H-bridge motor driver",
+          "Motor Supply Voltage (Vs): 5V - 35V",
+          "Logic Supply Voltage (Vss): 5V - 7V",
+          "Peak Current: 2A per bridge",
+          "Can drive two DC motors or one 4-wire 2-phase stepper motor"
         ]
       }
     ]
