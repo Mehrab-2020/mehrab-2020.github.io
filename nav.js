@@ -7,16 +7,18 @@
   if (!root) return;
 
   // Determine active page for nav highlighting
-  const page = window.location.pathname.split('/').pop();
+  let page = window.location.pathname.split('/').pop();
+  if (!page || page === '/') page = 'index.html';
 
   const navLinks = [
+    { href: 'index.html', label: 'Home' },
     { href: 'arduino-bangladesh.html',  label: 'Arduino' },
     { href: 'sensors-bangladesh.html',  label: 'Sensors' },
   ];
 
   const linksHtml = navLinks.map(l => {
-    const active = page === l.href ? 'style="color:var(--accent);"' : '';
-    return `<a href="${l.href}" class="nav-link" ${active}>${l.label}</a>`;
+    const activeClass = page === l.href || (page.startsWith('product') && l.href === 'index.html') ? 'active' : '';
+    return `<a href="${l.href}" class="nav-link ${activeClass}">${l.label}</a>`;
   }).join('');
 
   root.innerHTML = `
@@ -24,7 +26,7 @@
       <a href="index.html" class="nav-logo" aria-label="ElectroMartBD Home">
         ElectroMart<span>BD</span>
       </a>
-      <div class="nav-center" style="display:flex; gap:28px; align-items:center;">
+      <div class="nav-center">
         ${linksHtml}
       </div>
       <a href="tel:+8801998421007" class="contact-badge" aria-label="Call us at 01998421007">
