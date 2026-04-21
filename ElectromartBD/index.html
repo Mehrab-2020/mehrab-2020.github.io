@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary Meta Tags -->
+  <title>ElectroMartBD | Electronics Components, Arduino & Sensors Store in BD</title>
+  <meta name="title" content="ElectroMartBD | Electronics Components, Arduino & Sensors Store in BD">
+  <meta name="description" content="Your one-stop shop for resistors, capacitors, Arduino boards, and advanced sensors in Bangladesh. High-quality hardware for builders at ElectroMartBD.">
+  <meta name="keywords" content="electronics components BD, Arduino store Bangladesh, buy resistors, capacitors, sensors BD, robotics parts Bangladesh, ElectroMartBD">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://electromartbd.com/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://electromartbd.com/">
+  <meta property="og:title" content="ElectroMartBD | Electronics Components, Arduino & Sensors Store in BD">
+  <meta property="og:description" content="Your one-stop shop for resistors, capacitors, Arduino boards, and advanced sensors in Bangladesh.">
+  <meta property="og:image" content="https://electromartbd.com/meta-image.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://electromartbd.com/">
+  <meta property="twitter:title" content="ElectroMartBD | Electronics Components, Arduino & Sensors Store in BD">
+  <meta property="twitter:description" content="Your one-stop shop for resistors, capacitors, Arduino boards, and advanced sensors in Bangladesh.">
+  <meta property="twitter:image" content="https://electromartbd.com/meta-image.jpg">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ElectronicsStore",
+    "name": "ElectroMartBD",
+    "image": "https://electromartbd.com/logo.png",
+    "url": "https://electromartbd.com/",
+    "telephone": "+8801998421007",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dhaka",
+      "addressCountry": "BD"
+    },
+    "description": "Your one-stop shop for resistors, capacitors, Arduino boards, and advanced sensors in Bangladesh.",
+    "priceRange": "$$"
+  }
+  </script>
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* ── Index-specific styles ── */
+    .hero {
+      text-align: center;
+      padding: 100px 20px 60px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      line-height: 1.1;
+      font-weight: 800;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, #00d1ff, #0088ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      color: var(--text-dim);
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
+
+    /* ── Filter Bar ── */
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 50px 0 30px;
+    }
+
+    .filter-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-dim);
+      padding: 8px 18px;
+      border-radius: 99px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .filter-btn.active {
+      background: linear-gradient(135deg, #00d1ff22, #0088ff22);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ── Catalog ── */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 5% 20px;
+    }
+
+    .section-title {
+      margin: 50px 0 24px;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title::before {
+      content: '';
+      display: block;
+      width: 12px;
+      height: 24px;
+      background: var(--accent);
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 28px;
+    }
+
+    /* ── Skeleton Loader ── */
+    .skeleton-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 28px;
+      margin-top: 80px;
+    }
+
+    .skeleton-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 24px;
+      height: 360px;
+    }
+
+    .skeleton-img {
+      width: 100%;
+      height: 200px;
+      border-radius: 12px;
+      background: linear-gradient(90deg, #111827 25%, #1f2937 50%, #111827 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.4s infinite;
+      margin-bottom: 20px;
+    }
+
+    .skeleton-line {
+      height: 16px;
+      border-radius: 8px;
+      background: linear-gradient(90deg, #111827 25%, #1f2937 50%, #111827 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.4s infinite;
+      margin-bottom: 12px;
+    }
+
+    .skeleton-line.short { width: 60%; }
+
+    @keyframes shimmer {
+      0%   { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    /* ── Empty State ── */
+    .empty-state {
+      text-align: center;
+      padding: 80px 20px;
+      color: var(--text-dim);
+    }
+
+    .empty-state .icon { font-size: 3rem; margin-bottom: 16px; }
+
+    /* ── Image Error Fallback ── */
+    .img-error {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      background: rgba(255,255,255,0.03);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .section-title { font-size: 1.6rem; }
+      .grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div id="site-nav"></div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Hero section">
+      <h1>Hardware for <span>Builders</span></h1>
+      <p>Your one-stop shop for resistors, capacitors, Arduino boards, and advanced sensors in Bangladesh.</p>
+    </section>
+
+    <div class="container">
+      <!-- Filter Bar -->
+      <nav class="filter-bar" id="filter-bar" aria-label="Category filter">
+        <button class="filter-btn active" data-filter="all">All Products</button>
+      </nav>
+
+      <!-- Skeleton shown while JS renders -->
+      <div class="skeleton-grid" id="skeleton" aria-hidden="true">
+        <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div></div>
+        <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div></div>
+        <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div></div>
+      </div>
+
+      <!-- Product Catalog -->
+      <section id="catalog-container" aria-label="Product catalog" style="display:none;"></section>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 ElectroMartBD | Designed with precision for builders</p>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a class="whatsapp-float" href="https://wa.me/8801998421007" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <span aria-hidden="true">💬</span>
+  </a>
+
+  <script src="nav.js"></script>
+  <script src="products.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const container = document.getElementById("catalog-container");
+      const skeleton  = document.getElementById("skeleton");
+      const filterBar = document.getElementById("filter-bar");
+
+      let activeFilter = "all";
+
+      // ── Build filter buttons ──────────────────────────────────
+      productsData.forEach(cat => {
+        const btn = document.createElement("button");
+        btn.className = "filter-btn";
+        btn.dataset.filter = cat.category;
+        btn.textContent = `${cat.icon} ${cat.category}`;
+        filterBar.appendChild(btn);
+      });
+
+      filterBar.addEventListener("click", e => {
+        const btn = e.target.closest(".filter-btn");
+        if (!btn) return;
+        activeFilter = btn.dataset.filter;
+        filterBar.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        renderCatalog();
+      });
+
+      // ── Render catalog ────────────────────────────────────────
+      function renderCatalog() {
+        container.innerHTML = "";
+        let anyVisible = false;
+
+        productsData.forEach(category => {
+          if (activeFilter !== "all" && activeFilter !== category.category) return;
+          anyVisible = true;
+
+          const titleEl = document.createElement("h2");
+          titleEl.className = "section-title";
+          titleEl.textContent = `${category.icon} ${category.category}`;
+          container.appendChild(titleEl);
+
+          const grid = document.createElement("div");
+          grid.className = "grid";
+
+          category.items.forEach((item, index) => {
+            const card = document.createElement("div");
+            card.className = "card";
+            card.style.animationDelay = `${0.08 * index}s`;
+
+            // Use sanitize() on all interpolated values
+            const imgEl = document.createElement("img");
+            imgEl.src    = item.image;
+            imgEl.alt    = sanitize(item.name);
+            imgEl.loading = "lazy";
+            imgEl.width  = 400;
+            imgEl.height = 220;
+            imgEl.onerror = function() {
+              this.parentElement.innerHTML = `<div class="img-error" aria-hidden="true">📦</div>`;
+            };
+
+            const imgWrap = document.createElement("div");
+            imgWrap.className = "img-container";
+            imgWrap.appendChild(imgEl);
+
+            const nameEl = document.createElement("h3");
+            nameEl.textContent = item.name;
+
+            const descEl = document.createElement("p");
+            descEl.textContent = item.shortDesc;
+
+            const priceEl = document.createElement("div");
+            priceEl.className = "price";
+            priceEl.textContent = item.price;
+
+            const linkEl = document.createElement("a");
+            linkEl.className = "btn";
+            linkEl.href = `product.html?id=${encodeURIComponent(item.id)}`;
+            linkEl.textContent = "View Details";
+            linkEl.setAttribute("aria-label", `View details for ${item.name}`);
+
+            const footer = document.createElement("div");
+            footer.className = "card-footer";
+            footer.appendChild(priceEl);
+            footer.appendChild(linkEl);
+
+            card.appendChild(imgWrap);
+            card.appendChild(nameEl);
+            card.appendChild(descEl);
+            card.appendChild(footer);
+            grid.appendChild(card);
+          });
+
+          container.appendChild(grid);
+        });
+
+        if (!anyVisible) {
+          container.innerHTML = `
+            <div class="empty-state">
+              <div class="icon">🔍</div>
+              <p>No products found in this category.</p>
+            </div>`;
+        }
+      }
+
+      // ── Show catalog, hide skeleton ───────────────────────────
+      // Small timeout gives browser a frame to paint skeleton first
+      setTimeout(() => {
+        skeleton.style.display = "none";
+        container.style.display = "block";
+        renderCatalog();
+      }, 150);
+    });
+  </script>
+
+</body>
+</html>
