@@ -18,7 +18,6 @@ try {
 const allProducts = [];
 productsData.forEach(category => {
   category.items.forEach(item => {
-    // Inject the category text for breadcrumb context if needed
     allProducts.push({ ...item, categoryName: category.category });
   });
 });
@@ -33,14 +32,9 @@ allProducts.forEach(product => {
 
   console.log(`Generating ${fileName}...`);
 
-  // Generate an automated SEO Meta Description based on the template logic requested:
-  // "Buy [Product Name] in Bangladesh at the best price. Original product, fast delivery & trusted electronics shop. Order now from ElectroMart BD."
   const metaDescription = `Buy ${product.name} in Bangladesh at the best price (2026). Original product, fast delivery & trusted electronics shop. Order now from ElectroMart BD.`;
-
-  // Automated Title template
   const metaTitle = `Best ${product.name} Price in Bangladesh (2026) | Original – ElectroMart`;
 
-  // Start replacing placeholders in HTML Template!
   let outputHtml = htmlTemplate;
 
   // 1. Replace <title>
@@ -49,9 +43,7 @@ allProducts.forEach(product => {
     `<title>${metaTitle}</title>`
   );
 
-  // 2. Replace meta tags (Title, Description)
-  // We'll dynamically inject our tags after the <title> to be safe if they don't exist,
-  // or replace existing ones.
+  // 2. Replace meta tags
   const seoTags = `
   <meta name="title" content="${metaTitle}">
   <meta name="description" content="${metaDescription}">
@@ -64,7 +56,7 @@ allProducts.forEach(product => {
     `</title>\n${seoTags}`
   );
 
-  // 3. Inject JSON-LD Schema
+  // 3. Inject JSON-LD
   const schema = `
   <script type="application/ld+json">
   {
@@ -92,8 +84,7 @@ allProducts.forEach(product => {
     `${schema}\n</head>`
   );
 
-  // 4. Inject Static Fallback HTML for SEO crawlers that don't execute JS
-  // Google CAN execute JS, but raw static HTML is always instantly indexed.
+  // 4. Inject Static Fallback
   const staticFallback = `
   <noscript>
     <div style="display:none;">
@@ -108,16 +99,14 @@ allProducts.forEach(product => {
     `<body>\n${staticFallback}`
   );
 
-  // 5. Override Javascript URL param reading for `rawId`
-  // From: const rawId     = urlParams.get('id') || "";
-  // To:   const rawId     = "arduino_uno";
+  // 5. Override Javascript URL param reading for productId
   outputHtml = outputHtml.replace(
-    /const rawId\s*=\s*urlParams\.get\('id'\)\s*\|\|\s*"";/gi,
-    `const rawId = "${product.id}";`
+    /const productId\s*=\s*urlParams\.get\('id'\);/gi,
+    `const productId = "${product.id}";`
   );
 
   fs.writeFileSync(filePath, outputHtml, 'utf-8');
   generatedCount++;
 });
 
-console.log(`\n🎉 Success! Automatically generated ${generatedCount} SEO-optimized static product pages.`);
+console.log(`\n🎉 Success! Automatically generated ${generatedCount} SEO-optimized static product pages in the IMPROVED directory.`);
