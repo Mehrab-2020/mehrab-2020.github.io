@@ -16,17 +16,28 @@ const productsData = [
     items: [
       {
         id: "arduino_uno",
-        name: "Arduino Uno R3",
+        name: "Arduino Uno R3 Original Board",
         image: "./images/webp/arduino_uno.webp",
-        shortDesc: "The classic microcontroller board. ATmega328P | USB Powered.",
+        shortDesc: "Most popular microcontroller for robotics, IoT & automation. ATmega328P | USB Powered – Best price in Bangladesh.",
         price: "৳550",
-        fullDesc: "The Arduino Uno R3 is the perfect microcontroller board for beginners and professionals alike. Based on the ATmega328P, it offers a robust platform for learning electronics and coding.",
+        fullDesc: "Build your next electronics project with the Arduino Uno R3, the most popular microcontroller board for beginners and professionals alike. Whether you're working on robotics, IoT, or automation, this board gives you the flexibility and reliability you need. Designed with the ATmega328P microcontroller, Arduino Uno is perfect for coding, prototyping, and learning embedded systems. Ideal for students, hobbyists & engineers across Bangladesh.",
+        whyBuy: [
+          "100% quality tested product",
+          "Best Arduino Uno price in Bangladesh",
+          "Fast delivery nationwide",
+          "Ideal for students, hobbyists & engineers"
+        ],
+        packageIncludes: "1 × Arduino Uno R3 Board",
+        keywords: "Arduino Uno R3 Bangladesh, Arduino price BD, Arduino board BD",
         features: [
           "Microcontroller: ATmega328P",
           "Operating Voltage: 5V",
-          "Digital I/O Pins: 14 (of which 6 provide PWM output)",
-          "Analog Input Pins: 6",
-          "Flash Memory: 32 KB"
+          "14 Digital I/O Pins (6 provide PWM output)",
+          "6 Analog Input Pins",
+          "Flash Memory: 32 KB",
+          "USB Interface for easy programming",
+          "Compatible with Arduino IDE",
+          "Stable and beginner-friendly"
         ]
       },
       {
@@ -134,32 +145,52 @@ const productsData = [
     items: [
       {
         id: "dht11",
-        name: "DHT11 Sensor",
+        name: "DHT11 Temperature & Humidity Sensor Module",
         image: "./images/webp/dht11.webp",
-        shortDesc: "Digital temperature and humidity sensor module.",
+        shortDesc: "Monitor temperature & humidity easily – perfect for weather stations, home automation & IoT. Best price in Bangladesh.",
         price: "৳120",
-        fullDesc: "The DHT11 is a basic, ultra low-cost digital temperature and humidity sensor. It uses a capacitive humidity sensor and a thermistor to measure the surrounding air, outputting a digital signal on the data pin.",
+        fullDesc: "Monitor temperature and humidity easily with the DHT11 Sensor Module. It's a cost-effective and reliable solution for weather stations, home automation, and IoT projects. Perfect for beginners working with Arduino and Raspberry Pi. The DHT11 uses a capacitive humidity sensor and a thermistor to measure surrounding air, outputting a digital signal on a single data pin – no analog conversion needed.",
+        whyBuy: [
+          "Best DHT11 price in Bangladesh",
+          "Quality checked products",
+          "Great for student projects",
+          "Fast delivery across BD"
+        ],
+        packageIncludes: "1 × DHT11 Sensor Module",
+        keywords: "DHT11 sensor BD, temperature sensor Bangladesh, humidity sensor BD",
         features: [
+          "Measures temperature: 0–50°C (±2°C accuracy)",
+          "Measures humidity: 20–90% RH (±5% accuracy)",
           "Operating Voltage: 3.3V to 5V",
-          "Temperature range: 0-50°C (±2°C accuracy)",
-          "Humidity range: 20-90% RH (±5% accuracy)",
-          "Single-bus digital signal output",
-          "Low power consumption"
+          "Digital signal output (single-bus)",
+          "Easy integration with Arduino & Raspberry Pi",
+          "Low power consumption",
+          "Stable and long-lasting performance"
         ]
       },
       {
         id: "ultrasonic",
-        name: "HC-SR04 Ultrasonic",
+        name: "HC-SR04 Ultrasonic Distance Sensor",
         image: "./images/webp/ultrasonic.webp",
-        shortDesc: "Precision distance measurement module with dual transducers.",
+        shortDesc: "Accurate distance measurement with ultrasonic waves – ideal for robotics & obstacle detection. Best price in BD.",
         price: "৳150",
-        fullDesc: "The HC-SR04 uses sonar to determine distance to an object like bats do. It offers excellent non-contact range detection with high accuracy and stable readings. From 2cm to 400cm, it is the standard for robotic obstacle avoidance.",
+        fullDesc: "Measure distance accurately with the HC-SR04 Ultrasonic Sensor, perfect for Arduino and robotics projects. This sensor uses ultrasonic waves to detect objects and calculate distance with high precision. Ideal for obstacle detection, smart parking systems, and automation projects. From 2cm to 400cm, it's the standard for robotic obstacle avoidance — compact, lightweight, and easy to interface.",
+        whyBuy: [
+          "Affordable sensor price in Bangladesh",
+          "Reliable and tested modules",
+          "Fast delivery across BD"
+        ],
+        packageIncludes: "1 × HC-SR04 Ultrasonic Sensor",
+        keywords: "ultrasonic sensor BD, HC-SR04 price Bangladesh, distance sensor BD",
         features: [
+          "Measuring Range: 2cm – 400cm",
           "Operating Voltage: 5V DC",
           "Quiescent Current: <2mA",
           "Measuring Angle: <15 degrees",
-          "Ranging Distance: 2cm - 400cm",
-          "High precision: up to 3mm accuracy"
+          "High accuracy: up to 3mm precision",
+          "Low power consumption",
+          "Easy interface with Arduino & microcontrollers",
+          "Compact and lightweight"
         ]
       },
       {

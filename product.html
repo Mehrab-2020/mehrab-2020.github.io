@@ -502,6 +502,15 @@
         tabBtns.appendChild(btnOverview);
         tabBtns.appendChild(btnSpecs);
 
+        // Optional Why Buy tab
+        let btnWhyBuy = null;
+        if (p.whyBuy || p.packageIncludes) {
+          btnWhyBuy = document.createElement("button");
+          btnWhyBuy.className = "tab-btn";
+          btnWhyBuy.textContent = "Why Buy";
+          tabBtns.appendChild(btnWhyBuy);
+        }
+
         const contentOverview = document.createElement("div");
         contentOverview.className = "tab-content active";
         contentOverview.textContent = p.fullDesc;
@@ -517,24 +526,62 @@
         });
         contentSpecs.appendChild(featuresUl);
 
-        // Tab Switching Logic
-        btnOverview.addEventListener("click", () => {
-          btnOverview.classList.add("active");
-          btnSpecs.classList.remove("active");
-          contentOverview.classList.add("active");
-          contentSpecs.classList.remove("active");
-        });
+        // Why Buy tab content
+        let contentWhyBuy = null;
+        if (p.whyBuy || p.packageIncludes) {
+          contentWhyBuy = document.createElement("div");
+          contentWhyBuy.className = "tab-content";
 
-        btnSpecs.addEventListener("click", () => {
-          btnSpecs.classList.add("active");
-          btnOverview.classList.remove("active");
-          contentSpecs.classList.add("active");
-          contentOverview.classList.remove("active");
+          if (p.whyBuy) {
+            const wbTitle = document.createElement("h4");
+            wbTitle.textContent = "🎯 Why Buy from ElectroMart BD?";
+            wbTitle.style.cssText = "color:var(--accent); margin-bottom:14px; font-size:1rem;";
+            const wbList = document.createElement("ul");
+            wbList.className = "features-list";
+            p.whyBuy.forEach(w => {
+              const li = document.createElement("li");
+              li.textContent = w;
+              wbList.appendChild(li);
+            });
+            contentWhyBuy.appendChild(wbTitle);
+            contentWhyBuy.appendChild(wbList);
+          }
+
+          if (p.packageIncludes) {
+            const pkgTitle = document.createElement("h4");
+            pkgTitle.textContent = "📦 Package Includes";
+            pkgTitle.style.cssText = "color:var(--accent); margin-top:20px; margin-bottom:10px; font-size:1rem;";
+            const pkgText = document.createElement("p");
+            pkgText.textContent = p.packageIncludes;
+            pkgText.style.color = "var(--text-dim)";
+            contentWhyBuy.appendChild(pkgTitle);
+            contentWhyBuy.appendChild(pkgText);
+          }
+        }
+
+        // Tab Switching Logic
+        const allBtns = [btnOverview, btnSpecs];
+        const allContents = [contentOverview, contentSpecs];
+        if (btnWhyBuy && contentWhyBuy) {
+          allBtns.push(btnWhyBuy);
+          allContents.push(contentWhyBuy);
+        }
+
+        function switchTab(activeBtn, activeContent) {
+          allBtns.forEach(b => b.classList.remove("active"));
+          allContents.forEach(c => c.classList.remove("active"));
+          activeBtn.classList.add("active");
+          activeContent.classList.add("active");
+        }
+
+        allBtns.forEach((btn, i) => {
+          btn.addEventListener("click", () => switchTab(btn, allContents[i]));
         });
 
         tabsWrapper.appendChild(tabBtns);
         tabsWrapper.appendChild(contentOverview);
         tabsWrapper.appendChild(contentSpecs);
+        if (contentWhyBuy) tabsWrapper.appendChild(contentWhyBuy);
 
         // Order Button
         const btnWrapper = document.createElement("div");
