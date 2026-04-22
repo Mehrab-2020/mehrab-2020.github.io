@@ -100,6 +100,31 @@ const productsData = [
           "Capacitive Touch Sensors built-in",
           "Extensive peripheral interfaces: SPI, I2C, UART, I2S, CAN"
         ]
+      },
+      {
+        id: "arduino_mega",
+        seoSlug: "arduino-mega-bd",
+        name: "Arduino Mega 2560",
+        image: "./images/webp/arduino-uno-r3-bangladesh.webp",
+        shortDesc: "54 digital I/O pins, 256KB Flash — the powerhouse Arduino for 3D printers, CNC & complex robotics. Best Arduino Mega price BD.",
+        price: "৳950",
+        fullDesc: "The Arduino Mega 2560 is the powerhouse of the Arduino family. With 54 digital pins, 16 analog inputs, and 256KB of Flash memory, it handles the most demanding DIY projects in Bangladesh — from 3D printer firmware (Marlin) to CNC controllers and large multi-sensor data loggers.",
+        whyBuy: [
+          "Best Arduino Mega price in Bangladesh",
+          "100% quality-tested original board",
+          "Ideal for 3D printers, CNC and complex robotics",
+          "Fast delivery nationwide"
+        ],
+        packageIncludes: "1 × Arduino Mega 2560 Board",
+        keywords: "arduino mega bangladesh, arduino mega 2560 price BD, arduino mega bd",
+        features: [
+          "Microcontroller: ATmega2560",
+          "54 Digital I/O Pins (15 PWM)",
+          "16 Analog Input Pins",
+          "Flash Memory: 256 KB",
+          "4 Hardware Serial Ports (UART)",
+          "Clock Speed: 16 MHz"
+        ]
       }
     ]
   },
@@ -173,6 +198,27 @@ const productsData = [
     ]
   },
   {
+    category: "Accessories & Power",
+    items: [
+      {
+        id: "power_bank",
+        seoSlug: "power-bank-bangladesh",
+        name: "10000mAh Power Bank",
+        image: "./images/webp/esp32-development-board-bd.webp",
+        shortDesc: "High-capacity 10000mAh portable charger for IoT field builds, Raspberry Pi & smartphones. Best power bank price BD.",
+        price: "৳1,200",
+        fullDesc: "A reliable high-capacity power bank in Bangladesh for powering smartphones, Raspberry Pi, NodeMCU and IoT field projects. With 10000mAh capacity and dual USB output, this is the perfect portable charger for electronics projects and outdoor builds.",
+        features: [
+          "Capacity: 10000mAh Li-Ion Battery",
+          "Dual USB Output: 5V/2.1A + 5V/1A",
+          "LED charge indicator",
+          "Short-circuit and over-voltage protection",
+          "Ideal for Raspberry Pi, NodeMCU, IoT field builds"
+        ]
+      }
+    ]
+  },
+  {
     category: "Sensors & Modules",
     items: [
       {
@@ -226,6 +272,62 @@ const productsData = [
           "Low power consumption",
           "Easy interface with Arduino & microcontrollers",
           "Compact and lightweight"
+        ]
+      },
+      {
+        id: "sg90",
+        seoSlug: "servo-motor-sg90-bd",
+        name: "SG90 Servo Motor",
+        image: "./images/webp/hc-sr04-ultrasonic-sensor-bd.webp",
+        shortDesc: "9g mini servo for Arduino & robotics. Best servo motor price in Bangladesh.",
+        price: "৳120",
+        fullDesc: "The SG90 is a lightweight, high-quality mini servo motor perfect for Arduino, robotics, and RC projects. Its compact size and ease of control make it a favorite for hobbyists in Bangladesh.",
+        features: [
+          "Weight: 9g",
+          "Operating Voltage: 4.8V - 6.0V",
+          "Stall Torque: 1.8 kg/cm",
+          "Operating Speed: 0.1s / 60 degrees",
+          "Includes 3 different servo horns and screws"
+        ]
+      },
+      {
+        id: "lcd16x2",
+        seoSlug: "lcd-16x2-i2c-bd",
+        name: "16x2 LCD with I2C",
+        image: "./images/webp/esp32-development-board-bd.webp",
+        shortDesc: "2x16 character display with I2C module. Best 16x2 LCD display price in Bangladesh.",
+        price: "৳350",
+        fullDesc: "The 16x2 Character LCD Display Module with an integrated I2C interface allows you to display text and numbers using only two pins (SDA/SCL) on your Arduino or ESP32.",
+        features: [
+          "16 characters x 2 lines display",
+          "Blue backlight with white characters",
+          "Integrated I2C module (PCF8574T)",
+          "Adjustable contrast via potentiometer",
+          "Operating Voltage: 5V"
+        ]
+      },
+      {
+        id: "mq2",
+        seoSlug: "mq2-gas-sensor-bd",
+        name: "MQ-2 Gas Sensor Module",
+        image: "./images/webp/hc-sr04-ultrasonic-sensor-bd.webp",
+        shortDesc: "Detects LPG, smoke, alcohol, propane & methane — ideal for safety alarms & IoT. Best MQ2 gas sensor price BD.",
+        price: "৳130",
+        fullDesc: "The MQ-2 Gas Sensor Module is the most popular gas detection sensor for Arduino and IoT projects in Bangladesh. Detects LPG, smoke, alcohol, propane, hydrogen, methane, and carbon monoxide — perfect for safety alarms, air quality monitors, and smart home systems.",
+        whyBuy: [
+          "Best MQ2 gas sensor price in Bangladesh",
+          "100% quality-tested modules",
+          "Fast delivery nationwide",
+          "Ideal for student and professional projects"
+        ],
+        packageIncludes: "1 × MQ-2 Gas Sensor Module",
+        keywords: "MQ2 gas sensor Bangladesh, gas sensor BD, smoke sensor Bangladesh",
+        features: [
+          "Detects: LPG, smoke, alcohol, propane, hydrogen, methane, CO",
+          "Operating Voltage: 5V DC",
+          "Analog and Digital output pins",
+          "Adjustable sensitivity via potentiometer",
+          "Detection range: 300–10,000 ppm"
         ]
       },
       {
