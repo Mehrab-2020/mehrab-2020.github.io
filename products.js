@@ -204,7 +204,7 @@ const productsData = [
         id: "power_bank",
         seoSlug: "power-bank-bangladesh",
         name: "10000mAh Power Bank",
-        image: "./images/webp/esp32-development-board-bd.webp",
+        image: "./images/webp/power-bank-bangladesh.webp",
         shortDesc: "High-capacity 10000mAh portable charger for IoT field builds, Raspberry Pi & smartphones. Best power bank price BD.",
         price: "৳1,200",
         fullDesc: "A reliable high-capacity power bank in Bangladesh for powering smartphones, Raspberry Pi, NodeMCU and IoT field projects. With 10000mAh capacity and dual USB output, this is the perfect portable charger for electronics projects and outdoor builds.",
@@ -268,7 +268,6 @@ const productsData = [
           "Quiescent Current: <2mA",
           "Measuring Angle: <15 degrees",
           "High accuracy: up to 3mm precision",
-          "High accuracy and stable performance",
           "Low power consumption",
           "Easy interface with Arduino & microcontrollers",
           "Compact and lightweight"
