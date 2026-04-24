@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://www.electromartbd.bd/</loc>
+    <loc>https://electromartbd.bd/</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -10,21 +10,21 @@
 
   <!-- Category / Hub Pages -->
   <url>
-    <loc>https://www.electromartbd.bd/arduino-bangladesh.html</loc>
+    <loc>https://electromartbd.bd/arduino-bangladesh.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://www.electromartbd.bd/sensors-bangladesh.html</loc>
+    <loc>https://electromartbd.bd/sensors-bangladesh.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://www.electromartbd.bd/electronics-components-bd.html</loc>
+    <loc>https://electromartbd.bd/electronics-components-bd.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -32,42 +32,42 @@
 
   <!-- Arduino Product Pages -->
   <url>
-    <loc>https://www.electromartbd.bd/arduino-uno-r3-bangladesh.html</loc>
+    <loc>https://electromartbd.bd/arduino-uno-r3-bangladesh.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://www.electromartbd.bd/arduino-nano-bd.html</loc>
+    <loc>https://electromartbd.bd/arduino-nano-bd.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://www.electromartbd.bd/arduino-mega-bd.html</loc>
+    <loc>https://electromartbd.bd/arduino-mega-bd.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://www.electromartbd.bd/nodemcu-esp8266-bd.html</loc>
+    <loc>https://electromartbd.bd/nodemcu-esp8266-bd.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.electromartbd.bd/esp32-development-board-bd.html</loc>
+    <loc>https://electromartbd.bd/esp32-development-board-bd.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.electromartbd.bd/raspberry-pi-4-bangladesh.html</loc>
+    <loc>https://electromartbd.bd/raspberry-pi-4-bangladesh.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -75,42 +75,42 @@
 
   <!-- Sensor Product Pages -->
   <url>
-    <loc>https://www.electromartbd.bd/dht11-sensor-bangladesh.html</loc>
+    <loc>https://electromartbd.bd/dht11-sensor-bangladesh.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://www.electromartbd.bd/hc-sr04-ultrasonic-sensor-bd.html</loc>
+    <loc>https://electromartbd.bd/hc-sr04-ultrasonic-sensor-bd.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://www.electromartbd.bd/mq2-gas-sensor-bd.html</loc>
+    <loc>https://electromartbd.bd/mq2-gas-sensor-bd.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://www.electromartbd.bd/hc-05-bluetooth-module-bd.html</loc>
+    <loc>https://electromartbd.bd/hc-05-bluetooth-module-bd.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.electromartbd.bd/l298n-motor-driver-module-bd.html</loc>
+    <loc>https://electromartbd.bd/l298n-motor-driver-module-bd.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.electromartbd.bd/l7805cv-voltage-regulator-bd.html</loc>
+    <loc>https://electromartbd.bd/l7805cv-voltage-regulator-bd.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
@@ -118,49 +118,49 @@
 
   <!-- Accessories / Components Pages -->
   <url>
-    <loc>https://www.electromartbd.bd/breadboard-830-tie-points-bd.html</loc>
+    <loc>https://electromartbd.bd/breadboard-830-tie-points-bd.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.electromartbd.bd/jumper-wire-male-to-male-bd.html</loc>
+    <loc>https://electromartbd.bd/jumper-wire-male-to-male-bd.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.electromartbd.bd/power-bank-bangladesh.html</loc>
+    <loc>https://electromartbd.bd/power-bank-bangladesh.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.electromartbd.bd/resistor-pack-bangladesh.html</loc>
+    <loc>https://electromartbd.bd/resistor-pack-bangladesh.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
   <url>
-    <loc>https://www.electromartbd.bd/capacitor-kit-bd.html</loc>
+    <loc>https://electromartbd.bd/capacitor-kit-bd.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
   <url>
-    <loc>https://www.electromartbd.bd/servo-motor-sg90-bd.html</loc>
+    <loc>https://electromartbd.bd/servo-motor-sg90-bd.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.electromartbd.bd/lcd-16x2-i2c-bd.html</loc>
+    <loc>https://electromartbd.bd/lcd-16x2-i2c-bd.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
