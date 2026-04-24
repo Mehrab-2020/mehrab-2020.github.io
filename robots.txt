@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: https://electromartbd.com/sitemap.xml
+Sitemap: https://www.electromartbd.bd/sitemap.xml
