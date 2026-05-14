@@ -1,112 +1,212 @@
 const fs = require('fs');
 const path = require('path');
 
-// Read products data
 const { productsData } = require('./products.js');
 
-// Read the product.html boilerplate
-const templatePath = path.join(__dirname, 'product.html');
-let htmlTemplate = '';
-try {
-  htmlTemplate = fs.readFileSync(templatePath, 'utf-8');
-} catch (e) {
-  console.error("Error reading product.html. Make sure it exists in the same directory.");
-  process.exit(1);
+const SITE_URL = 'https://electromartbd.bd';
+const WHATSAPP_NUMBER = '8801998421007';
+
+function escapeHtml(value) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
 }
 
-// Flat list of products
-const allProducts = [];
-productsData.forEach(category => {
-  category.items.forEach(item => {
-    allProducts.push({ ...item, categoryName: category.category });
-  });
-});
+function toAbsoluteUrl(localPath) {
+  return `${SITE_URL}${localPath.replace('./', '/')}`;
+}
+
+function getCategoryPage(categoryName) {
+  if (categoryName === 'Development Boards') return {
+    name: 'Arduino Bangladesh',
+    url: `${SITE_URL}/arduino-bangladesh.html`
+  };
+  if (categoryName === 'Sensors & Modules') return {
+    name: 'Sensors Bangladesh',
+    url: `${SITE_URL}/sensors-bangladesh.html`
+  };
+  return {
+    name: 'Electronics Components',
+    url: `${SITE_URL}/electronics-components-bd.html`
+  };
+}
+
+function renderProductPage(product) {
+  const fileName = `${product.seoSlug}.html`;
+  const pageUrl = `${SITE_URL}/${fileName}`;
+  const imageUrl = toAbsoluteUrl(product.image);
+  const price = product.price.replace(/[^0-9]/g, '');
+  const categoryPage = getCategoryPage(product.categoryName);
+  const metaTitle = `Best ${product.name} Price in Bangladesh (2026) | Original - ElectroMart BD`;
+  const metaDescription = `Buy ${product.name} in Bangladesh at the best price (2026). Original product, fast delivery and trusted electronics shop. Order now from ElectroMart BD.`;
+  const waMessage = encodeURIComponent(`Hello! I want to order: ${product.name}`);
+
+  const featuresHtml = product.features
+    .map(feature => `                <li>${escapeHtml(feature)}</li>`)
+    .join('\n');
+
+  const whyBuyHtml = product.whyBuy ? `
+              <div class="why-buy-section">
+                <h4>Why Buy from ElectroMart BD?</h4>
+                <ul class="why-buy-list">
+${product.whyBuy.map(item => `                  <li>${escapeHtml(item)}</li>`).join('\n')}
+                </ul>
+              </div>` : '';
+
+  const packageHtml = product.packageIncludes ? `
+              <div class="package-section">
+                <h4>Package Includes</h4>
+                <p>${escapeHtml(product.packageIncludes)}</p>
+              </div>` : '';
+
+  const productSchema = {
+    '@context': 'https://schema.org/',
+    '@type': 'Product',
+    name: product.name,
+    image: imageUrl,
+    description: product.shortDesc,
+    brand: {
+      '@type': 'Brand',
+      name: 'ElectroMartBD'
+    },
+    sku: product.id,
+    offers: {
+      '@type': 'Offer',
+      url: pageUrl,
+      priceCurrency: 'BDT',
+      price,
+      availability: 'https://schema.org/InStock'
+    }
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: `${SITE_URL}/`
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: categoryPage.name,
+        item: categoryPage.url
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: product.name,
+        item: pageUrl
+      }
+    ]
+  };
+
+  return `<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${escapeHtml(metaTitle)}</title>
+  <meta name="title" content="${escapeHtml(metaTitle)}">
+  <meta name="description" content="${escapeHtml(metaDescription)}">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="${pageUrl}">
+
+  <meta property="og:type" content="product">
+  <meta property="og:url" content="${pageUrl}">
+  <meta property="og:title" content="${escapeHtml(metaTitle)}">
+  <meta property="og:description" content="${escapeHtml(metaDescription)}">
+  <meta property="og:image" content="${imageUrl}">
+
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="${pageUrl}">
+  <meta property="twitter:title" content="${escapeHtml(metaTitle)}">
+  <meta property="twitter:description" content="${escapeHtml(metaDescription)}">
+  <meta property="twitter:image" content="${imageUrl}">
+
+  <script type="application/ld+json">
+  ${JSON.stringify(productSchema, null, 2)}
+  </script>
+  <script type="application/ld+json">
+  ${JSON.stringify(breadcrumbSchema, null, 2)}
+  </script>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+
+<body>
+
+  <div id="site-nav"></div>
+
+  <main class="container" id="main-content">
+    <a href="index.html" class="back-link">← Back to Catalog</a>
+
+    <article class="product-grid">
+      <div class="product-image">
+        <img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)} price in Bangladesh">
+      </div>
+
+      <div class="product-details">
+        <h1 class="product-title">${escapeHtml(product.name)}</h1>
+        <div class="product-price">${escapeHtml(product.price)}</div>
+
+        <div class="product-desc">
+          <p>${escapeHtml(product.fullDesc)}</p>
+        </div>
+
+        <h2 style="margin-bottom: 15px; font-size: 1.2rem; color: #fff;">Key Features:</h2>
+        <ul class="features-list">
+${featuresHtml}
+        </ul>
+${whyBuyHtml}
+${packageHtml}
+
+        <div style="margin-top: 28px;">
+          <a href="https://wa.me/${WHATSAPP_NUMBER}?text=${waMessage}" target="_blank" rel="noopener noreferrer" class="order-btn">
+            Order via WhatsApp
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>© 2026 ElectroMartBD | Designed with precision for builders</p>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/${WHATSAPP_NUMBER}" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp">💬</a>
+  <script src="nav.js"></script>
+</body>
+
+</html>
+`;
+}
+
+const allProducts = productsData.flatMap(category =>
+  category.items.map(item => ({ ...item, categoryName: category.category }))
+);
 
 let generatedCount = 0;
 
-allProducts.forEach(product => {
-  if (!product.seoSlug) return; // skip if no slug
+for (const product of allProducts) {
+  if (!product.seoSlug) continue;
 
   const fileName = `${product.seoSlug}.html`;
   const filePath = path.join(__dirname, fileName);
-
-  console.log(`Generating ${fileName}...`);
-
-  const metaDescription = `Buy ${product.name} in Bangladesh at the best price (2026). Original product, fast delivery & trusted electronics shop. Order now from ElectroMart BD.`;
-  const metaTitle = `Best ${product.name} Price in Bangladesh (2026) | Original – ElectroMart`;
-
-  let outputHtml = htmlTemplate;
-
-  // 1. Replace <title>
-  outputHtml = outputHtml.replace(
-    /<title>.*?<\/title>/gi,
-    `<title>${metaTitle}</title>`
-  );
-
-  // 2. Replace meta tags
-  const seoTags = `
-  <meta name="title" content="${metaTitle}">
-  <meta name="description" content="${metaDescription}">
-  <meta property="og:title" content="${metaTitle}">
-  <meta property="og:description" content="${metaDescription}">
-  <meta property="og:image" content="https://www.electromartbd.bd${product.image.replace('./', '/')}">
-  `;
-  outputHtml = outputHtml.replace(
-    /<\/title>/gi,
-    `</title>\n${seoTags}`
-  );
-
-  // 3. Inject JSON-LD
-  const schema = `
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org/",
-    "@type": "Product",
-    "name": "${product.name}",
-    "image": "https://www.electromartbd.bd${product.image.replace('./', '/')}",
-    "description": "${product.shortDesc}",
-    "brand": {
-      "@type": "Brand",
-      "name": "ElectroMartBD"
-    },
-    "offers": {
-      "@type": "Offer",
-      "url": "https://www.electromartbd.bd/${fileName}",
-      "priceCurrency": "BDT",
-      "price": "${product.price.replace(/[^0-9]/g, '')}",
-      "availability": "https://schema.org/InStock"
-    }
-  }
-  </script>`;
-  
-  outputHtml = outputHtml.replace(
-    /<\/head>/gi,
-    `${schema}\n</head>`
-  );
-
-  // 4. Inject Static Fallback
-  const staticFallback = `
-  <noscript>
-    <div style="display:none;">
-      <h1>${product.name} Price in Bangladesh</h1>
-      <p>${product.fullDesc}</p>
-      <img src="${product.image}" alt="${product.name} price in Bangladesh" />
-    </div>
-  </noscript>
-  `;
-  outputHtml = outputHtml.replace(
-    /<body.*?>/gi,
-    `<body>\n${staticFallback}`
-  );
-
-  // 5. Override Javascript URL param reading for productId
-  outputHtml = outputHtml.replace(
-    /const productId\s*=\s*urlParams\.get\('id'\);/gi,
-    `const productId = "${product.id}";`
-  );
-
-  fs.writeFileSync(filePath, outputHtml, 'utf-8');
+  fs.writeFileSync(filePath, renderProductPage(product), 'utf-8');
+  console.log(`Generated ${fileName}`);
   generatedCount++;
-});
+}
 
-console.log(`\n🎉 Success! Automatically generated ${generatedCount} SEO-optimized static product pages in the IMPROVED directory.`);
+console.log(`\nSuccess! Generated ${generatedCount} static SEO product pages.`);
