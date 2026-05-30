@@ -9,6 +9,14 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- Build a Robotics Project — Lead Generation Page -->
+  <url>
+    <loc>https://electromartbd.bd/build-a-robotics-project-bangladesh.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
   <!-- Category / Hub Pages -->
   <url>
     <loc>https://electromartbd.bd/arduino-bangladesh.html</loc>

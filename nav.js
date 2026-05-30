@@ -1,24 +1,24 @@
 /**
  * nav.js — Injects a shared navbar into any page.
- * Usage: <div id="site-nav"></div>  then include this script.
+ * Usage: <div id="site-nav"></div> then include this script.
  */
 (function () {
   const root = document.getElementById("site-nav");
   if (!root) return;
 
-  // Determine active page for nav highlighting
   let page = window.location.pathname.split('/').pop();
   if (!page || page === '/') page = 'index.html';
 
   const navLinks = [
-    { href: 'index.html', label: 'Home' },
-    { href: 'arduino-bangladesh.html', label: 'Arduino' },
-    { href: 'sensors-bangladesh.html', label: 'Sensors' },
-    { href: 'electronics-components-bd.html', label: 'Components' }
+    { href: 'index.html',                                       label: 'Home' },
+    { href: 'arduino-bangladesh.html',                          label: 'Arduino' },
+    { href: 'sensors-bangladesh.html',                          label: 'Sensors' },
+    { href: 'electronics-components-bd.html',                   label: 'Components' },
+    { href: 'build-a-robotics-project-bangladesh.html',         label: '🤖 Build a Project' },
   ];
 
   const linksHtml = navLinks.map(l => {
-    const activeClass = page === l.href || (page.startsWith('product') && l.href === 'index.html') ? 'active' : '';
+    const activeClass = page === l.href ? 'active' : '';
     return `<a href="${l.href}" class="nav-link ${activeClass}">${l.label}</a>`;
   }).join('');
 
