@@ -19,14 +19,14 @@ const productsData = [
         packageIncludes: "1 × Arduino Uno R3 Board",
         keywords: "Arduino Uno R3 Bangladesh, Arduino price BD, Arduino board BD",
         features: [
-           "Microcontroller: ATmega328P",
-           "Operating Voltage: 5V",
-           "14 Digital I/O Pins (6 provide PWM output)",
-           "6 Analog Input Pins",
-           "Flash Memory: 32 KB",
-           "USB Interface for easy programming",
-           "Compatible with Arduino IDE",
-           "Stable and beginner-friendly"
+          "Microcontroller: ATmega328P",
+          "Operating Voltage: 5V",
+          "14 Digital I/O Pins (6 provide PWM output)",
+          "6 Analog Input Pins",
+          "Flash Memory: 32 KB",
+          "USB Interface for easy programming",
+          "Compatible with Arduino IDE",
+          "Stable and beginner-friendly"
         ]
       },
       {
@@ -45,11 +45,11 @@ const productsData = [
         packageIncludes: "1 × Arduino Nano V3.0, Pin headers",
         keywords: "arduino nano bd, arduino nano price bd, arduino nano bangladesh",
         features: [
-           "Microcontroller: ATmega328P",
-           "Operating Voltage: 5V",
-           "Compact size for breadboards",
-           "Mini-B USB Connection",
-           "14 Digital I/O Pins"
+          "Microcontroller: ATmega328P",
+          "Operating Voltage: 5V",
+          "Compact size for breadboards",
+          "Mini-B USB Connection",
+          "14 Digital I/O Pins"
         ]
       },
       {
@@ -61,20 +61,20 @@ const productsData = [
         price: "৳350",
         fullDesc: "The NodeMCU ESP8266 is an open-source firmware and development kit that helps you to prototype or build IoT products. It includes firmware which runs on the ESP8266 Wi-Fi SoC.",
         features: [
-           "Microcontroller: ESP8266",
-           "Built-in WiFi 802.11 b/g/n",
-           "Operating Voltage: 3.3V",
-           "Digital I/O Pins: 11",
-           "Clock Speed: 80MHz/160MHz"
+          "Microcontroller: ESP8266",
+          "Built-in WiFi 802.11 b/g/n",
+          "Operating Voltage: 3.3V",
+          "Digital I/O Pins: 11",
+          "Clock Speed: 80MHz/160MHz"
         ]
       },
       {
         id: "raspberry_pi_4",
         seoSlug: "raspberry-pi-4-bangladesh",
         name: "Raspberry Pi 4 Model B",
-        image: "./images/webp/raspberry-pi-4-bangladesh.webp", 
+        image: "./images/webp/raspberry-pi-4-bangladesh.webp",
         shortDesc: "High-performance SBC with dual 4K display support and true Gigabit Ethernet.",
-        price: "৳6500",
+        price: "৳14500",
         fullDesc: "The Raspberry Pi 4 Model B represents a huge leap forward for single-board computing. It boasts a 64-bit quad-core processor, dual-display support at resolutions up to 4K, and dual-band wireless LAN. Whether you're building a retro gaming console, a media center, or an industrial controller, the Pi 4 has the power you need.",
         features: [
           "Processor: Broadcom BCM2711, quad-core Cortex-A72 (ARM v8) 64-bit SoC @ 1.5GHz",
@@ -91,7 +91,7 @@ const productsData = [
         name: "ESP32 Development Board",
         image: "./images/webp/esp32-development-board-bd.webp",
         shortDesc: "Dual-core WiFi & Bluetooth MCU for advanced IoT applications.",
-        price: "৳450",
+        price: "৳500",
         fullDesc: "The ESP32 is a powerful dual-core microcontroller with integrated Wi-Fi and dual-mode Bluetooth (Classic and BLE). It excels in complex IoT applications, robotics, and smart home systems requiring both strong processing capabilities and varied wireless connectivity.",
         features: [
           "Processor: Dual-core Tensilica Xtensa LX6",
@@ -107,7 +107,7 @@ const productsData = [
         name: "Arduino Mega 2560",
         image: "./images/webp/arduino-mega-bd.jpg",
         shortDesc: "54 digital I/O pins, 256KB Flash — the powerhouse Arduino for 3D printers, CNC & complex robotics. Best Arduino Mega price BD.",
-        price: "৳950",
+        price: "৳1950",
         fullDesc: "The Arduino Mega 2560 is the powerhouse of the Arduino family. With 54 digital pins, 16 analog inputs, and 256KB of Flash memory, it handles the most demanding DIY projects in Bangladesh — from 3D printer firmware (Marlin) to CNC controllers and large multi-sensor data loggers.",
         whyBuy: [
           "Best Arduino Mega price in Bangladesh",
@@ -185,7 +185,7 @@ const productsData = [
         name: "Jumper Wire (Male to Male)",
         image: "./images/webp/jumper-wire-male-to-male-bd.png",
         shortDesc: "40 pins ribbon cable jumper wires male to male for breadboard.",
-        price: "৳80",
+        price: "৳85",
         fullDesc: "Standard 40-pin Male to Male jumper wire ribbon cable. These high-quality wires are flexible, durable, and essential for every Arduino and IoT project you run on a breadboard. Great jumper wire male to male bd price value.",
         features: [
           "40 individual wires per ribbon",
@@ -227,7 +227,7 @@ const productsData = [
         name: "DHT11 Temperature & Humidity Sensor Module",
         image: "./images/webp/dht11-sensor-bangladesh.webp",
         shortDesc: "Monitor temperature & humidity easily – perfect for weather stations, home automation & IoT. Best price in Bangladesh.",
-        price: "৳120",
+        price: "৳125",
         fullDesc: "Monitor temperature and humidity easily with the DHT11 Sensor Module. It's a cost-effective and reliable solution for weather stations, home automation, and IoT projects. Perfect for beginners working with Arduino and Raspberry Pi. The DHT11 uses a capacitive humidity sensor and a thermistor to measure surrounding air, outputting a digital signal on a single data pin – no analog conversion needed.",
         whyBuy: [
           "Best DHT11 price in Bangladesh",
@@ -279,7 +279,7 @@ const productsData = [
         name: "SG90 Servo Motor",
         image: "./images/webp/servo-motor-sg90-bd.jpg",
         shortDesc: "9g mini servo for Arduino & robotics. Best servo motor price in Bangladesh.",
-        price: "৳120",
+        price: "৳150",
         fullDesc: "The SG90 is a lightweight, high-quality mini servo motor perfect for Arduino, robotics, and RC projects. Its compact size and ease of control make it a favorite for hobbyists in Bangladesh.",
         features: [
           "Weight: 9g",
@@ -295,7 +295,7 @@ const productsData = [
         name: "16x2 LCD with I2C",
         image: "./images/webp/lcd-16x2-i2c-bd.jpg",
         shortDesc: "2x16 character display with I2C module. Best 16x2 LCD display price in Bangladesh.",
-        price: "৳350",
+        price: "৳380",
         fullDesc: "The 16x2 Character LCD Display Module with an integrated I2C interface allows you to display text and numbers using only two pins (SDA/SCL) on your Arduino or ESP32.",
         features: [
           "16 characters x 2 lines display",
