@@ -367,7 +367,7 @@ const productsData = [
         name: "L298N Motor Driver Module",
         image: "./images/webp/l298n-motor-driver-module-bd.jpg",
         shortDesc: "Dual H-Bridge motor driver module for robotics projects.",
-        price: "৳180",
+        price: "৳185",
         fullDesc: "The L298N Dual H-Bridge Motor Driver is standard equipment for any robotics hobbyist. It allows you to reliably control the speed and direction of two DC motors simultaneously, or one stepper motor.",
         features: [
           "Driver Chip: L298N dual H-bridge",
