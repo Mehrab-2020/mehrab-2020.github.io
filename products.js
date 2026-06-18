@@ -33,7 +33,7 @@ const productsData = [
         id: "arduino_nano",
         seoSlug: "arduino-nano-bd",
         name: "Arduino Nano V3.0",
-        image: "./images/webp/arduino-nano-bd.webp",
+        image: "./images/webp/arduino-nano-bd.png",
         shortDesc: "Compact, breadboard-friendly microcontroller board based on the ATmega328P. Best Arduino Nano price BD.",
         price: "৳450",
         fullDesc: "The Arduino Nano is a small, complete, and breadboard-friendly board based on the ATmega328. It has more or less the same functionality of the Arduino Uno, but in a different package. It lacks only a DC power jack, and works with a Mini-B USB cable instead of a standard one. Incredible Arduino price BD value for compact IoT projects.",
@@ -367,7 +367,7 @@ const productsData = [
         name: "L298N Motor Driver Module",
         image: "./images/webp/l298n-motor-driver-module-bd.jpg",
         shortDesc: "Dual H-Bridge motor driver module for robotics projects.",
-        price: "৳185",
+        price: "৳180",
         fullDesc: "The L298N Dual H-Bridge Motor Driver is standard equipment for any robotics hobbyist. It allows you to reliably control the speed and direction of two DC motors simultaneously, or one stepper motor.",
         features: [
           "Driver Chip: L298N dual H-bridge",

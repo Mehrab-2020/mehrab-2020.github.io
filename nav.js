@@ -10,11 +10,10 @@
   if (!page || page === '/') page = 'index.html';
 
   const navLinks = [
-    { href: 'index.html',                                       label: 'Home' },
-    { href: 'arduino-bangladesh.html',                          label: 'Arduino' },
-    { href: 'sensors-bangladesh.html',                          label: 'Sensors' },
-    { href: 'electronics-components-bd.html',                   label: 'Components' },
-    { href: 'build-a-robotics-project-bangladesh.html',         label: '🤖 Build a Project' },
+    { href: 'index.html',                    label: 'Home' },
+    { href: 'arduino-bangladesh.html',       label: 'Arduino' },
+    { href: 'sensors-bangladesh.html',       label: 'Sensors' },
+    { href: 'electronics-components-bd.html', label: 'Components' },
   ];
 
   const linksHtml = navLinks.map(l => {
@@ -30,7 +29,7 @@
       <div class="nav-center">
         ${linksHtml}
       </div>
-      <a href="tel:+8801998421007" class="contact-badge" aria-label="Call us at 01998421007">
+      <a href="tel:+1577098376" class="contact-badge" aria-label="Call us at 01998421007">
         📞 01998421007
       </a>
     </nav>

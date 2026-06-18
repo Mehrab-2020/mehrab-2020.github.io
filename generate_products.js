@@ -4,7 +4,7 @@ const path = require('path');
 const { productsData } = require('./products.js');
 
 const SITE_URL = 'https://www.electromartbd.bd';
-const WHATSAPP_NUMBER = '8801998421007';
+const WHATSAPP_NUMBER = '1577098376';
 
 function escapeHtml(value) {
   return String(value ?? '')
