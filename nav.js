@@ -29,8 +29,8 @@
       <div class="nav-center">
         ${linksHtml}
       </div>
-      <a href="tel:+1577098376" class="contact-badge" aria-label="Call us at 01998421007">
-        📞 01998421007
+      <a href="tel:+1577098376" class="contact-badge" aria-label="Call us at 01577098376">
+        📞 01577098376
       </a>
     </nav>
   `;
