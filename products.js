@@ -5,19 +5,20 @@ const productsData = [
       {
         id: "arduino_uno",
         seoSlug: "arduino-uno-r3-bangladesh",
-        name: "Arduino Uno R3 Original Board",
+        name: "Arduino Uno R3 SMD Version",
         image: "./images/webp/arduino-uno-r3-bangladesh.webp",
+        url: "arduino-uno-r3-bangladesh.html",
         shortDesc: "Most popular microcontroller for robotics, IoT & automation. ATmega328P | USB Powered – Best price in Bangladesh.",
         price: "৳550",
-        fullDesc: "Build your next electronics project with the Arduino Uno R3, the most popular microcontroller board for beginners and professionals alike. Whether you're working on robotics, IoT, or automation, this board gives you the flexibility and reliability you need. Designed with the ATmega328P microcontroller, Arduino Uno is perfect for coding, prototyping, and learning embedded systems. Ideal for students, hobbyists & engineers across Bangladesh.",
+        fullDesc: "Build your next electronics project with the Arduino Uno R3 SMD Version, the most popular microcontroller board for beginners and professionals alike. Whether you're working on robotics, IoT, or automation, this board gives you the flexibility and reliability you need. Designed with the ATmega328P microcontroller, Arduino Uno is perfect for coding, prototyping, and learning embedded systems. Ideal for students, hobbyists & engineers across Bangladesh.",
         whyBuy: [
           "100% quality tested product",
           "Best Arduino Uno price in Bangladesh",
           "Fast delivery nationwide",
           "Ideal for students, hobbyists & engineers"
         ],
-        packageIncludes: "1 × Arduino Uno R3 Board",
-        keywords: "Arduino Uno R3 Bangladesh, Arduino price BD, Arduino board BD",
+        packageIncludes: "1 × Arduino Uno R3 SMD Version",
+        keywords: "Arduino Uno R3 SMD Version Bangladesh, Arduino price BD, Arduino board BD",
         features: [
           "Microcontroller: ATmega328P",
           "Operating Voltage: 5V",
