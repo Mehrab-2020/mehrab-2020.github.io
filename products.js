@@ -34,7 +34,7 @@ const productsData = [
         id: "arduino_nano",
         seoSlug: "arduino-nano-bd",
         name: "Arduino Nano V3.0",
-        image: "./images/webp/arduino-nano-bd.png",
+        image: "./images/webp/arduino-nano-bd.webp",
         shortDesc: "Compact, breadboard-friendly microcontroller board based on the ATmega328P. Best Arduino Nano price BD.",
         price: "৳450",
         fullDesc: "The Arduino Nano is a small, complete, and breadboard-friendly board based on the ATmega328. It has more or less the same functionality of the Arduino Uno, but in a different package. It lacks only a DC power jack, and works with a Mini-B USB cable instead of a standard one. Incredible Arduino price BD value for compact IoT projects.",
