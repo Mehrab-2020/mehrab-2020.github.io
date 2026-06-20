@@ -23,7 +23,7 @@ To rank for "electronics shop near me", you must register on Google.
    - **Name:** ElectroMart BD
    - **Category:** Electronics Store
    - **Address:** Your exact location in Dhaka (even if it's a home-based office, hiding the address is fine, just list the service area as Bangladesh).
-   - **Phone:** +880 1998 421007
+   - **Phone:** 01577098376
    - **Website:** https://www.electromartbd.bd
 3. Post 1-2 product photos every week.
 
