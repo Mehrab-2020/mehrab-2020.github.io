@@ -377,6 +377,156 @@ const productsData = [
           "Peak Current: 2A per channel",
           "Built-in 5V regulator for logic components"
         ]
+      },
+      {
+        id: "mpu6050",
+        seoSlug: "mpu6050-accelerometer-gyroscope-bangladesh",
+        name: "MPU6050 6-DOF Accelerometer & Gyroscope Module",
+        image: "./images/webp/6DOF-Accelerometer-Gyroscope-GY-521-MPU-6050_20251229_113036.webp",
+        shortDesc: "Highly accurate 6-axis motion tracking device combining an accelerometer and gyroscope with an onboard Digital Motion Processor.",
+        price: "৳150",
+        fullDesc: [
+          "The MPU6050 is a groundbreaking 6-axis motion tracking device that combines a 3-axis gyroscope, a 3-axis accelerometer, and a Digital Motion Processor (DMP) all housed in a single, incredibly compact package. It is the go-to sensor for electronics enthusiasts, researchers, and professional engineers across Bangladesh who are looking to implement precise motion sensing into their projects. The sensor features an onboard GY-521 breakout board, which provides straightforward access to all critical pins including I2C interfaces and power lines. By integrating both the accelerometer and the gyroscope on the same silicon die, the MPU6050 effectively eliminates the cross-axis alignment problems that frequently plague multi-chip solutions, resulting in consistently accurate readings.",
+          "One of the standout features of the MPU6050 is its embedded Digital Motion Processor (DMP). This advanced onboard processor handles complex motion fusion algorithms, offloading the heavy computational burden from the host microcontroller (such as an Arduino or ESP32). This means you can get quaternion, Euler angle, or gravity vector outputs directly from the sensor, saving precious processing cycles for other vital tasks in your project. Whether you're building a self-balancing robot, a sophisticated drone, an inertial navigation system, or a gesture-controlled wearable device, this module provides the precise data you need with minimal latency.",
+          "Interfacing with the MPU6050 is remarkably simple thanks to its standard I2C communication protocol. It operates on a supply voltage of 3V to 5V, making it highly compatible with both 3.3V logic (like the ESP32, NodeMCU, and Raspberry Pi) and 5V logic (like the Arduino Uno and Mega). The module also features a built-in Low Drop-Out (LDO) voltage regulator to ensure stable power delivery to the core IC. The sensor includes a user-programmable gyro full-scale range of ±250, ±500, ±1000, and ±2000 degrees per second (dps), as well as a user-programmable accelerometer full-scale range of ±2g, ±4g, ±8g, and ±16g, giving you unparalleled flexibility depending on the dynamic requirements of your application.",
+          "When you purchase the MPU6050 from ElectroMart BD, you are guaranteed a high-quality, fully tested component that meets the stringent demands of modern electronic design. We ensure fast and reliable delivery nationwide, so you can keep your project timelines on track. Enhance your robotics, virtual reality, and smart devices with the industry-standard motion tracking capabilities of the MPU6050."
+        ],
+        features: [
+          "6-axis motion tracking capability (3-axis Gyroscope + 3-axis Accelerometer)",
+          "Onboard Digital Motion Processor (DMP) for sensor fusion",
+          "I2C communication interface",
+          "Built-in 16-bit ADCs for high accuracy data conversion",
+          "Compact GY-521 breakout board design"
+        ],
+        specifications: [
+          "Operating Voltage: 3V - 5V (Internal low dropout regulator included)",
+          "Communication Protocol: Standard I2C Interface",
+          "Degrees of Freedom (DOF): 6 (3-axis Accelerometer + 3-axis Gyroscope)",
+          "Gyroscope Range: ±250, 500, 1000, 2000 degrees/second (dps)",
+          "Accelerometer Range: ±2g, ±4g, ±8g, ±16g",
+          "Analog-to-Digital Converter (ADC): Built-in 16-bit for highly accurate digitisation",
+          "Digital Motion Processor (DMP): Embedded hardware engine for complex motion fusion algorithms",
+          "Operating Current: Approximately 3.9mA during active sensing",
+          "Dimensions: 20mm x 15mm (compact design for space-constrained projects)",
+          "Pin Spacing: Standard 2.54mm pitch for easy breadboard and PCB integration"
+        ],
+        applications: [
+          "Quadcopter and Drone Flight Controllers: Essential for maintaining stability and performing complex aerial maneuvers.",
+          "Self-Balancing Robots: Provides the precise tilt and acceleration data required for real-time PID balancing algorithms.",
+          "Virtual Reality (VR) and Augmented Reality (AR) Headsets: Tracks head movements to update visual displays with minimal latency.",
+          "Gesture Recognition Systems: Enables wearable devices to interpret hand and arm movements for intuitive human-computer interaction.",
+          "Inertial Navigation Systems (INS): Used in robotics to track position and velocity over time when GPS is unavailable or unreliable.",
+          "Vibration Analysis and Structural Health Monitoring: Capable of detecting minute vibrations in industrial machinery and buildings.",
+          "Sports and Fitness Tracking: Monitors athletic performance by tracking acceleration, rotation, and dynamic forces during exercise.",
+          "Smartphone and Tablet Orientation: Automatically detects device orientation to switch between portrait and landscape modes."
+        ],
+        faq: [
+          { q: "How does the MPU6050 communicate with an Arduino?", a: "The MPU6050 uses the I2C (Inter-Integrated Circuit) communication protocol. It requires only two data pins—SDA (Serial Data) and SCL (Serial Clock)—along with VCC and GND. You can easily interface it using the Wire library in the Arduino IDE." },
+          { q: "Do I need a logic level converter when using the MPU6050 with a 5V Arduino?", a: "No, the GY-521 breakout board typically includes an onboard voltage regulator and pull-up resistors, making it safe to use directly with a 5V microcontroller like the Arduino Uno without a logic level converter." },
+          { q: "What is the purpose of the INT pin?", a: "The INT (Interrupt) pin is used to notify the host microcontroller when new data is ready to be read. This is extremely useful for optimizing code, as the microcontroller doesn't need to constantly poll the sensor for new data." },
+          { q: "Can I use multiple MPU6050 sensors on the same I2C bus?", a: "Yes, you can use up to two MPU6050 sensors on the same I2C bus. The AD0 pin controls the I2C address. By default, it is usually 0x68. If you connect the AD0 pin to 3.3V, the address changes to 0x69, allowing two sensors to operate simultaneously." },
+          { q: "How accurate is the onboard Digital Motion Processor (DMP)?", a: "The onboard DMP is highly accurate for its price range and offloads complex sensor fusion math from the microcontroller. However, like all MEMS sensors, it can suffer from drift over time, which is why it is often combined with a magnetometer for absolute orientation tracking (making it a 9-DOF system)." }
+        ]
+      },
+      {
+        id: "tcrt5000",
+        seoSlug: "tcrt5000-ir-sensor-bangladesh",
+        name: "TCRT5000 Infrared Reflective Sensor Module",
+        image: "./images/webp/TCRT5000.jpg",
+        shortDesc: "Versatile infrared reflective sensor for object detection and line-following robots with digital and analog outputs.",
+        price: "৳45",
+        fullDesc: [
+          "The TCRT5000 Infrared Reflective Sensor Module is a highly versatile and reliable component designed for a wide array of optical sensing applications. Built around the industry-standard TCRT5000 infrared emitter and phototransistor pair, this module is an absolute must-have for electronics enthusiasts, engineering students, and hobbyists across Bangladesh. The sensor operates by emitting a focused beam of infrared light from its LED. When an object is placed in front of the sensor, the infrared light bounces off the object's surface and reflects back into the built-in phototransistor. This simple yet highly effective mechanism allows the sensor to detect the presence of objects, measure distances over short ranges, and differentiate between light and dark surfaces with remarkable precision.",
+          "One of the most common and popular uses for the TCRT5000 module is in the construction of line-following robots. In such applications, the sensor is typically positioned facing downwards towards the floor. Because dark surfaces (like a black line) absorb infrared light while light surfaces (like a white floor) reflect it, the sensor can easily distinguish between the two. The onboard comparator circuit, usually built around the LM393 IC, processes the analog signal from the phototransistor and provides a clean, easily readable digital output (HIGH or LOW). This makes it incredibly straightforward to interface with microcontrollers such as the Arduino Uno, ESP32, Raspberry Pi, or any other digital logic system without needing complex analog-to-digital conversion.",
+          "In addition to its digital output, many TCRT5000 modules also feature an analog output pin. This analog pin provides a continuous voltage reading that varies depending on the intensity of the reflected infrared light. This feature is particularly useful for applications requiring more nuanced distance measurements or variable threshold detection. The module also comes equipped with a built-in potentiometer, allowing users to manually adjust the detection sensitivity to suit different lighting conditions and object reflectivities. This adaptability makes the TCRT5000 an excellent choice for a variety of projects, from simple obstacle avoidance systems in small autonomous vehicles to sophisticated edge detection and rotary encoder applications.",
+          "When shopping for electronic components in Bangladesh, reliability and performance are key. Our TCRT5000 modules are rigorously tested to ensure consistent performance out of the box. Whether you are building your very first robot, designing an automated sorting system for an industrial prototype, or creating interactive installations, the TCRT5000 provides the dependable optical sensing capabilities you need to succeed. Its compact size, low power consumption, and dual output options make it one of the most practical and frequently utilized sensors in the maker community."
+        ],
+        features: [
+          "Dual output modes: Digital (DO) and Analog (AO)",
+          "Onboard LM393 comparator chip for clean digital signals",
+          "Adjustable sensitivity via built-in potentiometer",
+          "Ideal for line-following and obstacle avoidance",
+          "Easy integration with 3.3V and 5V microcontrollers"
+        ],
+        specifications: [
+          "Sensor Model: TCRT5000 Infrared Emitter and Phototransistor Pair",
+          "Operating Voltage: 3.3V to 5V DC (Highly compatible with most microcontrollers)",
+          "Operating Current: Approximately 15mA during continuous active operation",
+          "Detection Range: 1mm to 25mm (Optimal performance typically around 10mm)",
+          "Output Format: Dual output featuring both Digital (0 or 1) and Analog (variable voltage)",
+          "Comparator Chip: LM393 voltage comparator for stable digital signal generation",
+          "Sensitivity Adjustment: Onboard variable resistor (potentiometer) for precise tuning",
+          "Indicator LEDs: Power LED and Digital Output status LED for easy troubleshooting",
+          "Mounting Hole: Pre-drilled 3mm mounting hole for secure physical installation",
+          "Dimensions: 32mm x 14mm (Compact footprint suitable for tight enclosures)"
+        ],
+        applications: [
+          "Line Following Robots: The primary application, distinguishing between black tracks and white backgrounds for autonomous navigation.",
+          "Obstacle Avoidance: Detecting the presence of nearby objects to prevent collisions in small-scale robotic vehicles.",
+          "Edge Detection: Preventing robots from falling off tables or stairs by sensing the sudden absence of a reflective surface.",
+          "Rotary Encoders: Counting wheel rotations or motor RPM by detecting alternating black and white stripes on a rotating disk.",
+          "Optical Switches and Limit Switches: Acting as a non-contact trigger for moving mechanical parts in 3D printers and CNC machines.",
+          "Paper Detection in Printers: Identifying whether paper is present in the feed tray of a printer or photocopier.",
+          "Automated Sorting Systems: Detecting items on a conveyor belt for industrial automation and counting applications.",
+          "Interactive Art and Displays: Triggering light or sound effects when a user's hand approaches the sensor."
+        ],
+        faq: [
+          { q: "How do I connect the TCRT5000 module to an Arduino?", a: "The module typically has four pins: VCC, GND, DO (Digital Out), and AO (Analog Out). Connect VCC to 5V, GND to GND, and DO to any digital input pin on the Arduino. If you need the analog reading, connect AO to an analog input pin (like A0)." },
+          { q: "Why is the digital output always staying HIGH or LOW regardless of what is in front of the sensor?", a: "This usually means the sensitivity needs adjustment. Use a small screwdriver to turn the onboard potentiometer until the digital output LED toggles correctly when an object is placed in front of the sensor." },
+          { q: "Does ambient light affect the TCRT5000 sensor?", a: "Yes, strong ambient light, especially direct sunlight which contains a lot of infrared radiation, can interfere with the sensor's readings. It is recommended to use the sensor in controlled lighting environments or shield it from direct sunlight." },
+          { q: "What is the maximum reliable detection distance?", a: "The TCRT5000 is designed for short-range detection. Its reliable maximum range is typically around 25mm (1 inch). For distances beyond this, an ultrasonic sensor or a long-range IR sensor like the Sharp GP2Y0A21YK0F is recommended." },
+          { q: "Can I use the TCRT5000 to detect transparent objects like glass or clear plastic?", a: "Detecting transparent objects can be very challenging because infrared light tends to pass through them rather than reflecting back. The sensor may occasionally detect them if there are reflections off the edges or surface imperfections, but it is not reliable for this purpose." }
+        ]
+      },
+      {
+        id: "tb6612fng",
+        seoSlug: "tb6612fng-dual-motor-driver-bangladesh",
+        name: "TB6612FNG Dual DC Motor Driver Module",
+        image: "./images/webp/Motor Driver - Dual TB6612FNG.webp",
+        shortDesc: "Ultra-compact, highly efficient dual motor driver utilizing modern MOSFET technology for robotics and RC vehicles.",
+        price: "৳220",
+        fullDesc: [
+          "The TB6612FNG Dual DC Motor Driver Module is an exceptionally efficient and highly compact motor control solution designed to drive two DC motors or one bipolar stepper motor. Operating as a superior alternative to the aging L298N motor driver, the TB6612FNG utilizes modern MOSFET-based H-bridge technology. This technological upgrade provides a significant reduction in voltage drop across the motor driver IC, meaning that your motors receive more of the battery's actual voltage, leading to higher torque and better overall performance. For robotics enthusiasts and electronics engineers in Bangladesh, this module offers a perfect blend of power, efficiency, and space-saving design, making it ideal for everything from miniature sumo robots to sophisticated autonomous rovers.",
+          "One of the most compelling advantages of the TB6612FNG over older bipolar transistor-based drivers is its exceptional thermal efficiency. Because the internal MOSFETs have a very low ON-resistance, they dissipate far less heat during operation. This eliminates the need for the bulky, heavy aluminum heatsinks that are typically required by the L298N. As a result, the TB6612FNG module is incredibly small and lightweight, allowing it to be easily integrated into space-constrained projects, drones, and micro-robots where every gram and millimeter counts. Despite its small size, it packs a serious punch, capable of delivering a continuous output current of 1.2A per channel, with peak burst currents reaching up to 3.2A for short durations.",
+          "Controlling the TB6612FNG is straightforward and intuitive. It interfaces easily with standard microcontrollers such as the Arduino Uno, Mega, ESP32, and Raspberry Pi. Each motor channel is controlled via three pins: two directional pins (IN1 and IN2) to determine forward, reverse, or braking states, and one PWM (Pulse Width Modulation) pin to control the motor's speed. The module also features a convenient Standby (STBY) pin. Pulling the standby pin LOW disables the motors entirely, placing the driver into a low-power sleep mode—a highly useful feature for battery-operated robots that need to conserve power while remaining idle. The logic supply voltage ranges from 2.7V to 5.5V, ensuring seamless compatibility with both 3.3V and 5V logic systems.",
+          "When building battery-powered electronics, efficiency is paramount. The TB6612FNG module requires a dedicated motor power supply (VMOT) capable of handling up to 15V. It integrates built-in thermal shutdown and under-voltage lockout protection circuits, ensuring that the driver IC remains safe even under demanding conditions. Whether you are participating in a local robotics competition, building a custom RC car, or designing an automated tracking system, the TB6612FNG Dual DC Motor Driver from ElectroMart BD provides the precise control and robust reliability necessary to bring your motorized creations to life."
+        ],
+        features: [
+          "High efficiency MOSFET H-bridge design",
+          "Controls two DC motors or one stepper motor",
+          "Ultra-compact and lightweight, no heatsink required",
+          "Standby control to save battery life",
+          "Built-in thermal shutdown and under-voltage protection"
+        ],
+        specifications: [
+          "Driver Chip: Toshiba TB6612FNG MOSFET-based Dual H-Bridge",
+          "Motor Power Supply Voltage (VMOT): 4.5V to 15V DC",
+          "Logic Supply Voltage (VCC): 2.7V to 5.5V DC (Compatible with 3.3V and 5V microcontrollers)",
+          "Continuous Output Current: 1.2A per channel (Capable of driving two DC motors independently)",
+          "Peak Output Current: 3.2A per channel (For short bursts during startup or stalling)",
+          "PWM Control Frequency: Up to 100 kHz for smooth and quiet motor speed control",
+          "Internal Protections: Thermal shutdown circuit and under-voltage lockout protection integrated",
+          "Control Interface: 3 pins per motor (IN1, IN2, PWM) plus a global Standby (STBY) pin",
+          "Filtering Components: Onboard decoupling capacitors on both supply lines to reduce electrical noise",
+          "Dimensions: 20mm x 20mm (Ultra-compact, breadboard-friendly design)"
+        ],
+        applications: [
+          "Miniature and Micro Robotics: Perfect for line followers, maze solvers, and mini sumo bots due to its tiny footprint.",
+          "Battery-Operated Vehicles: High efficiency means longer battery life for RC cars and autonomous rovers.",
+          "Stepper Motor Control: Capable of driving a single bipolar stepper motor for CNC machines or 3D printer mechanisms.",
+          "Camera Pan and Tilt Systems: Smooth PWM control allows for precise movement of camera gimbals.",
+          "Automated Smart Curtains and Blinds: Driving small DC motors quietly in home automation projects.",
+          "Water Pumps and Fans: Controlling the speed of small DC pumps and cooling fans in automated systems.",
+          "Robotic Arms and Grippers: Driving the precise actuation motors in robotic manipulation setups.",
+          "Education and STEM Projects: An excellent upgrade from the L298N for teaching modern motor control techniques."
+        ],
+        faq: [
+          { q: "How does the TB6612FNG compare to the L298N motor driver?", a: "The TB6612FNG is much more efficient because it uses MOSFETs instead of bipolar transistors. This means less voltage is lost as heat, so the motors get more power and the driver doesn't need a bulky heatsink. The TB6612FNG is significantly smaller and better suited for low-voltage, battery-powered projects." },
+          { q: "Can I connect the motor power supply directly to my Arduino?", a: "No, you should never power motors directly from the Arduino's 5V or VIN pins. Motors draw high current and cause voltage spikes that can reset or permanently damage your microcontroller. Always use a separate power source (like a battery pack) for the VMOT pin, sharing only the common ground connection." },
+          { q: "What does the STBY (Standby) pin do, and how should I connect it?", a: "The STBY pin enables or disables the motor outputs. To use the driver, the STBY pin MUST be pulled HIGH (connected to the logic supply voltage or set HIGH via a microcontroller pin). If it is left floating or pulled LOW, the motors will not spin." },
+          { q: "Why do my motors emit a high-pitched whining noise when using PWM?", a: "This noise is caused by the PWM frequency vibrating the motor coils at an audible frequency. The TB6612FNG supports PWM frequencies up to 100 kHz. Increasing the PWM frequency on your microcontroller to an ultrasonic range (above 20 kHz) can completely eliminate this noise." },
+          { q: "Can the TB6612FNG drive a single larger motor by combining the channels?", a: "Yes, it is possible to parallel the two output channels to drive a single motor with up to 2.4A continuous current. To do this, you must tie both IN1 pins together, both IN2 pins together, both PWM pins together, and physically connect the motor across the paralleled output terminals." }
+        ]
       }
     ]
   }

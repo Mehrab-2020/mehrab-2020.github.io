@@ -62,6 +62,28 @@ ${product.whyBuy.map(item => `                  <li>${escapeHtml(item)}</li>`).j
                 <p>${escapeHtml(product.packageIncludes)}</p>
               </div>` : '';
 
+  const descHtml = Array.isArray(product.fullDesc) 
+    ? product.fullDesc.map(p => `<p>${escapeHtml(p)}</p>`).join('\n          ')
+    : `<p>${escapeHtml(product.fullDesc)}</p>`;
+
+  const specHtml = product.specifications ? `
+        <h2 style="margin-top: 25px; margin-bottom: 15px; font-size: 1.2rem; color: #fff;">Specifications:</h2>
+        <ul class="features-list">
+${product.specifications.map(item => `          <li>${escapeHtml(item)}</li>`).join('\n')}
+        </ul>` : '';
+
+  const appHtml = product.applications ? `
+        <h2 style="margin-top: 25px; margin-bottom: 15px; font-size: 1.2rem; color: #fff;">Applications:</h2>
+        <ul class="features-list">
+${product.applications.map(item => `          <li>${escapeHtml(item)}</li>`).join('\n')}
+        </ul>` : '';
+
+  const faqHtml = product.faq ? `
+        <h2 style="margin-top: 25px; margin-bottom: 15px; font-size: 1.2rem; color: #fff;">Frequently Asked Questions (FAQ):</h2>
+        <div class="faq-section" style="color: var(--text-muted); line-height: 1.6;">
+${product.faq.map(item => `          <div class="faq-item" style="margin-bottom: 15px;"><strong style="color: #fff;">Q: ${escapeHtml(item.q)}</strong><br>A: ${escapeHtml(item.a)}</div>`).join('\n')}
+        </div>` : '';
+
   const productSchema = {
     '@context': 'https://schema.org/',
     '@type': 'Product',
@@ -162,15 +184,18 @@ ${product.whyBuy.map(item => `                  <li>${escapeHtml(item)}</li>`).j
         <div class="product-price">${escapeHtml(product.price)}</div>
 
         <div class="product-desc">
-          <p>${escapeHtml(product.fullDesc)}</p>
+          ${descHtml}
         </div>
 
         <h2 style="margin-bottom: 15px; font-size: 1.2rem; color: #fff;">Key Features:</h2>
         <ul class="features-list">
 ${featuresHtml}
         </ul>
+${specHtml}
+${appHtml}
 ${whyBuyHtml}
 ${packageHtml}
+${faqHtml}
 
         <div style="margin-top: 28px;">
           <a href="https://wa.me/${WHATSAPP_NUMBER}?text=${waMessage}" target="_blank" rel="noopener noreferrer" class="order-btn">
