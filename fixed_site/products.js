@@ -105,7 +105,7 @@ const productsData = [
         keywords: "esp32 price in bd, esp32 bangladesh, esp32 board price bd",
         image: "./images/webp/esp32-development-board-bd.webp",
         shortDesc: "Dual-core WiFi & Bluetooth MCU for advanced IoT applications.",
-        price: "৳500",
+        price: "৳600",
         fullDesc: "The ESP32 is a powerful dual-core microcontroller with integrated Wi-Fi and dual-mode Bluetooth (Classic and BLE). It excels in complex IoT applications, robotics, and smart home systems requiring both strong processing capabilities and varied wireless connectivity.",
         features: [
           "Processor: Dual-core Tensilica Xtensa LX6",

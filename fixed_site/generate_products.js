@@ -28,6 +28,14 @@ function getCategoryPage(categoryName) {
     name: 'Sensors Bangladesh',
     url: `${SITE_URL}/sensors-bangladesh.html`
   };
+  if (categoryName === 'Passive Components') return {
+    name: 'Electronics Components',
+    url: `${SITE_URL}/electronics-components-bd.html`
+  };
+  if (categoryName === 'Accessories & Power') return {
+    name: 'Electronics Components',
+    url: `${SITE_URL}/electronics-components-bd.html`
+  };
   return {
     name: 'Electronics Components',
     url: `${SITE_URL}/electronics-components-bd.html`
