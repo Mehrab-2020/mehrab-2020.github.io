@@ -431,7 +431,7 @@ const productsData = [
         id: "mpu6050",
         seoSlug: "mpu6050-accelerometer-gyroscope-bangladesh",
         name: "MPU6050 6-DOF Accelerometer & Gyroscope Module",
-        image: "./images/webp/6DOF-Accelerometer-Gyroscope-GY-521-MPU-6050_20251229_113036.webp",
+        image: "./images/webp/mpu6050-accelerometer-gyroscope-bangladesh.webp",
         shortDesc: "Highly accurate 6-axis motion tracking device combining an accelerometer and gyroscope with an onboard Digital Motion Processor.",
         price: "৳370",
         fullDesc: [
@@ -481,7 +481,7 @@ const productsData = [
         id: "tcrt5000",
         seoSlug: "tcrt5000-ir-sensor-bangladesh",
         name: "TCRT5000 Infrared Reflective Sensor Module",
-        image: "./images/webp/TCRT5000.jpg",
+        image: "./images/webp/tcrt5000-ir-sensor-bangladesh.jpg",
         shortDesc: "Versatile infrared reflective sensor for object detection and line-following robots with digital and analog outputs.",
         price: "৳25",
         fullDesc: [
@@ -531,7 +531,7 @@ const productsData = [
         id: "tb6612fng",
         seoSlug: "tb6612fng-dual-motor-driver-bangladesh",
         name: "TB6612FNG Dual DC Motor Driver Module",
-        image: "./images/webp/Motor Driver - Dual TB6612FNG.webp",
+        image: "./images/webp/tb6612fng-dual-motor-driver-bangladesh.webp",
         shortDesc: "Ultra-compact, highly efficient dual motor driver utilizing modern MOSFET technology for robotics and RC vehicles.",
         price: "৳220",
         fullDesc: [
