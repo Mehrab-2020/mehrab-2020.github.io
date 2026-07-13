@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details | ElectroMartBD</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+
+<body>
+
+  <div id="site-nav"></div>
+
+  <div class="container" id="main-content">
+    <a href="index.html" class="back-link">← Back to Catalog</a>
+    
+    <div id="product-view">
+      <!-- Injected by JS -->
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 ElectroMartBD | Designed with precision for builders</p>
+  </footer>
+
+  <script src="products.js"></script>
+  <script src="cart.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Get product ID from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get('id');
+      
+      const productView = document.getElementById("product-view");
+
+      if (!productId) {
+        showError("No product specified.");
+        return;
+      }
+
+      // Fetch product from data
+      const product = getProductById(productId);
+
+      if (!product) {
+        showError("Product not found.");
+        return;
+      }
+
+      // Render product
+      renderProduct(product);
+
+      function showError(msg) {
+        document.title = "Not Found | ElectroMartBD";
+        productView.innerHTML = `
+          <div class="error-container">
+            <h2>${msg}</h2>
+            <p style="color: var(--text-dim); margin-top: 10px;">Please return to the catalog and try again.</p>
+          </div>
+        `;
+      }
+
+      function renderProduct(p) {
+        document.title = `${p.name} | ElectroMartBD`;
+        
+        // --- Inject Dynamic SEO Tags ---
+        const metaDesc = document.createElement('meta');
+        metaDesc.name = "description";
+        metaDesc.content = p.shortDesc;
+        document.head.appendChild(metaDesc);
+
+        const ogTitle = document.createElement('meta');
+        ogTitle.property = "og:title";
+        ogTitle.content = `${p.name} | ElectroMartBD`;
+        document.head.appendChild(ogTitle);
+
+        const ogDesc = document.createElement('meta');
+        ogDesc.property = "og:description";
+        ogDesc.content = p.shortDesc;
+        document.head.appendChild(ogDesc);
+
+        const ogImg = document.createElement('meta');
+        ogImg.property = "og:image";
+        // construct absolute URL if possible. Since we're client-side, we use location.origin
+        ogImg.content = window.location.origin + p.image.substring(1); // assumes p.image starts with ./
+        document.head.appendChild(ogImg);
+
+        // Inject Product JSON-LD Schema
+        const schemaUrl = window.location.href;
+        const jsonLd = document.createElement('script');
+        jsonLd.type = "application/ld+json";
+        jsonLd.text = JSON.stringify({
+          "@context": "https://schema.org/",
+          "@type": "Product",
+          "name": p.name,
+          "image": window.location.origin + p.image.substring(1),
+          "description": p.shortDesc,
+          "sku": p.id,
+          "offers": {
+            "@type": "Offer",
+            "url": schemaUrl,
+            "priceCurrency": "BDT",
+            "price": p.price.replace(/[^0-9]/g, ''), 
+            "availability": "https://schema.org/InStock"
+          }
+        });
+        document.head.appendChild(jsonLd);
+        // -------------------------------
+        
+        // Render features
+        const featuresHtml = p.features.map(f => `<li>${f}</li>`).join('');
+
+        // Why Buy section (optional)
+        const whyBuyHtml = p.whyBuy ? `
+          <div class="why-buy-section">
+            <h4>🎯 Why Buy from ElectroMart BD?</h4>
+            <ul class="why-buy-list">
+              ${p.whyBuy.map(w => `<li>${w}</li>`).join('')}
+            </ul>
+          </div>` : '';
+
+        // Package Includes (optional)
+        const packageHtml = p.packageIncludes ? `
+          <div class="package-section">
+            <h4>📦 Package Includes</h4>
+            <p>${p.packageIncludes}</p>
+          </div>` : '';
+
+        // WhatsApp Message
+        const waMessage = encodeURIComponent(`Hello! I want to order: ${p.name}`);
+
+        productView.innerHTML = `
+          <div class="product-grid">
+            <div class="product-image">
+              <img src="${p.image}" alt="${p.name}">
+            </div>
+            
+            <div class="product-details">
+              <h2 class="product-title">${p.name}</h2>
+              <div class="product-price">${p.price}</div>
+              
+              <div class="product-desc">
+                <p>${p.fullDesc}</p>
+              </div>
+              
+              <h3 style="margin-bottom: 15px; font-size: 1.2rem; color: #fff;">⚡ Key Features:</h3>
+              <ul class="features-list">
+                ${featuresHtml}
+              </ul>
+
+              ${whyBuyHtml}
+              ${packageHtml}
+              
+              <div style="margin-top: 28px;">
+                <button onclick="addToCart('${p.id}', '${p.name.replace(/'/g, "\\'")}', '${p.price}', '${p.image}')" class="order-btn" style="width: 100%;">
+                   Add to Cart 🛒
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+    });
+  </script>
+
+  <a class="whatsapp-float" href="https://wa.me/8801577098376" target="_blank" title="Chat on WhatsApp">💬</a>
+  <script src="nav.js"></script>
+</body>
+
+</html>
