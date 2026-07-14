@@ -52,6 +52,12 @@
         return;
       }
 
+      // If an SEO static page exists, redirect to it to avoid duplicate content
+      if (product.seoSlug) {
+        window.location.replace(product.seoSlug + '.html');
+        return;
+      }
+
       // Render product
       renderProduct(product);
 
