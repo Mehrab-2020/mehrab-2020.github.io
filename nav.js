@@ -14,6 +14,7 @@
     { href: 'arduino-bangladesh.html',       label: 'Arduino' },
     { href: 'sensors-bangladesh.html',       label: 'Sensors' },
     { href: 'electronics-components-bd.html', label: 'Components' },
+    { href: 'blog.html',                     label: 'Blog' },
   ];
 
   const linksHtml = navLinks.map(l => {

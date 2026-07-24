@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Getting Started: Building Basic Electronic Projects | ElectroMart BD</title>
+  <meta name="title" content="Getting Started: Building Basic Electronic Projects | ElectroMart BD">
+  <meta name="description" content="Learn the basics of electronics and build your first project using breadboards, LEDs, and resistors. A step-by-step tutorial for beginners in Bangladesh.">
+  <meta name="keywords" content="basic electronic projects, breadboard tutorial, electronics for beginners BD, LED circuit, Arduino basics">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.electromartbd.bd/basic-electronic-projects-tutorial.html">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Getting Started: Building Basic Electronic Projects",
+    "image": "https://www.electromartbd.bd/meta-image.png",
+    "author": {
+      "@type": "Organization",
+      "name": "ElectroMartBD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ElectroMartBD",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.electromartbd.bd/logo.png"
+      }
+    },
+    "datePublished": "2026-07-24"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.electromartbd.bd/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.electromartbd.bd/blog.html" },
+      { "@type": "ListItem", "position": 3, "name": "Basic Electronic Projects", "item": "https://www.electromartbd.bd/basic-electronic-projects-tutorial.html" }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <style>
+    .article-header {
+      text-align: center;
+      padding: 60px 5% 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .article-category {
+      background: rgba(0, 209, 255, 0.1);
+      color: var(--accent);
+      padding: 6px 16px;
+      border-radius: 99px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+    .article-header h1 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .article-meta {
+      color: var(--text-dim);
+      font-size: 0.95rem;
+      margin-bottom: 40px;
+    }
+    
+    .article-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 5% 80px;
+      line-height: 1.8;
+      font-size: 1.1rem;
+      color: var(--text-dim);
+    }
+    .article-content h2 {
+      color: var(--text-main);
+      font-size: 1.8rem;
+      margin: 40px 0 20px;
+      font-weight: 700;
+    }
+    .article-content h3 {
+      color: var(--text-main);
+      font-size: 1.4rem;
+      margin: 30px 0 15px;
+      font-weight: 600;
+    }
+    .article-content p {
+      margin-bottom: 20px;
+    }
+    .article-content ul, .article-content ol {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+    .article-content li {
+      margin-bottom: 10px;
+    }
+    .article-content strong {
+      color: var(--text-main);
+    }
+    .article-content a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .article-content a:hover {
+      text-decoration: underline;
+    }
+    
+    .highlight-box {
+      background: rgba(0, 209, 255, 0.05);
+      border-left: 4px solid var(--accent);
+      padding: 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 30px 0;
+    }
+    
+    .parts-list {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 30px;
+      border-radius: 16px;
+      margin: 30px 0;
+    }
+    .parts-list h3 { margin-top: 0; }
+  </style>
+</head>
+<body>
+
+  <div id="site-nav"></div>
+
+  <main>
+    <article>
+      <header class="article-header fade-in">
+        <span class="article-category">Tutorial</span>
+        <h1>Getting Started: Building Basic Electronic Projects</h1>
+        <div class="article-meta">Published on July 24, 2026 • 5 min read</div>
+      </header>
+
+      <div class="article-content fade-in" style="animation-delay: 0.1s;">
+        <p>Welcome to the world of electronics! Whether you're a student, hobbyist, or aspiring engineer in Bangladesh, starting with basic electronic components is the foundation for building complex robotics and IoT systems. In this guide, we'll walk you through understanding essential components and building your very first interactive circuit.</p>
+
+        <h2>1. The Essential Components</h2>
+        <p>Before connecting wires, it's crucial to understand the tools at your disposal. Here are the most common components you'll use in every project:</p>
+        
+        <ul>
+          <li><strong>Breadboard:</strong> A reusable platform for prototyping circuits without soldering. It consists of interconnected holes where you can plug in wires and components.</li>
+          <li><strong>LEDs (Light Emitting Diodes):</strong> These produce light when current flows through them. Remember, they have polarity: the longer leg is the positive (anode) and the shorter leg is the negative (cathode).</li>
+          <li><strong>Resistors:</strong> These resist the flow of current. We use them to prevent components like LEDs from receiving too much current and burning out.</li>
+          <li><strong>Jumper Wires:</strong> Wires used to connect components on the breadboard.</li>
+          <li><strong>Power Source:</strong> Usually a 9V battery, a USB power bank, or a dedicated power supply module.</li>
+        </ul>
+
+        <div class="highlight-box">
+          <p><strong>Pro Tip:</strong> Always make sure your circuit is disconnected from the power source while you are building or making changes to prevent accidental short circuits.</p>
+        </div>
+
+        <h2>2. Building Your First Circuit: The LED Indicator</h2>
+        <p>Let's build the "Hello World" of hardware: lighting up an LED.</p>
+
+        <div class="parts-list">
+          <h3>What You Need:</h3>
+          <ul>
+            <li>1x <a href="breadboard-830-tie-points-bd.html">Breadboard (830 tie-points)</a></li>
+            <li>1x <a href="5mm-led-bd.html">5mm LED (Any color)</a></li>
+            <li>1x <a href="resistor-pack-bangladesh.html">220Ω or 330Ω Resistor</a></li>
+            <li>2x <a href="jumper-wire-male-to-male-bd.html">Male-to-Male Jumper Wires</a></li>
+            <li>1x Power Source (e.g., 9V battery with clip, or 5V Arduino pin)</li>
+          </ul>
+        </div>
+
+        <h3>Step-by-Step Instructions:</h3>
+        <ol>
+          <li><strong>Place the LED:</strong> Insert the long leg (anode) and short leg (cathode) into two different rows on the breadboard.</li>
+          <li><strong>Add the Resistor:</strong> Connect one end of the resistor to the row with the LED's short leg (cathode). Connect the other end of the resistor to the negative (blue/black) power rail on the side of the breadboard.</li>
+          <li><strong>Connect Power:</strong> Use a jumper wire to connect the positive (red) power rail to the row containing the LED's long leg (anode).</li>
+          <li><strong>Power It Up:</strong> Connect your power source to the breadboard's power rails. If everything is connected correctly, your LED should light up brightly!</li>
+        </ol>
+
+        <h2>3. What's Next?</h2>
+        <p>Congratulations, you've built a basic circuit! This fundamental understanding of current flow, resistance, and polarity applies to almost every electronics project. From here, you can start integrating switches to control the LED, or connect sensors to create interactive systems.</p>
+        <p>Ready for more? Check out our <a href="arduino-bangladesh.html">Arduino microcontrollers</a> to start programming your circuits and adding smart logic to your projects!</p>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>© 2026 ElectroMartBD | Designed with precision for builders</p>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/8801577098376" target="_blank" title="Chat on WhatsApp">💬</a>
+
+  <script src="nav.js"></script>
+</body>
+</html>
