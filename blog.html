@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElectroMart BD Blog | Arduino Tutorials & Electronics Guides</title>
+  <meta name="title" content="ElectroMart BD Blog | Arduino Tutorials & Electronics Guides">
+  <meta name="description" content="Learn how to build electronics projects with Arduino, ESP32, sensors, and more. Read our tutorials and comparisons to kickstart your robotics journey in Bangladesh.">
+  <meta name="keywords" content="electronics blog Bangladesh, Arduino tutorials BD, robotics projects, ESP32 vs Arduino, electronics guides">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.electromartbd.bd/blog.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.electromartbd.bd/blog.html">
+  <meta property="og:title" content="ElectroMart BD Blog | Arduino Tutorials & Electronics Guides">
+  <meta property="og:description" content="Learn how to build electronics projects with Arduino, ESP32, sensors, and more. Read our tutorials and comparisons.">
+  <meta property="og:image" content="https://www.electromartbd.bd/meta-image.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "ElectroMart BD Blog",
+    "url": "https://www.electromartbd.bd/blog.html",
+    "description": "Electronics tutorials, project guides, and hardware comparisons for makers in Bangladesh."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.electromartbd.bd/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.electromartbd.bd/blog.html" }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <style>
+    .blog-hero {
+      text-align: center;
+      padding: 80px 5% 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .blog-hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+    }
+    .blog-hero h1 span {
+      background: linear-gradient(135deg, #00d1ff, #0088ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .blog-hero p {
+      color: var(--text-dim);
+      font-size: 1.15rem;
+      line-height: 1.7;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+      padding: 40px 5% 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .blog-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+    
+    .blog-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(0, 209, 255, 0.5), transparent);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    
+    .blog-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 20px var(--accent-glow);
+      border-color: rgba(0, 209, 255, 0.3);
+    }
+    .blog-card:hover::before { opacity: 1; }
+    
+    .blog-category {
+      background: rgba(0, 209, 255, 0.1);
+      color: var(--accent);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: inline-block;
+      align-self: flex-start;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .blog-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.3;
+      font-family: 'Outfit', sans-serif;
+    }
+    
+    .blog-excerpt {
+      color: var(--text-dim);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      flex-grow: 1;
+      margin-bottom: 24px;
+    }
+    
+    .blog-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 16px;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+    
+    .blog-read-more {
+      color: var(--accent);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.3s ease;
+    }
+    .blog-card:hover .blog-read-more { gap: 10px; }
+  </style>
+</head>
+<body>
+
+  <div id="site-nav"></div>
+
+  <main>
+    <section class="blog-hero fade-in">
+      <h1>ElectroMart BD <span>Blog</span></h1>
+      <p>Discover tutorials, comparisons, and guides to help you build your next robotics or IoT project in Bangladesh.</p>
+    </section>
+
+    <section class="blog-grid fade-in">
+      
+      <!-- Tutorial Post -->
+      <a href="basic-electronic-projects-tutorial.html" class="blog-card">
+        <span class="blog-category">Tutorial</span>
+        <h2 class="blog-title">Getting Started: Building Basic Electronic Projects</h2>
+        <p class="blog-excerpt">New to electronics? Learn the basics of breadboards, LEDs, and resistors, and build your very first interactive circuit today.</p>
+        <div class="blog-footer">
+          <span>5 min read</span>
+          <span class="blog-read-more">Read Full Guide →</span>
+        </div>
+      </a>
+
+      <!-- Comparison Post -->
+      <a href="arduino-vs-esp32-comparison.html" class="blog-card" style="animation-delay: 0.1s;">
+        <span class="blog-category">Comparison</span>
+        <h2 class="blog-title">Arduino Uno vs ESP32: Which Should You Choose?</h2>
+        <p class="blog-excerpt">We break down the key differences in processing power, WiFi capabilities, and use cases to help you choose the right board for your next project.</p>
+        <div class="blog-footer">
+          <span>8 min read</span>
+          <span class="blog-read-more">Read Full Guide →</span>
+        </div>
+      </a>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 ElectroMartBD | Designed with precision for builders</p>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/8801577098376" target="_blank" title="Chat on WhatsApp">💬</a>
+
+  <script src="nav.js"></script>
+</body>
+</html>
