@@ -21,9 +21,6 @@
 
 body {
   background-color: var(--bg-color);
-  background-image:
-    radial-gradient(circle at 15% 50%, rgba(0, 209, 255, 0.05), transparent 25%),
-    radial-gradient(circle at 85% 30%, rgba(0, 209, 255, 0.04), transparent 25%);
   color: var(--text-main);
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
@@ -62,10 +59,7 @@ nav {
 }
 
 .nav-logo span {
-  background: linear-gradient(135deg, #00d1ff, #0088ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--accent);
   padding-right: 2px;
 }
 
@@ -118,7 +112,6 @@ nav {
 .nav-link.active::after {
   width: 100%;
   opacity: 1;
-  box-shadow: 0 0 8px var(--accent-glow);
 }
 
 .contact-badge {
@@ -143,7 +136,7 @@ nav {
 
 /* ── Buttons ─────────────────────────────────────────────── */
 .btn {
-  background: linear-gradient(135deg, #00d1ff, #0088ff);
+  background: var(--accent);
   color: #000;
   padding: 10px 20px;
   border-radius: 10px;
@@ -159,7 +152,6 @@ nav {
 }
 
 .btn:hover {
-  box-shadow: 0 0 15px var(--accent-glow);
   transform: translateY(-2px);
   filter: brightness(1.1);
 }
@@ -167,7 +159,6 @@ nav {
 /* ── Cards ───────────────────────────────────────────────── */
 .card {
   background: var(--card-bg);
-  backdrop-filter: blur(10px);
   border: 1px solid var(--card-border);
   border-radius: 20px;
   padding: 24px;
@@ -180,21 +171,13 @@ nav {
 }
 
 .card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0, 209, 255, 0.5), transparent);
-  opacity: 0;
-  transition: opacity 0.4s ease;
+  display: none;
 }
 
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 20px var(--accent-glow);
-  border-color: rgba(0, 209, 255, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .card:hover::before {
@@ -580,10 +563,7 @@ body.flex-layout {
 }
 
 .hero h1 span {
-  background: linear-gradient(135deg, #00d1ff, #0088ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--accent);
 }
 
 .hero-desc {
@@ -597,7 +577,7 @@ body.flex-layout {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, #00d1ff, #0088ff);
+  background: var(--accent);
   color: #000;
   padding: 14px 28px;
   border-radius: 12px;
@@ -608,7 +588,6 @@ body.flex-layout {
 }
 
 .hero-cta:hover {
-  box-shadow: 0 0 20px var(--accent-glow);
   transform: translateY(-2px);
   filter: brightness(1.1);
 }
