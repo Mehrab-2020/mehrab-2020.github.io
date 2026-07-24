@@ -34,7 +34,7 @@ const productsData = [
       },
       {
         id: "arduino_nano",
-        seoSlug: "arduino-nano-bd",
+        seoSlug: "arduino-nano-v3-price-in-bangladesh",
         name: "Arduino Nano V3.0",
         metaTitle: "Arduino Nano Price in BD / Bangladesh (2026) | Buy Original Nano",
         metaDescription: "Find the best Arduino Nano price in BD. Buy original Arduino Nano V3.0 at the lowest price in Bangladesh. Compact and perfect for IoT projects.",
@@ -59,7 +59,7 @@ const productsData = [
       },
       {
         id: "nodemcu",
-        seoSlug: "nodemcu-esp8266-bd",
+        seoSlug: "nodemcu-esp8266-wifi-module-price-in-bangladesh",
         name: "NodeMCU ESP8266",
         metaTitle: "NodeMCU ESP8266 Price in BD / Bangladesh (2026)",
         metaDescription: "Best NodeMCU ESP8266 price in BD. Buy original NodeMCU for your WiFi & IoT projects at the lowest price in Bangladesh. Fast delivery.",
@@ -78,7 +78,7 @@ const productsData = [
       },
       {
         id: "raspberry_pi_4",
-        seoSlug: "raspberry-pi-4-bangladesh",
+        seoSlug: "buy-raspberry-pi-4-model-b-price-in-bangladesh",
         name: "Raspberry Pi 4 Model B",
         metaTitle: "Raspberry Pi 4 Price in BD / Bangladesh (2026) | Original",
         metaDescription: "Check out the best Raspberry Pi 4 price in BD. Buy original Raspberry Pi 4 Model B at lowest price in Bangladesh. Fast nationwide delivery.",
@@ -98,7 +98,7 @@ const productsData = [
       },
       {
         id: "esp32",
-        seoSlug: "esp32-development-board-bd",
+        seoSlug: "esp32-wifi-bluetooth-development-board-price-bd",
         name: "ESP32 Development Board",
         metaTitle: "ESP32 Price in BD / Bangladesh (2026) | WiFi & Bluetooth",
         metaDescription: "Get the best ESP32 price in BD. Buy original ESP32 Development Board for IoT projects at the lowest price in Bangladesh.",
@@ -117,7 +117,7 @@ const productsData = [
       },
       {
         id: "arduino_mega",
-        seoSlug: "arduino-mega-bd",
+        seoSlug: "arduino-mega-2560-r3-price-in-bangladesh",
         name: "Arduino Mega 2560",
         metaTitle: "Arduino Mega Price in BD / Bangladesh (2026) | Mega 2560",
         metaDescription: "Best Arduino Mega price in BD. Buy original Arduino Mega 2560 at the lowest price in Bangladesh. Perfect for advanced robotics and CNC projects.",
