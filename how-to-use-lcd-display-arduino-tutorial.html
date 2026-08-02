@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Use an I2C LCD Display with Arduino | ElectroMart BD</title>
+  <meta name="title" content="How to Use an I2C LCD Display with Arduino | ElectroMart BD">
+  <meta name="description" content="A step-by-step guide to connecting and programming a 16x2 I2C LCD display with Arduino. Learn how to print text and sensor data easily.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.electromartbd.bd/how-to-use-lcd-display-arduino-tutorial.html">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Use an I2C LCD Display with Arduino",
+    "image": "https://www.electromartbd.bd/meta-image.png",
+    "author": {
+      "@type": "Organization",
+      "name": "ElectroMartBD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ElectroMartBD",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.electromartbd.bd/logo.png"
+      }
+    },
+    "datePublished": "2026-07-30"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.electromartbd.bd/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.electromartbd.bd/blog.html" },
+      { "@type": "ListItem", "position": 3, "name": "LCD Display Tutorial", "item": "https://www.electromartbd.bd/how-to-use-lcd-display-arduino-tutorial.html" }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <style>
+    .article-header {
+      text-align: center;
+      padding: 60px 5% 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .article-category {
+      background: rgba(0, 209, 255, 0.1);
+      color: var(--accent);
+      padding: 6px 16px;
+      border-radius: 99px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+    .article-header h1 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .article-meta {
+      color: var(--text-dim);
+      font-size: 0.95rem;
+      margin-bottom: 40px;
+    }
+    
+    .article-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 5% 80px;
+      line-height: 1.8;
+      font-size: 1.1rem;
+      color: var(--text-dim);
+    }
+    .article-content h2 {
+      color: var(--text-main);
+      font-size: 1.8rem;
+      margin: 40px 0 20px;
+      font-weight: 700;
+    }
+    .article-content h3 {
+      color: var(--text-main);
+      font-size: 1.4rem;
+      margin: 30px 0 15px;
+      font-weight: 600;
+    }
+    .article-content p {
+      margin-bottom: 20px;
+    }
+    .article-content ul, .article-content ol {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+    .article-content li {
+      margin-bottom: 10px;
+    }
+    .article-content strong {
+      color: var(--text-main);
+    }
+    .article-content a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .article-content a:hover {
+      text-decoration: underline;
+    }
+    .article-content pre {
+      background: #111827;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #e5e7eb;
+      font-size: 0.95rem;
+    }
+    
+    .highlight-box {
+      background: rgba(0, 209, 255, 0.05);
+      border-left: 4px solid var(--accent);
+      padding: 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 30px 0;
+    }
+    
+    .parts-list {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 30px;
+      border-radius: 16px;
+      margin: 30px 0;
+    }
+    .parts-list h3 { margin-top: 0; }
+  </style>
+</head>
+<body>
+
+  <div id="site-nav"></div>
+
+  <main>
+    <article>
+      <header class="article-header fade-in">
+        <span class="article-category">Tutorial</span>
+        <h1>How to Use an I2C LCD Display with Arduino</h1>
+        <div class="article-meta">Published on July 30, 2026 • 6 min read</div>
+      </header>
+
+      <div class="article-content fade-in" style="animation-delay: 0.1s;">
+        <p>Adding a screen to your Arduino projects makes them instantly more interactive. Instead of relying on the Serial Monitor, you can display live sensor data, status messages, or menus directly on the device. In this tutorial, we will learn how to connect and use a 16x2 I2C LCD display.</p>
+
+        <h2>1. Why Use an I2C LCD?</h2>
+        <p>A standard 16x2 LCD requires at least 6 digital pins to operate, which can quickly consume all the available pins on your Arduino Uno. An <strong>I2C LCD</strong> has an adapter soldered onto the back that converts it to use the I2C protocol. This means it only requires <strong>two data pins (SDA and SCL)</strong> along with power and ground.</p>
+
+        <div class="parts-list">
+          <h3>What You Need:</h3>
+          <ul>
+            <li>1x <a href="arduino-uno-r3-bangladesh.html">Arduino Uno R3</a></li>
+            <li>1x <a href="lcd-16x2-i2c-bd.html">LCD 16x2 with I2C Module</a></li>
+            <li>4x <a href="jumper-wire-male-to-male-bd.html">Female-to-Male Jumper Wires</a></li>
+          </ul>
+        </div>
+
+        <h2>2. Wiring the LCD to Arduino</h2>
+        <p>Connecting the I2C LCD is incredibly simple. Just connect four wires from the LCD to your Arduino:</p>
+        
+        <ul>
+          <li><strong>GND</strong> to Arduino <strong>GND</strong></li>
+          <li><strong>VCC</strong> to Arduino <strong>5V</strong></li>
+          <li><strong>SDA</strong> to Arduino <strong>A4</strong> (or the dedicated SDA pin)</li>
+          <li><strong>SCL</strong> to Arduino <strong>A5</strong> (or the dedicated SCL pin)</li>
+        </ul>
+
+        <div class="highlight-box">
+          <p><strong>Note:</strong> Some Arduino compatible boards use different pins for I2C. On the Arduino Mega, SDA is 20 and SCL is 21. On ESP8266 (NodeMCU), it's typically D2 (SDA) and D1 (SCL).</p>
+        </div>
+
+        <h2>3. The Code</h2>
+        <p>Before writing the code, you need to install the <strong>LiquidCrystal I2C</strong> library. In the Arduino IDE, go to <em>Sketch &gt; Include Library &gt; Manage Libraries</em>, search for "LiquidCrystal I2C" (by Frank de Brabander), and install it.</p>
+
+        <pre><code>#include &lt;Wire.h&gt;
+#include &lt;LiquidCrystal_I2C.h&gt;
+
+// Set the LCD address to 0x27 for a 16 chars and 2 line display
+// If 0x27 doesn't work, try 0x3F.
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+void setup() {
+  // Initialize the LCD
+  lcd.init();
+  
+  // Turn on the backlight
+  lcd.backlight();
+  
+  // Print a message to the LCD
+  lcd.setCursor(0, 0); // Column 0, Row 0
+  lcd.print("Hello, BD!");
+  
+  lcd.setCursor(0, 1); // Column 0, Row 1
+  lcd.print("ElectroMart BD");
+}
+
+void loop() {
+  // Nothing to do here
+}</code></pre>
+
+        <h2>4. Troubleshooting</h2>
+        <p>If you see a blank screen or solid black blocks:</p>
+        <ul>
+          <li><strong>Check the contrast:</strong> There is a small blue potentiometer on the back of the I2C module. Use a screwdriver to turn it until the text becomes clear.</li>
+          <li><strong>Check the address:</strong> The most common I2C addresses are <code>0x27</code> and <code>0x3F</code>. If one doesn't work, try the other in the code.</li>
+          <li><strong>Check your wiring:</strong> Ensure SDA and SCL aren't swapped.</li>
+        </ul>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>© 2026 ElectroMartBD | Designed with precision for builders</p>
+      <p style="margin-top: 10px;">
+      <a href="https://www.facebook.com/profile.php?id=61570971407231" target="_blank" rel="noopener noreferrer" style="color: var(--text-dim); text-decoration: none; font-size: 0.9rem;">Follow us on Facebook</a>
+    </p>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/8801577098376" target="_blank" title="Chat on WhatsApp">💬</a>
+
+  <script src="nav.js"></script>
+</body>
+</html>

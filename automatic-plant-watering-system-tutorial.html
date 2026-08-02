@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build an Automatic Plant Watering System | ElectroMart BD</title>
+  <meta name="title" content="Build an Automatic Plant Watering System with Arduino | ElectroMart BD">
+  <meta name="description" content="Learn how to build an automated plant watering box using an Arduino, soil moisture sensor, and water pump. Keep your plants healthy automatically.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.electromartbd.bd/automatic-plant-watering-system-tutorial.html">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Build an Automatic Plant Watering System with Arduino",
+    "image": "https://www.electromartbd.bd/meta-image.png",
+    "author": {
+      "@type": "Organization",
+      "name": "ElectroMartBD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ElectroMartBD",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.electromartbd.bd/logo.png"
+      }
+    },
+    "datePublished": "2026-07-30"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.electromartbd.bd/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.electromartbd.bd/blog.html" },
+      { "@type": "ListItem", "position": 3, "name": "Plant Watering System", "item": "https://www.electromartbd.bd/automatic-plant-watering-system-tutorial.html" }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <style>
+    .article-header {
+      text-align: center;
+      padding: 60px 5% 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .article-category {
+      background: rgba(0, 209, 255, 0.1);
+      color: var(--accent);
+      padding: 6px 16px;
+      border-radius: 99px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+    .article-header h1 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .article-meta {
+      color: var(--text-dim);
+      font-size: 0.95rem;
+      margin-bottom: 40px;
+    }
+    
+    .article-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 5% 80px;
+      line-height: 1.8;
+      font-size: 1.1rem;
+      color: var(--text-dim);
+    }
+    .article-content h2 {
+      color: var(--text-main);
+      font-size: 1.8rem;
+      margin: 40px 0 20px;
+      font-weight: 700;
+    }
+    .article-content h3 {
+      color: var(--text-main);
+      font-size: 1.4rem;
+      margin: 30px 0 15px;
+      font-weight: 600;
+    }
+    .article-content p {
+      margin-bottom: 20px;
+    }
+    .article-content ul, .article-content ol {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+    .article-content li {
+      margin-bottom: 10px;
+    }
+    .article-content strong {
+      color: var(--text-main);
+    }
+    .article-content a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .article-content a:hover {
+      text-decoration: underline;
+    }
+    .article-content pre {
+      background: #111827;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #e5e7eb;
+      font-size: 0.95rem;
+    }
+    
+    .highlight-box {
+      background: rgba(0, 209, 255, 0.05);
+      border-left: 4px solid var(--accent);
+      padding: 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 30px 0;
+    }
+    
+    .parts-list {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 30px;
+      border-radius: 16px;
+      margin: 30px 0;
+    }
+    .parts-list h3 { margin-top: 0; }
+  </style>
+</head>
+<body>
+
+  <div id="site-nav"></div>
+
+  <main>
+    <article>
+      <header class="article-header fade-in">
+        <span class="article-category">Project</span>
+        <h1>Build an Automatic Plant Watering System</h1>
+        <div class="article-meta">Published on July 30, 2026 • 8 min read</div>
+      </header>
+
+      <div class="article-content fade-in" style="animation-delay: 0.1s;">
+        <p>Never forget to water your plants again! In this tutorial, we will build an automated plant watering box that monitors the soil moisture level and automatically pumps water when the soil gets too dry.</p>
+
+        <h2>1. How It Works</h2>
+        <p>The system uses an analog soil moisture sensor placed in the plant's soil. The Arduino constantly reads the moisture level. If the level drops below a specific threshold (meaning the soil is dry), the Arduino sends a signal to a relay module. The relay acts as a switch, turning on a mini water pump to water the plant for a few seconds.</p>
+
+        <div class="parts-list">
+          <h3>What You Need:</h3>
+          <ul>
+            <li>1x <a href="arduino-uno-r3-bangladesh.html">Arduino Uno R3</a></li>
+            <li>1x Soil Moisture Sensor (Analog)</li>
+            <li>1x 5V Relay Module</li>
+            <li>1x 5V Submersible Mini Water Pump with Tubing</li>
+            <li>1x Power Source (e.g., 5V 2A adapter or battery pack)</li>
+            <li><a href="jumper-wire-male-to-male-bd.html">Jumper Wires</a></li>
+          </ul>
+        </div>
+
+        <h2>2. Wiring the System</h2>
+        <p>Follow these connections carefully, especially when wiring the water pump and relay.</p>
+        
+        <h3>Soil Moisture Sensor to Arduino:</h3>
+        <ul>
+          <li><strong>VCC</strong> to Arduino <strong>5V</strong></li>
+          <li><strong>GND</strong> to Arduino <strong>GND</strong></li>
+          <li><strong>A0</strong> (Analog Out) to Arduino <strong>A0</strong></li>
+        </ul>
+
+        <h3>Relay Module to Arduino:</h3>
+        <ul>
+          <li><strong>VCC</strong> to Arduino <strong>5V</strong></li>
+          <li><strong>GND</strong> to Arduino <strong>GND</strong></li>
+          <li><strong>IN</strong> to Arduino <strong>Pin 8</strong></li>
+        </ul>
+
+        <h3>Water Pump Circuit:</h3>
+        <p>The water pump needs more current than the Arduino pins can provide, which is why we use a relay.</p>
+        <ul>
+          <li>Connect the <strong>Positive (+)</strong> wire of your power supply to the <strong>COM</strong> (Common) terminal on the relay.</li>
+          <li>Connect the <strong>NO</strong> (Normally Open) terminal on the relay to the <strong>Positive (+)</strong> wire of the water pump.</li>
+          <li>Connect the <strong>Negative (-)</strong> wire of the water pump directly to the <strong>Negative (-)</strong> wire of your power supply.</li>
+        </ul>
+
+        <div class="highlight-box">
+          <p><strong>Safety Warning:</strong> Do not use high voltage (like 220V AC mains) for this project. Stick to a 5V or 12V DC water pump to ensure safety.</p>
+        </div>
+
+        <h2>3. The Arduino Code</h2>
+        <p>Upload the following code to your Arduino. You can adjust the <code>moistureThreshold</code> value depending on how dry you want the soil to get before watering.</p>
+
+        <pre><code>const int moisturePin = A0;
+const int relayPin = 8;
+
+// Define the threshold for dry soil
+// Note: In some sensors, a higher analog value means drier soil
+const int moistureThreshold = 600; 
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(relayPin, OUTPUT);
+  
+  // Make sure pump is off initially
+  digitalWrite(relayPin, HIGH); // For active-low relays
+}
+
+void loop() {
+  int moistureLevel = analogRead(moisturePin);
+  Serial.print("Soil Moisture: ");
+  Serial.println(moistureLevel);
+  
+  // If soil is dry (value is higher than threshold)
+  if (moistureLevel > moistureThreshold) {
+    Serial.println("Soil is dry! Watering plant...");
+    
+    // Turn on pump
+    digitalWrite(relayPin, LOW); 
+    
+    // Water for 3 seconds
+    delay(3000); 
+    
+    // Turn off pump
+    digitalWrite(relayPin, HIGH); 
+    
+    // Wait a while before checking again to let water soak in
+    delay(10000); 
+  } else {
+    Serial.println("Soil is moist.");
+    // Wait 2 seconds before reading again
+    delay(2000); 
+  }
+}</code></pre>
+
+        <h2>4. Testing the System</h2>
+        <p>Submerge the pump in a container of water, and place the tubing so it points into your plant's pot. Insert the soil moisture sensor deeply into the soil. Open the Serial Monitor in the Arduino IDE to see the real-time moisture readings. Try taking the sensor out of the soil to simulate dry conditions—you should hear the relay click and see water pumping!</p>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>© 2026 ElectroMartBD | Designed with precision for builders</p>
+      <p style="margin-top: 10px;">
+      <a href="https://www.facebook.com/profile.php?id=61570971407231" target="_blank" rel="noopener noreferrer" style="color: var(--text-dim); text-decoration: none; font-size: 0.9rem;">Follow us on Facebook</a>
+    </p>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/8801577098376" target="_blank" title="Chat on WhatsApp">💬</a>
+
+  <script src="nav.js"></script>
+</body>
+</html>
