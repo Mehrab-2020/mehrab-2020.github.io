@@ -583,7 +583,7 @@ const productsData = [
         name: "N20 Micro Gear Motor",
         image: "./images/webp/n20-motor.webp",
         shortDesc: "High-torque, compact DC gear motor for robotics and RC cars. Best N20 motor price BD.",
-        price: "৳20",
+        price: "৳ 320",
         fullDesc: "The N20 Micro Gear Motor is a compact, high-torque DC motor with an integrated metal gearbox. Perfect for small-scale robotics, DIY RC cars, and automated mechanisms. Its small footprint makes it ideal for projects where space is limited but torque is required.",
         features: [
           "Metal gearbox for durability",
