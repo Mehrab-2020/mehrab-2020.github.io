@@ -576,6 +576,51 @@ const productsData = [
           { q: "Why do my motors emit a high-pitched whining noise when using PWM?", a: "This noise is caused by the PWM frequency vibrating the motor coils at an audible frequency. The TB6612FNG supports PWM frequencies up to 100 kHz. Increasing the PWM frequency on your microcontroller to an ultrasonic range (above 20 kHz) can completely eliminate this noise." },
           { q: "Can the TB6612FNG drive a single larger motor by combining the channels?", a: "Yes, it is possible to parallel the two output channels to drive a single motor with up to 2.4A continuous current. To do this, you must tie both IN1 pins together, both IN2 pins together, both PWM pins together, and physically connect the motor across the paralleled output terminals." }
         ]
+      },
+      {
+        id: "n20_motor",
+        seoSlug: "n20-micro-gear-motor-bd",
+        name: "N20 Micro Gear Motor",
+        image: "./images/webp/n20-motor.webp",
+        shortDesc: "High-torque, compact DC gear motor for robotics and RC cars. Best N20 motor price BD.",
+        price: "৳320",
+        fullDesc: "The N20 Micro Gear Motor is a compact, high-torque DC motor with an integrated metal gearbox. Perfect for small-scale robotics, DIY RC cars, and automated mechanisms. Its small footprint makes it ideal for projects where space is limited but torque is required.",
+        features: [
+          "Metal gearbox for durability",
+          "Operating Voltage: 3V - 6V DC",
+          "Compact size and lightweight",
+          "D-shaped output shaft for easy wheel mounting"
+        ]
+      },
+      {
+        id: "n20_motor_wheel",
+        seoSlug: "n20-motor-wheel-bd",
+        name: "N20 Motor Wheel",
+        image: "./images/webp/n20-motor-wheel.webp",
+        shortDesc: "Rubber tire wheel designed specifically for N20 micro gear motors.",
+        price: "৳100",
+        fullDesc: "This wheel features a rubber tire providing excellent grip and traction for your miniature robots. The hub is designed with a D-shaped hole to perfectly fit the N20 micro gear motor's output shaft, ensuring a secure fit without slipping.",
+        features: [
+          "High-grip rubber tire",
+          "D-shaped D-hole hub for N20 motor shafts",
+          "Durable plastic rim",
+          "Ideal for mini sumo robots and line followers"
+        ]
+      },
+      {
+        id: "n20_motor_mount",
+        seoSlug: "n20-motor-mount-bracket-bd",
+        name: "N20 Motor Mount Bracket",
+        image: "./images/webp/n20-motor-mount.webp",
+        shortDesc: "Sturdy plastic mounting bracket for securely attaching N20 micro gear motors.",
+        price: "৳50",
+        fullDesc: "Securely mount your N20 micro gear motors to your robot chassis with this lightweight and durable mounting bracket. Includes mounting screws and nuts for quick and easy installation.",
+        features: [
+          "Designed specifically for N20 motors",
+          "Durable plastic construction",
+          "Includes screws and nuts for mounting",
+          "Easy to install on various chassis"
+        ]
       }
     ]
   }
