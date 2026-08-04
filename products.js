@@ -401,7 +401,7 @@ const productsData = [
         name: "L7805CV Voltage Regulator",
         image: "./images/webp/l7805cv-voltage-regulator-bd.jpg",
         shortDesc: "Provides a stable 5V output for all your electronic components.",
-        price: "৳20",
+        price: "৳ 320",
         fullDesc: "The L7805CV is a classic three-terminal 5V positive voltage regulator. If your project runs on a 9V or 12V battery and you need to power 5V logic ICs or sensors reliably without overheating, this IC is perfectly suited.",
         features: [
           "Output Voltage: 5V",
@@ -583,7 +583,7 @@ const productsData = [
         name: "N20 Micro Gear Motor",
         image: "./images/webp/n20-motor.webp",
         shortDesc: "High-torque, compact DC gear motor for robotics and RC cars. Best N20 motor price BD.",
-        price: "৳320",
+        price: "৳20",
         fullDesc: "The N20 Micro Gear Motor is a compact, high-torque DC motor with an integrated metal gearbox. Perfect for small-scale robotics, DIY RC cars, and automated mechanisms. Its small footprint makes it ideal for projects where space is limited but torque is required.",
         features: [
           "Metal gearbox for durability",
@@ -598,7 +598,7 @@ const productsData = [
         name: "N20 Motor Wheel",
         image: "./images/webp/n20-motor-wheel.webp",
         shortDesc: "Rubber tire wheel designed specifically for N20 micro gear motors.",
-        price: "৳100",
+        price: "৳ 100",
         fullDesc: "This wheel features a rubber tire providing excellent grip and traction for your miniature robots. The hub is designed with a D-shaped hole to perfectly fit the N20 micro gear motor's output shaft, ensuring a secure fit without slipping.",
         features: [
           "High-grip rubber tire",
@@ -613,7 +613,7 @@ const productsData = [
         name: "N20 Motor Mount Bracket",
         image: "./images/webp/n20-motor-mount.webp",
         shortDesc: "Sturdy plastic mounting bracket for securely attaching N20 micro gear motors.",
-        price: "৳50",
+        price: "৳ 50",
         fullDesc: "Securely mount your N20 micro gear motors to your robot chassis with this lightweight and durable mounting bracket. Includes mounting screws and nuts for quick and easy installation.",
         features: [
           "Designed specifically for N20 motors",
