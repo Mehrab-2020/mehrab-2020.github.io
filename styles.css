@@ -261,6 +261,43 @@ footer {
   font-size: 0.9rem;
 }
 
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.footer-about {
+  line-height: 1.5;
+  color: var(--text-dim);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+.footer-copy {
+  margin-top: 20px;
+  font-size: 0.85rem;
+}
+
 /* ── WhatsApp Float ──────────────────────────────────────── */
 .whatsapp-float {
   position: fixed;
@@ -304,9 +341,45 @@ footer {
 }
 
 /* ── Responsive ──────────────────────────────────────────── */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-main);
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 4px;
+}
+
 @media (max-width: 900px) {
+  .mobile-menu-btn {
+    display: block;
+  }
+  .contact-badge {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
   .nav-center {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: rgba(3, 7, 18, 0.95);
+    border-radius: 0 0 20px 20px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+  }
+  .nav-center.show {
+    display: flex;
   }
 }
 
@@ -772,6 +845,15 @@ body.flex-layout {
 .fade-in:nth-child(3) { animation-delay: 0.3s; }
 .fade-in:nth-child(4) { animation-delay: 0.4s; }
 .fade-in:nth-child(5) { animation-delay: 0.5s; }
+
+.trust-page-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #00d1ff, #0088ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 /* ── Index page specifics ─────────────────────────────────── */
 .index-hero {

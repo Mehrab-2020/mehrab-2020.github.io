@@ -14,6 +14,7 @@
     { href: 'arduino-bangladesh.html',       label: 'Arduino' },
     { href: 'sensors-bangladesh.html',       label: 'Sensors' },
     { href: 'electronics-components-bd.html', label: 'Components' },
+    { href: 'blog.html',                     label: 'Blog' },
   ];
 
   const linksHtml = navLinks.map(l => {
@@ -29,9 +30,24 @@
       <div class="nav-center">
         ${linksHtml}
       </div>
-      <a href="tel:+8801577098376" class="contact-badge" aria-label="Call us at 01577098376">
-        📞 01577098376
-      </a>
+      <div class="nav-actions">
+        <a href="tel:+8801577098376" class="contact-badge" aria-label="Call us at 01577098376">
+          📞 01577098376
+        </a>
+        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+          ☰
+        </button>
+      </div>
     </nav>
   `;
+
+  const menuBtn = root.querySelector('.mobile-menu-btn');
+  const navCenter = root.querySelector('.nav-center');
+  if (menuBtn && navCenter) {
+    menuBtn.addEventListener('click', () => {
+      navCenter.classList.toggle('show');
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!expanded));
+    });
+  }
 })();
