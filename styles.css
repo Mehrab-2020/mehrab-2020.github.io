@@ -686,6 +686,46 @@ body.flex-layout {
   filter: brightness(1.1);
 }
 
+.hero-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.category-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(17, 24, 39, 0.6);
+  border: 1px solid rgba(0, 209, 255, 0.15);
+  color: var(--text-main);
+  padding: 10px 18px;
+  border-radius: 99px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+}
+
+.category-pill:hover {
+  background: rgba(0, 209, 255, 0.1);
+  border-color: rgba(0, 209, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 209, 255, 0.15);
+  color: #fff;
+}
+
+.category-pill:hover .icon {
+  transform: scale(1.1);
+}
+
+.category-pill .icon {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
 .content { max-width: 1200px; margin: 0 auto; padding: 0 5% 80px; }
 
 .section-title {
