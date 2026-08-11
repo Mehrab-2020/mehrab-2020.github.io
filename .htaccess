@@ -7,6 +7,9 @@
   RewriteCond %{HTTP_HOST} ^(www\.)?electromartbd\.com$ [NC]
   RewriteRule ^(.*)$ https://electromartbd.bd/$1 [L,R=301]
 
+  # Redirect missing arduino nano page
+  Redirect 301 /arduino-nano-v3-price-in-bangladesh.html /arduino-nano-bd.html
+
   # Force HTTPS
   RewriteCond %{HTTPS} off
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

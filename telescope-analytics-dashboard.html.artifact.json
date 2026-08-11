@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "Telescope — Analytics dashboard (dark dev-tools)",
+  "entry": "telescope-analytics-dashboard.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-08-09T19:01:43.795Z",
+  "updatedAt": "2026-08-09T19:01:43.809Z",
+  "metadata": {
+    "identifier": "telescope-analytics-dashboard",
+    "artifactType": "text/html",
+    "inferred": false
+  }
+}
