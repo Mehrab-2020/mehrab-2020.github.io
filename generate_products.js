@@ -50,7 +50,9 @@ function renderProductPage(product) {
   const categoryPage = getCategoryPage(product.categoryName);
   const metaTitle = product.metaTitle || `Best ${product.name} Price in BD / Bangladesh (2026) | Original - ElectroMart BD`;
   const metaDescription = product.metaDescription || `Buy ${product.name} in Bangladesh at the best price (2026). Original product, fast delivery and trusted electronics shop. Order now from ElectroMart BD.`;
-  const metaKeywords = product.keywords ? `\n  <meta name="keywords" content="${escapeHtml(product.keywords)}">` : '';
+  const gscKeywords = "electromart bd, arduino price in bd, sensor price in bangladesh, sensor, rassberry pi 4, jumper wire, bt 05 bluetooth, mq2 gas sensor";
+  const finalKeywords = product.keywords ? `${gscKeywords}, ${escapeHtml(product.keywords)}` : gscKeywords;
+  const metaKeywords = `\n  <meta name="keywords" content="${finalKeywords}">`;
   const waMessage = encodeURIComponent(`Hello! I want to order: ${product.name}`);
   const escapedName = product.name.replace(/'/g, "\\'");
 
