@@ -29,6 +29,15 @@ productsData.forEach(category => {
           return `<meta name="keywords" content="${newKeywords}">`;
         });
         
+        // Inject an h2 right after h1 if it doesn't exist
+        if (htmlContent.includes('<h1 class="product-title">')) {
+          const h1Regex = /(<h1 class="product-title">.*?<\/h1>)/s;
+          if (!htmlContent.includes('class="seo-subtitle"')) {
+            htmlContent = htmlContent.replace(h1Regex, `$1\n        <h2 class="seo-subtitle" style="font-size: 1rem; color: #aaa; margin-top: 5px; margin-bottom: 15px;">Search tags: ${specificKeywords}</h2>`);
+            modified = true;
+          }
+        }
+        
         if (modified) {
           fs.writeFileSync(htmlFile, htmlContent, 'utf-8');
           updatedCount++;
