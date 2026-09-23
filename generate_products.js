@@ -146,6 +146,21 @@ ${product.faq.map(item => `          <div class="faq-item" style="margin-bottom:
     ]
   };
 
+  const faqSchema = product.faq ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: product.faq.map(item => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a
+      }
+    }))
+  } : null;
+
+  const faqSchemaScript = faqSchema ? `\n  <script type="application/ld+json">\n  ${JSON.stringify(faqSchema, null, 2)}\n  </script>` : '';
+
   return `<!DOCTYPE html>
 <html lang="en">
 
@@ -175,7 +190,7 @@ ${product.faq.map(item => `          <div class="faq-item" style="margin-bottom:
   </script>
   <script type="application/ld+json">
   ${JSON.stringify(breadcrumbSchema, null, 2)}
-  </script>
+  </script>${faqSchemaScript}
 
   <link
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap"
