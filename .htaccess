@@ -10,6 +10,9 @@
   # Redirect missing arduino nano page
   Redirect 301 /arduino-nano-v3-price-in-bangladesh.html /arduino-nano-bd.html
 
+  # Redirect legacy product.html shell to homepage catalog
+  RewriteRule ^product\.html$ / [R=301,L]
+
   # Force HTTPS
   RewriteCond %{HTTPS} off
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
