@@ -1,21 +1,108 @@
+# ==============================================================================
+# ElectroMart BD - robots.txt
+# Optimized for Web Search Engines, AI Agents, LLMs & Generative Engine Optimization (GEO)
+# ==============================================================================
+
+# Default Rule for all Web Crawlers
 User-agent: *
 Allow: /
 Disallow:
 
-# Allow AI Search Engines and LLMs
+# ------------------------------------------------------------------------------
+# OpenAI (ChatGPT, SearchGPT, GPT-4o, GPT-5)
+# ------------------------------------------------------------------------------
+User-agent: GPTBot
+Allow: /
+
 User-agent: ChatGPT-User
 Allow: /
 
 User-agent: OAI-SearchBot
 Allow: /
 
-User-agent: CCBot
+# ------------------------------------------------------------------------------
+# Anthropic (Claude, Claude-3.5/3.7 Sonnet, Claude Opus)
+# ------------------------------------------------------------------------------
+User-agent: ClaudeBot
 Allow: /
 
-User-agent: Google-Extended
+User-agent: Claude-Web
 Allow: /
 
 User-agent: anthropic-ai
 Allow: /
 
+# ------------------------------------------------------------------------------
+# Perplexity AI Search Engine & Citations
+# ------------------------------------------------------------------------------
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# ------------------------------------------------------------------------------
+# Google (Search & Gemini / Google-Extended)
+# ------------------------------------------------------------------------------
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# ------------------------------------------------------------------------------
+# Apple Intelligence & Siri
+# ------------------------------------------------------------------------------
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# ------------------------------------------------------------------------------
+# Microsoft Bing & Copilot
+# ------------------------------------------------------------------------------
+User-agent: Bingbot
+Allow: /
+
+User-agent: Copilot
+Allow: /
+
+# ------------------------------------------------------------------------------
+# Meta AI (Llama & Meta Search)
+# ------------------------------------------------------------------------------
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# ------------------------------------------------------------------------------
+# Other Leading AI Agents & Aggregators
+# ------------------------------------------------------------------------------
+User-agent: MistralBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# ------------------------------------------------------------------------------
+# Sitemaps & Machine-Readable AI Knowledge
+# ------------------------------------------------------------------------------
 Sitemap: https://www.electromartbd.bd/sitemap.xml
+# AI Context: https://www.electromartbd.bd/llms.txt
