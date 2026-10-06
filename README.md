@@ -43,8 +43,8 @@
   - Curated [`llms.txt`](llms.txt) for AI search engines (ChatGPT Search, Perplexity, Claude).
   - Schema.org structured data (`Product`, `BreadcrumbList`, `FAQPage`, `ElectronicsStore`).
   - Canonical tags, Open Graph meta tags, and automated XML sitemap.
-- **💬 Seamless WhatsApp Checkout:** One-click cart-to-WhatsApp order dispatch with pre-formatted product summaries.
-- **📱 Responsive Glassmorphic Dark UI:** Handcrafted CSS with modern design tokens, accessible typography (`Outfit` & `Inter`), and interactive search/filter capabilities.
+- **💬 Seamless WhatsApp Checkout:** One-click cart-to-WhatsApp order dispatch with pre-formatted product summaries. Direct "Order Now" buttons on every product tile.
+- **📱 Premium Responsive Glassmorphic Dark UI:** High-conversion design with stretched links (entire product tiles are clickable!), deep hover-state shadows, dynamic hero gradients, and a dedicated trust signal section. Accessible typography (`Outfit` & `Inter`), and interactive search/filter capabilities.
 - **🚚 Pathao Courier API Integration:** Lightweight Express.js backend (`server.js`) for automated parcel booking and order fulfillment.
 
 ---
