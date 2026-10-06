@@ -408,16 +408,23 @@ function generateIndexCatalogHtml() {
     const cardsHtml = category.items.map((item, index) => {
       const productUrl = item.seoSlug ? `${item.seoSlug}.html` : `${item.id}.html`;
       const escapedItemName = item.name.replace(/'/g, "\\'");
-      return `        <div class="card" style="animation-delay: ${Math.min(0.1 * (index + 1), 0.5)}s;">
+      const isPopular = item.name.toLowerCase().includes('arduino') || item.name.toLowerCase().includes('esp32') || item.name.toLowerCase().includes('nodemcu') || item.name.toLowerCase().includes('dht11') || item.name.toLowerCase().includes('hc-sr04');
+      const badgeHtml = isPopular ? '<div class="badge" style="position: absolute; top: 10px; right: 10px; background: var(--accent); color: #000; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; z-index: 2; box-shadow: 0 2px 4px rgba(0,0,0,0.5);">⭐ Popular</div>' : '';
+      
+      return `        <div class="card" style="animation-delay: ${Math.min(0.1 * (index + 1), 0.5)}s; position: relative;">
+          ${badgeHtml}
+          <a href="${productUrl}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;" aria-label="View ${escapeHtml(item.name)} details"></a>
           <div class="img-container">
             <img src="${item.image}" alt="${escapeHtml(item.name)} price in Bangladesh" loading="lazy">
           </div>
           <h3>${escapeHtml(item.name)}</h3>
           <p>${escapeHtml(item.shortDesc)}</p>
-          <div class="card-footer">
-            <div class="price">${escapeHtml(item.price)}</div>
-            <button class="btn add-to-cart-button" style="padding: 10px; background: rgba(0,209,255,0.1); color: var(--accent); border: 1px solid var(--accent); cursor: pointer;" type="button" aria-label="Add ${escapeHtml(item.name)} to cart" onclick="addToCart('${item.id}', '${escapedItemName}', '${item.price}', '${item.image}')">🛒</button>
-            <a class="btn" href="${productUrl}">View Details</a>
+          <div class="card-footer" style="display: flex; flex-direction: column; gap: 12px; margin-top: auto; position: relative; z-index: 2;">
+            <div class="price" style="font-size: 1.4rem; font-weight: 800; color: var(--accent); margin-bottom: 2px;">${escapeHtml(item.price)}</div>
+            <div style="display: flex; gap: 8px; width: 100%;">
+              <a href="https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hello! I want to order ' + item.name)}" target="_blank" rel="noopener noreferrer" style="flex: 1; background: #25d366; color: #fff; border: none; text-align: center; padding: 10px 0; font-weight: bold; font-size: 0.95rem; border-radius: 8px; display: flex; justify-content: center; align-items: center; text-decoration: none; transition: background 0.3s;" onmouseover="this.style.background='#20bd5a'" onmouseout="this.style.background='#25d366'">Order Now</a>
+              <button class="add-to-cart-button" style="padding: 0 16px; background: rgba(0,209,255,0.1); color: var(--accent); border: 1px solid var(--accent); cursor: pointer; border-radius: 8px; display: flex; justify-content: center; align-items: center; font-size: 1.2rem; transition: all 0.3s;" onmouseover="this.style.background='rgba(0,209,255,0.2)'" onmouseout="this.style.background='rgba(0,209,255,0.1)'" type="button" aria-label="Add ${escapeHtml(item.name)} to cart" onclick="addToCart('${item.id}', '${escapedItemName}', '${item.price}', '${item.image}')">🛒</button>
+            </div>
           </div>
         </div>`;
     }).join('\n');

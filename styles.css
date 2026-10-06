@@ -3,14 +3,14 @@
    ============================================================ */
 
 :root {
-  --bg-color: #030712;
-  --card-bg: rgba(17, 24, 39, 0.7);
-  --card-border: rgba(31, 41, 55, 0.8);
+  --bg-color: #0b0f14;
+  --card-bg: rgba(18, 24, 33, 0.6);
+  --card-border: rgba(255, 255, 255, 0.05);
   --accent: #00d1ff;
   --accent-hover: #00e5ff;
-  --accent-glow: rgba(0, 209, 255, 0.3);
-  --text-main: #f9fafb;
-  --text-dim: #9ca3af;
+  --accent-glow: rgba(0, 209, 255, 0.35);
+  --text-main: #ffffff;
+  --text-dim: #a0aec0;
 }
 
 * {
@@ -22,12 +22,12 @@
 body {
   background-color: var(--bg-color);
   background-image:
-    radial-gradient(circle at 15% 50%, rgba(0, 209, 255, 0.05), transparent 25%),
-    radial-gradient(circle at 85% 30%, rgba(0, 209, 255, 0.04), transparent 25%);
+    radial-gradient(circle at 15% 50%, rgba(0, 209, 255, 0.08), transparent 30%),
+    radial-gradient(circle at 85% 30%, rgba(0, 209, 255, 0.06), transparent 30%);
   color: var(--text-main);
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -167,7 +167,8 @@ nav {
 /* ── Cards ───────────────────────────────────────────────── */
 .card {
   background: var(--card-bg);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--card-border);
   border-radius: 20px;
   padding: 24px;
@@ -177,6 +178,7 @@ nav {
   position: relative;
   overflow: hidden;
   animation: fadeUp 0.6s ease-out both;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .card::before {
@@ -193,8 +195,8 @@ nav {
 
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 20px var(--accent-glow);
-  border-color: rgba(0, 209, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px var(--accent-glow);
+  border-color: rgba(0, 209, 255, 0.4);
 }
 
 .card:hover::before {
@@ -645,12 +647,18 @@ body.flex-layout {
 }
 
 .hero h1 {
-  font-size: 3.2rem;
-  font-weight: 800;
-  line-height: 1.15;
-  margin-bottom: 20px;
-  letter-spacing: -1px;
-}
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #ffffff 20%, #00d1ff 50%, #ffffff 80%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShine 5s linear infinite;
+    letter-spacing: -1px;
+  }
 
 .hero h1 span {
   background: linear-gradient(135deg, #00d1ff, #0088ff);
@@ -1080,3 +1088,8 @@ body.flex-layout {
 .nav-links { display: flex; gap: 24px; align-items: center; }
 .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
 .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+@keyframes textShine {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
